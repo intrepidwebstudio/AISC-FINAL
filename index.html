@@ -1076,7 +1076,7 @@ function deletedata(tx){
 		var cond='0';
 		
 
-        transaction.executeSql("UPDATE contacts set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+        tx.executeSql("UPDATE contacts set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
 
 	}
 
@@ -1363,7 +1363,9 @@ function deleteEvents_data()
 		tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[],queryEventsselectSuccess,errorEventsCB);
 			 },ErrordelteCB);
 			 
-	d.transaction(function(tx){
+			 alert('completed selecrt events');
+			 
+	db.transaction(function(tx){
 				var value='1';
 				var cond='0';
         		tx.executeSql("UPDATE upcomingevents set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
@@ -1399,7 +1401,7 @@ function queryEventsselectSuccess(tx,result){
 					
 					
 				}
-	alert("Every "+event_read_array);
+	alert("Every  ");
 	}
 
 
