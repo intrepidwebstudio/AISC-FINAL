@@ -11,8 +11,8 @@
 	{
 		if (document.readyState === 'complete')
 		{	  
-		alert('asd');
-				document.addEventListener("deviceready", onDeviceReady, false);
+			alert('asd');
+			document.addEventListener("deviceready", onDeviceReady, false);
 		}
 	};
    </script>
@@ -1074,14 +1074,11 @@ function deletedata(tx){
 	
 		var value='1';
 		var cond='0';
-		
-
         tx.executeSql("UPDATE contacts set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
-
 	}
 
+
 function successContactCBServer(){
-	
 	alert('adasda !!!!');
 	console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
 	$.support.cors = true;
@@ -1094,11 +1091,7 @@ function successContactCBServer(){
 	crossDomain: true,
 	success: function(data)
 	{
-		
-		
-		
-		
-		
+		 
 	db.transaction( function(tx){ deletedata(tx) }, ErrorDeleteCallBack );	
 		
 		alert(data.status.code);
@@ -1289,7 +1282,7 @@ function successEventsCBServer(){
 	
 	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId);
+	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
 	
 	var event_read_list=event_read_array.join(",");
 	
@@ -1360,7 +1353,20 @@ function deleteEvents_data()
 
 	db.transaction(function(tx){
 		
-		tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[],queryEventsselectSuccess,errorEventsCB);
+		tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[],
+		function(tx,result){
+				var length = result.rows.length;
+				console.log("ARRAAYYY   LENGTH  == "+length);
+				for(var i=0; i< length ; i++)
+				{
+					alert("array push ="+result.rows.item(i).event_id);
+					event_read_array.push(result.rows.item(i).event_id);
+				}
+				alert("Every  ");
+	}
+
+		
+		,errorEventsCB);
 			 },ErrordelteCB);
 			 
 			 alert('completed selecrt events');
@@ -1386,7 +1392,7 @@ function ErrordelteCB(err){
 	
 	}
 
-
+/*
 function queryEventsselectSuccess(tx,result){
 	
 	var length = result.rows.length;
@@ -1403,7 +1409,7 @@ function queryEventsselectSuccess(tx,result){
 				}
 	alert("Every  ");
 	}
-
+*/
 
   
   /*
