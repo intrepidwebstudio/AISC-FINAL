@@ -1072,7 +1072,7 @@ function loadcontactsfromserver()
 function delete_Contactdata(){
 	alert('delete start');
      db.transaction(function (tx){
-                tx.executeSql('DELETE * FROM contacts',errordeleteCB);}, 
+                tx.executeSql('DELETE FROM contacts where id!=0 ',errordeleteCB);}, 
                     errordeleteCB);
 					
 					
@@ -1367,7 +1367,7 @@ function deleteEvents_data()
 			 },ErrordelteCB);
 			 
 	d.transaction(function(tx){
-		tx.executeSql('DELETE from upcomingevents');
+		tx.executeSql('DELETE from upcomingevents where 1');
 		},ErrordeletteCB);	 
 		
 
