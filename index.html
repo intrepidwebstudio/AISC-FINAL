@@ -1069,22 +1069,16 @@ function loadcontactsfromserver()
 	db.transaction(populateContactDB, errorContactCB, successContactCBServer);
 }
 
-function delete_Contactdata(){
-	alert('delete start');
-     db.transaction(function (tx){
-                tx.executeSql('DELETE FROM contacts where id!=0 ',errordeleteCB);}, 
-                    errordeleteCB);
-					
-					
-				alert('delete end');	
-    }
+
+function deletedata(tx){
 	
-	
-function errordeleteCB(err){
-	alert('Deellete ERRor = '+err.message);
-	}	
-	
-	
+		var value='1';
+		var cond='0';
+		
+
+        transaction.executeSql("UPDATE contacts set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+
+	}
 
 function successContactCBServer(){
 	
@@ -1100,8 +1094,12 @@ function successContactCBServer(){
 	crossDomain: true,
 	success: function(data)
 	{
-	//db.transaction( function(tx){ tx.executeSql('DELETE * contacts',errorContactCBdelete)}, ErrorCallBack );		
-	delete_Contactdata(); 
+		
+		
+		
+		
+		
+	db.transaction( function(tx){ deletedata(tx) }, ErrorDeleteCallBack );	
 		
 		alert(data.status.code);
 			if(data.status.code=='100')
@@ -1111,9 +1109,6 @@ function successContactCBServer(){
 				var	Response = data.Response;
 				alert('14');
 			
-			
-			
-
 
 			
 			$.each(Response, function(index, element) {
@@ -1144,7 +1139,7 @@ fileTransfer.download(
 
 				db.transaction( function(tx){ insertContactvalues(tx, element.name, element.contactemail, element.imagepath , element.status )}, ErrorCallBack );	
 				
-			});;
+			});
 				
 				
 				loadContactsFromLocalDb();
@@ -1176,7 +1171,6 @@ function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
 	
  }
-
 
 
 
@@ -1360,14 +1354,19 @@ function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3)
 function deleteEvents_data()
 {
 	
-	
+		var value='1';
+		var cond='0';
+        
+
 	db.transaction(function(tx){
 		
 		tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[],queryEventsselectSuccess,errorEventsCB);
 			 },ErrordelteCB);
 			 
 	d.transaction(function(tx){
-		tx.executeSql('DELETE from upcomingevents where 1');
+				var value='1';
+				var cond='0';
+        		tx.executeSql("UPDATE upcomingevents set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
 		},ErrordeletteCB);	 
 		
 
@@ -1393,14 +1392,14 @@ function queryEventsselectSuccess(tx,result){
 				for(var i=0; i< length ; i++)
 				{
 			
-					alert(result.rows.item(i).event_id);
+					alert("array push ="+result.rows.item(i).event_id);
 					
 					event_read_array.push(result.rows.item(i).event_id);
 					
 					
 					
 				}
-	alert(event_read_array);
+	alert("Every "+event_read_array);
 	}
 
 
