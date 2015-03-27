@@ -967,7 +967,7 @@ var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000);
             }
 			browser_setting();
 			
-			loadupcomingevents();
+		//	loadupcomingevents();
 			loadcontacts();
 			
         }
@@ -1008,7 +1008,8 @@ function successContactCB() {
 	db.transaction(queryContactDB,errorContactCB);
 }
 function queryContactDB(tx){
-tx.executeSql('SELECT * FROM contacts ',[],queryContactSuccess,errorContactCB);
+	var value = '1';
+tx.executeSql('SELECT * FROM contacts where status=? ',[value],queryContactSuccess,errorContactCB);
 }
 
 
@@ -1072,7 +1073,7 @@ function loadcontactsfromserver()
 
 function deletedata(tx){
 	
-		var value='1';
+		var value='0';
 		var cond='0';
         tx.executeSql("UPDATE contacts set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
 	}
