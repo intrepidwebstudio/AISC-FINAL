@@ -1346,6 +1346,7 @@ function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3)
 
 function deleteEvents_data()
 {
+	alert('aa');
 	
 		var value='1';
 		var cond='0';
@@ -1363,9 +1364,7 @@ function deleteEvents_data()
 					event_read_array.push(result.rows.item(i).event_id);
 				}
 				alert("Every  ");
-	}
-
-		
+	}	
 		,errorEventsCB);
 			 },ErrordelteCB);
 			 
