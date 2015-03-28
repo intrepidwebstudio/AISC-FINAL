@@ -1180,6 +1180,7 @@ function fileSystemSuccess(fileSystem) {
     var rootdir = fileSystem.root;
     var fp = rootdir.fullPath; // Returns Fulpath of local directory
 
+console.log("Full path = "+fp);
     fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
     // download function call
     filetransfer(download_link, fp);
