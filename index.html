@@ -1401,7 +1401,7 @@ function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3,param
 {
 	alert('122');
 	alert(parameter1+'===='+parameter4+'======'+parameter2+'===='+parameter3+'====='+parameter5);
-	tx.executeSql('INSERT INTO contacts( event_id, eventname ,datetime , readstatus ,status ) VALUES (?,?,?,?,?)',[parameter1,parameter4,parameter2,parameter3,parameter5]);
+	tx.executeSql('INSERT INTO upcomingevents( event_id, eventname ,datetime , readstatus ,status ) VALUES (?,?,?,?,?)',[parameter1,parameter4,parameter2,parameter3,parameter5]);
  }
 
 
