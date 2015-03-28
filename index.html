@@ -1135,6 +1135,11 @@ function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 	alert('121');
 	alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
 	
+	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
+	
+ }
+
+
 var fileTransfer = new FileTransfer();
 var uri = encodeURI("http://www.safelearners.com/aisc/contact_images/52154images1.jpg");
 
@@ -1156,14 +1161,6 @@ fileTransfer.download(
         }
     }
 );
-
-	
-	
-	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
-	
- }
-
-
 
 
 
