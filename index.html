@@ -1223,20 +1223,15 @@ function queryEventsSuccess(tx,result){
 			if(length >0)
 			{
 			$('#events_id').html('');	
-				
 				for(var i=0; i< length ; i++)
 				{
-			
 			alert(result.rows.item(i).name);
-			
 		var eventname =	result.rows.item(i).eventname;
 		var	datetime =result.rows.item(i).datetime;
 		var readstatus = result.rows.item(i).readstatus;
 		var event_id = result.rows.item(i).event_id;
 		
 		console.log("Event name ="+eventname+" datetime  "+datetime +'REaD Statuds = '+readstatus );
-
-
 
 		if(readstatus=='1')
 		{
@@ -1248,10 +1243,9 @@ function queryEventsSuccess(tx,result){
 		Eventsappend+='<p style="color:#718497;">'+eventname+'</p>';
 		Eventsappend+='<p class="eventcontenttext2"><strong>'+datetime+'</strong></p></li>';
 	
-
 			}
 			
-			alert(Eventsappend);
+			alert("Eventsappend  "+Eventsappend);
 			
 		$('#events_id').empty().append(Eventsappend);
 		$('#events_id').trigger("create");
@@ -1355,18 +1349,7 @@ function deleteEvents_data()
 
 	db.transaction(function(tx){
 		
-		tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[],
-		function(tx,result){
-				var length = result.rows.length;
-				console.log("ARRAAYYY   LENGTH  == "+length);
-				for(var i=0; i< length ; i++)
-				{
-					alert("array push ="+result.rows.item(i).event_id);
-					event_read_array.push(result.rows.item(i).event_id);
-				}
-				alert("Every  ");
-	}	
-		,errorEventsCB);
+		tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[], successSelectEventsCB,errorEventsCB);
 			 },ErrordelteCB);
 			 
 			 alert('completed selecrt events');
@@ -1392,24 +1375,18 @@ function ErrordelteCB(err){
 	
 	}
 
-/*
-function queryEventsselectSuccess(tx,result){
+function successSelectEventsCB(tx,result){
 	
-	var length = result.rows.length;
+	  var length = result.rows.length;
 		
 				for(var i=0; i< length ; i++)
 				{
-			
 					alert("array push ="+result.rows.item(i).event_id);
-					
 					event_read_array.push(result.rows.item(i).event_id);
-					
-					
-					
-				}
-	alert("Every  ");
+ 				}
+		alert(" Every ");
 	}
-*/
+
 
   
   /*
