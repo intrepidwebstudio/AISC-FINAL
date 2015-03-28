@@ -1027,14 +1027,12 @@ function queryContactSuccess(tx,result){
 			$('#contact_id').html('');	
 				for(var i=0; i< length ; i++)
 				{
-			
-			alert(result.rows.item(i).name);
-			
-		var name =	result.rows.item(i).name;
-		var	contactemail =result.rows.item(i).contactemail;
-		var image =	result.rows.item(i).imagepath;
-		
-		var status = result.rows.item(i).status; 
+					
+					alert(result.rows.item(i).name);
+					var name =	result.rows.item(i).name;
+					var	contactemail =result.rows.item(i).contactemail;
+					var image =	result.rows.item(i).imagepath;
+					var status = result.rows.item(i).status; 
 		
 		
 		console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
@@ -1042,7 +1040,7 @@ function queryContactSuccess(tx,result){
 		contactappend+='<div class="contactsimagetop examplecolor" style="width:100%;"><div style="float:left; width:20% !important;">';
 		
 			if((image=='') || (navigator.network.connection.type == Connection.NONE) ){
-				image = "img/noimageicon.png";
+				image = '<img class="contactsimage" src="img/noimageicon.png" >';
 				contactappend+='<img class="contactsimage" src="'+image+'">';
 			}else{
 				contactappend+='<img class="contactsimage" src="'+imagepath+image+'">';		
@@ -1136,6 +1134,30 @@ function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 {
 	alert('121');
 	alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
+	
+var fileTransfer = new FileTransfer();
+var uri = encodeURI("http://www.safelearners.com/aisc/contact_images/52154images1.jpg");
+
+fileTransfer.download(
+    uri,
+    fileURL,
+    function(entry) {
+        console.log("download complete: " + entry.toURL());
+    },
+    function(error) {
+        console.log("download error source " + error.source);
+        console.log("download error target " + error.target);
+        console.log("upload error code" + error.code);
+    },
+    false,
+    {
+        headers: {
+            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+        }
+    }
+);
+
+	
 	
 	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
 	
