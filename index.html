@@ -1078,7 +1078,10 @@ function deletedata(tx){
         tx.executeSql("UPDATE contacts set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
 	}
 
-
+function ErrorDeleteCallBack(err){
+	alert('ERROR FOR DELETE = '+err.message);
+	
+	} 
 function successContactCBServer(){
 	alert('adasda !!!!');
 	console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
