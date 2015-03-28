@@ -1140,27 +1140,6 @@ function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
  }
 
 
-var fileTransfer = new FileTransfer();
-var uri = encodeURI("http://www.safelearners.com/aisc/contact_images/52154images1.jpg");
-
-fileTransfer.download(
-    uri,
-    fileURL,
-    function(entry) {
-        console.log("download complete: " + entry.toURL());
-    },
-    function(error) {
-        console.log("download error source " + error.source);
-        console.log("download error target " + error.target);
-        console.log("upload error code" + error.code);
-    },
-    false,
-    {
-        headers: {
-            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-        }
-    }
-);
 
 
 
@@ -1342,8 +1321,7 @@ function deleteEvents_data()
         
 
 	db.transaction(function(tx){
-		
-		tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[], successSelectEventsCB,errorEventsCB);
+				tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[], successSelectEventsCB,errorEventsCB);
 			 },ErrordelteCB);
 			 
 			 alert('completed selecrt events');
