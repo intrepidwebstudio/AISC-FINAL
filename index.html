@@ -1110,16 +1110,15 @@ function successContactCBServer(){
 				db.transaction( function(tx){ insertContactvalues(tx, element.name, element.contactemail, element.imagepath , element.status )}, ErrorCallBack );	
 			});
 				
-				
 				loadContactsFromLocalDb();
 				
 		}else{
-				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
 				}	
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "Ebbu", "Done");
+	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
 	
@@ -1337,13 +1336,18 @@ function successEventsCBServer(){
 	
 	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
 	
+	console.log("event_read_list  = "+event_read_list);
+	console.log(" event_read_list arraay length = "+ event_read_array.length );
+	
 	if(event_read_array.length>0)
 	{
 	event_read_list=event_read_array.join(",");
 	}else{
 	event_read_list ='0';
-		
 		}
+	
+	console.log("event_read_list  = "+event_read_list);	
+		
 	
 	$.support.cors = true;
 	$.ajax({
@@ -1365,10 +1369,9 @@ function successEventsCBServer(){
 				alert('11');
 				var	Response = data.Response;
 				alert('14');
-			
+
 			$.each(Response, function(index, element) {
-	
-			db.transaction( function(tx){ insertEventsvalues(tx, element.eventsname,element.event_id, element.datetime, element.readstatus )}, ErrorCallBack );	
+				db.transaction( function(tx){ insertEventsvalues(tx, element.eventsname,element.event_id, element.datetime, element.readstatus )}, ErrorCallBack );	
 			});
 				loadEventsFromLocalDb();
 				
