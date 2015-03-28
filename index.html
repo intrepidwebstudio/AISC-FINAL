@@ -1276,6 +1276,9 @@ function errorEventsCB(err){
 function queryEventsSuccess(tx,result){
 		var length = result.rows.length;
 		
+		
+		alert("EVENTS LENGTH  = "+ length);
+		
 		var Eventsappend='';
 			if(length >0)
 			{
@@ -1311,6 +1314,8 @@ function queryEventsSuccess(tx,result){
 			}//if close
 			else{
 				//CONNECT TO SERVER
+				
+				alert('again reload ');
 				 if(navigator.network.connection.type == Connection.NONE){
 						navigator.notification.alert("No Events available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
@@ -1371,7 +1376,6 @@ function successEventsCBServer(){
 				alert('14');
 
 			$.each(Response, function(index, element) {
-				alert("Events namee = "+element.eventsname);
 				db.transaction( function(tx){ insertEventsvalues(tx, element.event_id, element.eventsname, element.datetime, element.readstatus ,element.status )}, ErrorCallBack );	
 			});
 				loadEventsFromLocalDb();
@@ -1444,12 +1448,8 @@ function ErrordelteCB(err){
 
 function successSelectEventsCB(tx,result){
 	
-	
 	alert("Length of rows in table = "+ result.rows.length);
-	
 	  var length = result.rows.length;
-		
-		
 				for(var i=0; i< length ; i++)
 				{
 					alert("array push ="+result.rows.item(i).event_id);
