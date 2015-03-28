@@ -1020,7 +1020,7 @@ function errorContactCB(err){
 
 function queryContactSuccess(tx,result){
 		var length = result.rows.length;
-		
+		alert('length');
 		var contactappend='';
 			if(length >0)
 			{
@@ -1106,12 +1106,8 @@ function successContactCBServer(){
 				var	Response = data.Response;
 				alert('14');
 			
-
-			
 			$.each(Response, function(index, element) {
-
 				db.transaction( function(tx){ insertContactvalues(tx, element.name, element.contactemail, element.imagepath , element.status )}, ErrorCallBack );	
-				
 			});
 				
 				
