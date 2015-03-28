@@ -1371,7 +1371,7 @@ function successEventsCBServer(){
 				alert('14');
 
 			$.each(Response, function(index, element) {
-				db.transaction( function(tx){ insertEventsvalues(tx, element.eventsname,element.event_id, element.datetime, element.readstatus )}, ErrorCallBack );	
+				db.transaction( function(tx){ insertEventsvalues(tx, element.event_id,element.eventsname, element.datetime, element.readstatus ,element.status )}, ErrorCallBack );	
 			});
 				loadEventsFromLocalDb();
 				
@@ -1388,15 +1388,15 @@ function successEventsCBServer(){
  
  
 function ErrorCallBack(err){
-	alert("ERROR  :"+err);
+	alert("ERROR 11 :"+err);
 }
 
 
-function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3)
+function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3,parameter5)
 {
 	alert('122');
-	alert(parameter1+'===='+parameter4+'======'+parameter2+'===='+parameter3);
-	tx.executeSql('INSERT INTO contacts(eventname , event_id ,datetime , readstatus  ) VALUES (?,?,?,?)',[parameter1,parameter4,parameter2,parameter3]);
+	alert(parameter1+'===='+parameter4+'======'+parameter2+'===='+parameter3+'====='+parameter5);
+	tx.executeSql('INSERT INTO contacts( event_id, eventname ,datetime , readstatus ,status ) VALUES (?,?,?,?,?)',[parameter1,parameter4,parameter2,parameter3,parameter5]);
  }
 
 
