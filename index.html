@@ -1371,7 +1371,8 @@ function successEventsCBServer(){
 				alert('14');
 
 			$.each(Response, function(index, element) {
-				db.transaction( function(tx){ insertEventsvalues(tx, element.event_id,element.eventsname, element.datetime, element.readstatus ,element.status )}, ErrorCallBack );	
+				alert("Events namee = "+element.eventsname);
+				db.transaction( function(tx){ insertEventsvalues(tx, element.event_id, element.eventsname, element.datetime, element.readstatus ,element.status )}, ErrorCallBack );	
 			});
 				loadEventsFromLocalDb();
 				
