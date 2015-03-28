@@ -940,6 +940,7 @@ var AppTokenId='abcdefghijklmnopqrstuvwxyz';
 var ajaxpath = 'http://www.safelearners.com/aisc/appajax/';
 var imagepath = 'http://www.safelearners.com/aisc/';
 var event_read_array=[];
+var event_read_list='';
 	
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
 	
@@ -967,7 +968,7 @@ var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000);
             }
 			browser_setting();
 			
-		//	loadupcomingevents();
+			loadupcomingevents();
 			loadcontacts();
 			
         }
@@ -1106,13 +1107,6 @@ function successContactCBServer(){
 			
 			$.each(Response, function(index, element) {
 				
-				var url = imagepath+element.imagepath;
-				
-				var Folder_Name='aisc_app_imgs';
-				var File_Name='image'+element.status;
-				
-				DownloadFile(url, Folder_Name, File_Name);
-				
 				db.transaction( function(tx){ insertContactvalues(tx, element.name, element.contactemail, element.imagepath , element.status )}, ErrorCallBack );	
 			});
 				
@@ -1148,7 +1142,7 @@ function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
  }
 
 
-/***==============================================================================================================================================================***/
+/***=========================================================DOWNLOAD FILE SCRIPT=====================================================================================================***/
 	
 	function DownloadFile(URL, Folder_Name, File_Name) {
 //Parameters mismatch check
@@ -1172,10 +1166,18 @@ function download(URL, Folder_Name, File_Name) {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
 
 function fileSystemSuccess(fileSystem) {
+	
+	
+	console.log("filesystem == "+fileSystem);
+	
     var download_link = encodeURI(URL);
     ext = download_link.substr(download_link.lastIndexOf('.') + 1); //Get extension of URL
+	
+	console.log("Extension ExT"+ext);
 
     var directoryEntry = fileSystem.root; // to get root path of directory
+	
+	console.log('Directory  ='+ directoryEntry );
     directoryEntry.getDirectory(Folder_Name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
     var rootdir = fileSystem.root;
     var fp = rootdir.fullPath; // Returns Fulpath of local directory
@@ -1183,6 +1185,8 @@ function fileSystemSuccess(fileSystem) {
 console.log("Full path = "+fp);
     fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
     // download function call
+	
+console.log("Download Link = "+download_link+ " Full path link "+ fp);	
     filetransfer(download_link, fp);
 }
 
@@ -1191,7 +1195,7 @@ function onDirectorySuccess(parent) {
 }
 
 function onDirectoryFail(error) {
-    //Error while creating directory
+    //Error while creating directory   
     alert("Unable to create new directory: " + error.code);
 }
 
@@ -1260,7 +1264,8 @@ function successEventsCB() {
 	db.transaction(queryEventsDB,errorEventsCB);
 }
 function queryEventsDB(tx){
-tx.executeSql('SELECT * FROM upcomingevents ',[],queryEventsSuccess,errorEventsCB);
+	var value ='1';
+tx.executeSql('SELECT * FROM upcomingevents where status=?',[value],queryEventsSuccess,errorEventsCB);
 }
 
 
@@ -1332,7 +1337,13 @@ function successEventsCBServer(){
 	
 	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
 	
-	var event_read_list=event_read_array.join(",");
+	if(event_read_array.length>0)
+	{
+	event_read_list=event_read_array.join(",");
+	}else{
+	event_read_list ='0';
+		
+		}
 	
 	$.support.cors = true;
 	$.ajax({
@@ -1362,12 +1373,12 @@ function successEventsCBServer(){
 				loadEventsFromLocalDb();
 				
 		}else{
-				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
 				}	
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "Ebbu", "Done");
+	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
  }
@@ -1397,16 +1408,17 @@ function deleteEvents_data()
 	
 		var value='1';
 		var cond='0';
+		var readstatusval = '1';
         
 
 	db.transaction(function(tx){
-				tx.executeSql('SELECT event_id FROM upcomingevents where readstatus="1" ',[], successSelectEventsCB,errorEventsCB);
+				tx.executeSql('SELECT event_id FROM upcomingevents where readstatus=? and status=? ',[readstatusval,value], successSelectEventsCB,errorEventsCB);
 			 },ErrordelteCB);
 			 
 			 alert('completed selecrt events');
 			 
 	db.transaction(function(tx){
-				var value='1';
+				var value='0';
 				var cond='0';
         		tx.executeSql("UPDATE upcomingevents set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
 		},ErrordeletteCB);	 
@@ -1428,7 +1440,12 @@ function ErrordelteCB(err){
 
 function successSelectEventsCB(tx,result){
 	
+	
+	alert("Length of rows in table = ");
+	
 	  var length = result.rows.length;
+		
+		
 		
 				for(var i=0; i< length ; i++)
 				{
