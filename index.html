@@ -1389,7 +1389,7 @@ function successEventsCBServer(){
  
  
 function ErrorCallBack(err){
-	alert("ERROR 11 :"+err);
+	alert("ERROR 11 :"+err.message);
 }
 
 
@@ -1445,10 +1445,9 @@ function ErrordelteCB(err){
 function successSelectEventsCB(tx,result){
 	
 	
-	alert("Length of rows in table = ");
+	alert("Length of rows in table = "+ result.rows.length);
 	
 	  var length = result.rows.length;
-		
 		
 		
 				for(var i=0; i< length ; i++)
