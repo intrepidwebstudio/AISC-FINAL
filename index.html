@@ -1109,30 +1109,6 @@ function successContactCBServer(){
 
 			
 			$.each(Response, function(index, element) {
-				
-				
-var fileTransfer = new FileTransfer();
-var uri = encodeURI(imagepath+element.imagepath);
-
-fileTransfer.download(
-    uri,
-    fileURL,
-    function(entry) {
-        console.log("download complete: " + entry.fullPath);
-    },
-    function(error) {
-        console.log("download error source " + error.source);
-        console.log("download error target " + error.target);
-        console.log("upload error code" + error.code);
-    },
-    true,
-    {
-        headers: {
-            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-        }
-    }
-);
-
 
 				db.transaction( function(tx){ insertContactvalues(tx, element.name, element.contactemail, element.imagepath , element.status )}, ErrorCallBack );	
 				
