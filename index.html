@@ -4,6 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mobile Application</title>
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.iscrollview-pull.css">	  
+
+
 <link rel="stylesheet" href="css/custom1.css" />
 <link rel="stylesheet" href="css/responsiveslides.css" />
 	<script> 
@@ -21,6 +26,11 @@
 
 
 <style>
+		.example-wrapper, .example-wrapper div.iscroll-scroller {
+		width: 100% !important;
+		}
+
+
  @media only screen and (min-device-width: 320px) and (min-device-height: 480px) {
 	
 	/* Home */
@@ -745,7 +755,7 @@
             <a href="#socialmedia"><img class="homeimage" src="iconimage/333.png" /></a>
         </div>
         <div style="width:60%; float:right;">
-            <a href="#newsletter"><img class="homeimage" src="iconimage/444.png" /></a>
+            <a href="#newsletterlogedin"><img class="homeimage" src="iconimage/444.png" /></a>
         </div>
         
         <div style="width:60%;float:left;"  >
@@ -785,23 +795,25 @@
          </div>
        	 <div style="clear:both;"></div>
     </div>
+   </div> 
    	<!--/header---->
     <!----content---->
-    <div data-role="content" >
-    <div style="padding-bottom:25px !important;">
-    	<P class="eventcontenttext1">To add Events to your Phones Calender,Select multiple items and Press Add</P>
-    </div>
-	
-    <ul data-role="listview" data-divider id="events_id"  >
+	<div data-role="content">
+        <div style="padding-bottom:25px !important;">
+            <P class="eventcontenttext1">To add Events to your Phones Calender,Select multiple items and Press Add</P>
+        </div>
+     
+     <div class="example-wrapper" data-iscroll>            
+            <ul id="events_id" data-role="listview"  data-divider="true" >
+            
+           </ul>
+        </div>    
  
- 
-    </ul>    
-    
     </div>
     
-   
+    
 </div>
-</div>
+
 <!-------------------/EventPage----------------->
 
 <!-------------------contactsPage--------------->
@@ -816,9 +828,9 @@
     </div>
    <!--/header---->
     <!----content---->
-   <div data-role="content" id="contact_id" > 
+   <div data-role="content" id="contact_id" class="example-wrapper" data-iscroll>     
    
-      
+
     
 <!--    <div class="contactsmain examplecolor">
     	<div style="padding:1px;"><p style="text-align:center !important; vertical-align:middle !important">Main Reception &emsp; 004-22549000</p></div>
@@ -889,6 +901,36 @@
    
 </div>
 <!-----------------/Newsletter---------------->
+
+<!------------------Newsletter---------------->
+<div  data-role="page" id="newsletterlogedin" data-title="School Apps" style="background:url(images/gallery/newpattern4.png) repeat;">
+    <!---header -->
+    <div  data-role="header" data-id="persistent"  data-position="fixed">
+    	<div class="schoolheadertop">
+        	<a href="#index" class="aaa"><img class="schoolheaderimage" src="images/gallery/previousarrow.png" /></a>
+        </div>
+        <div class="schoolheadertext1">Home</div>
+        <div class="schoolheadertext2">Newsletters</div>
+    </div>
+    <!--/header---->
+    
+    
+    <div data-role="content" >
+         <div class="example-wrapper" data-iscroll>            
+            <ul id="Newsletter_id" data-role="listview"  data-divider="true" >
+            
+           </ul>
+        </div>    
+    </div>
+    
+    <!----content---->
+   
+</div>
+<!-----------------/Newsletter---------------->
+
+
+
+
 
 <!-----------------LocateUs--------------->
 <div data-role="page" id="locateus" data-title="School Apps">
@@ -974,6 +1016,7 @@ var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000);
 			
 			loadupcomingevents();
 			loadcontacts();
+			loadupcomingNewsletter();
 			
         }
  
