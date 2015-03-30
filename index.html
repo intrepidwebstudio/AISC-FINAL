@@ -780,7 +780,8 @@
         </div>
         <div style="float:right; margin-right:7px;">
         	<a href="#" class="aaa">
-        	<img class="eventtopimage22" src="images/gallery/plusicon.png" /></div></a>
+        	<img class="eventtopimage22" src="images/gallery/plusicon.png" />
+            </a>
          </div>
        	 <div style="clear:both;"></div>
     </div>
@@ -799,6 +800,7 @@
     </div>
     
    
+</div>
 </div>
 <!-------------------/EventPage----------------->
 
@@ -888,8 +890,9 @@
 </div>
 <!-----------------/Newsletter---------------->
 
-<!-----------------LocateUs---------------->
-<div   data-role="page" id="locateus" data-title="School Apps">
+<!-----------------LocateUs--------------->
+<div data-role="page" id="locateus" data-title="School Apps">
+
     <!---header -->
      <div  data-role="header" data-id="persistent"  data-position="fixed">
     	<div class="schoolheadertop">
@@ -908,7 +911,8 @@
    
     
    <!--	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31101.52074852343!2d80.24288045000003!3d12.991662749999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267891f335e13%3A0xad60d1ce4c5881c9!2sTaramani%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1426759615649" width="100%" height="263px"  frameborder="0" style="border:0;"></iframe>
-    </div>-->
+    -->
+    </div>
    
 </div>
 <!----------------/LocateUs---------------->
@@ -1041,12 +1045,11 @@ function queryContactSuccess(tx,result){
 		contactappend+='<div class="contactsimagetop examplecolor" style="width:100%;"><div style="float:left; width:20% !important;">';
 		
 			if((image=='') || (navigator.network.connection.type == Connection.NONE) ){
-				image = '<img class="contactsimage" src="img/noimageicon.png" >';
-				contactappend+='<img class="contactsimage" src="'+image+'">';
+				//image = '';
+				contactappend+='<img class="contactsimage" src="img/noimageicon.png">';
 			}else{
 				contactappend+='<img class="contactsimage" src="'+imagepath+image+'">';		
 				}
-		
 		contactappend+='</div><div style="float:right;  width:80% !important;">';
 		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a href="mailto:'+contactemail+'" >'+contactemail+'</a></p></div></div></div>';
 		}
@@ -1285,7 +1288,7 @@ function queryEventsSuccess(tx,result){
 			$('#events_id').html('');	
 				for(var i=0; i< length ; i++)
 				{
-			alert(result.rows.item(i).name);
+			alert(result.rows.item(i).eventname);
 		var eventname =	result.rows.item(i).eventname;
 		var	datetime =result.rows.item(i).datetime;
 		var readstatus = result.rows.item(i).readstatus;
@@ -1314,8 +1317,7 @@ function queryEventsSuccess(tx,result){
 			}//if close
 			else{
 				//CONNECT TO SERVER
-				
-				alert('again reload ');
+				alert(' again reload ');
 				 if(navigator.network.connection.type == Connection.NONE){
 						navigator.notification.alert("No Events available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
@@ -1455,6 +1457,201 @@ function successSelectEventsCB(tx,result){
 					alert("array push ="+result.rows.item(i).event_id);
 					event_read_array.push(result.rows.item(i).event_id);
  				}
+		alert(" Every ");
+	}
+
+
+/******************************************************************************************************************************************************
+	
+	UPCOMING NEWSLETTER CODE BELOW
+
+*******************************************************************************************************************************************************/
+
+function loadupcomingNewsletter()
+ {
+	 if(navigator.network.connection.type == Connection.NONE)
+	 {
+		 alert("loadupcomingNewsletter local");
+		loadNewsletterFromLocalDb(); 
+		 }
+		else{
+			alert("loadupcomingNewsletter server");
+			loadNewsletterfromserver(); 
+			//fetch contacts from online and update in local db 
+			//then call loadcontacts from local db function afgain;	
+		}		 
+	 }
+	 
+	 
+function loadNewsletterFromLocalDb()
+{
+	alert("loadupcomingNewsletter LocalDb");
+	db.transaction(populateNewsletterDB, errorNewsletterCB, successNewsletterCB);
+	}	 
+
+function populateNewsletterDB(tx) {
+	alert("loadupcomingNewsletter FromLocalDb  sdfsa asedf asdf");
+tx.executeSql('CREATE TABLE IF NOT EXISTS newsletter (id INTEGER PRIMARY KEY AUTOINCREMENT, newsletter_id INTEGER , name TEXT NOT NULL , department TEXT NOT NULL , newsimage TEXT NOT NULL , newsurl TEXT NOT NULL , status INTEGER )');
+}
+
+function successNewsletterCB() {
+	db.transaction(queryNewsletterDB,errorNewsletterCB);
+}
+function queryNewsletterDB(tx){
+	var value ='1';
+tx.executeSql('SELECT * FROM newsletter where status=?',[value],queryNewsletterSuccess,errorNewsletterCB);
+}
+
+
+function errorNewsletterCB(err){
+	
+	alert("ERROR : "+err);
+	}
+
+function queryNewsletterSuccess(tx,result){
+		var length = result.rows.length;
+		
+		
+		alert("Newsletter LENGTH  = "+ length);
+		
+		var Newsletterappend='';
+			if(length >0)
+			{
+			$('#Newsletter_id').html('');	
+				for(var i=0; i< length ; i++)
+				{
+			alert(result.rows.item(i).newsurl);
+			
+		var department =	result.rows.item(i).department;
+		var	name =result.rows.item(i).name;
+		var newsimage = result.rows.item(i).newsimage;
+		var newsurl = result.rows.item(i).newsurl;
+		
+		console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
+
+		Newsletterappend+='<li style="padding-left:35px !important;">';
+		Newsletterappend+='<p style="color:#718497;">'+name+'</p>';
+		Newsletterappend+='<p class="eventcontenttext2"><strong>'+department+'</strong></p></li>';
+	
+			}
+			
+			alert("Newsletterappend  "+Newsletterappend);
+			
+		$('#Newsletter_id').empty().append(Newsletterappend);
+		$('#Newsletter_id').trigger("create");
+		$('#Newsletter_id').listview().listview('refresh');		
+				
+			}//if close
+			else{
+				//CONNECT TO SERVER
+				alert(' again reload ');
+				 if(navigator.network.connection.type == Connection.NONE){
+						navigator.notification.alert("No Newsletter available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+				 }else{
+					loadNewsletterfromserver(); 
+					 }
+			}
+}
+
+
+
+
+function loadNewsletterfromserver()
+{
+	alert("loadNewsletterFromserver  populate");
+	db.transaction(populateNewsletterDB, errorNewsletterCB, successNewsletterCBServer);
+	
+}
+
+
+function successNewsletterCBServer(){
+	
+	alert('adasda !!!!');
+	
+	console.log(ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId);
+		
+	$.support.cors = true;
+	$.ajax({
+	url:ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+	
+	deleteNewsletter_data();	
+	alert('evennts loaded');
+		alert(data.status.code);
+			if(data.status.code=='100')
+			{
+				alert(data.Response);
+				alert('11');
+				var	Response = data.Response;
+				alert('14');
+
+			$.each(Response, function(index, element) {
+				db.transaction( function(tx){ insertNewslettervalues(tx, element.newsletter_id, element.name, element.department, element.newsimage, element.newsurl ,element.status )}, ErrorCallBack );	
+			});
+				loadNewsletterFromLocalDb();
+				
+		}else{
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				}	
+	},
+	error: function(e)
+	{
+	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	}
+	});
+ }
+ 
+ 
+function ErrorCallBack(err){
+	alert("ERROR 11 :"+err.message);
+}
+
+
+function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,parameter5,parameter6)
+{
+	alert('122');
+	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
+	tx.executeSql('INSERT INTO newsletter( newsletter_id, name ,department ,newsimage, newslurl ,status ) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,parameter3,parameter4,parameter5,parameter6]);
+ }
+
+
+
+
+
+
+
+function deleteNewsletter_data()
+{
+	alert('aa');
+	
+	db.transaction(function(tx){
+				var value='0';
+				var cond='0';
+        		tx.executeSql("UPDATE upcomingNewsletter set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+		},ErrordeletteCB);	 
+		
+	}
+	
+function ErrordeletteCB(err)
+{
+	alert("Error event delete = "+err.message);
+	
+	} 	
+	
+function ErrordelteCB(err){
+	alert("ErrordelteCB "+err.message);
+	
+	}
+
+function successSelectNewsletterCB(tx,result){
+	
+	alert("Length of rows in table = "+ result.rows.length);
 		alert(" Every ");
 	}
 
