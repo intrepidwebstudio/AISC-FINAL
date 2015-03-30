@@ -163,6 +163,21 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         registerDevice();
+		
+					
+            if(navigator.network.connection.type == Connection.NONE){
+                alert("nocon");
+            }else{
+                alert("yescon");
+            }
+			browser_setting();
+			
+			loadupcomingevents();
+			loadcontacts();
+			loadupcomingNewsletter();
+
+		
+		
     }
 };
 

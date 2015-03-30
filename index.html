@@ -17,7 +17,9 @@
 		if (document.readyState === 'complete')
 		{	  
 			alert('asd');
-			document.addEventListener("deviceready", onDeviceReady, false);
+			
+			
+			
 		}
 	};
    </script>
@@ -718,7 +720,7 @@
 }
 </style>
 </head>
-<body>
+<body class="app">
 <!--------------------Home 414 to 736---------------->
 <div data-role="page" id="index"  data-title="School Apps">
     <!-- /header -->
@@ -1005,23 +1007,14 @@ var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000);
   
   
         // device APIs are available
-        function onDeviceReady() {
-			
-            if(navigator.network.connection.type == Connection.NONE){
-                alert("nocon");
-            }else{
-                alert("yescon");
-            }
-			browser_setting();
-			
-			loadupcomingevents();
-			loadcontacts();
-			loadupcomingNewsletter();
-			
-        }
  
  
+ </script>
  
+ <script >
+  app.initialize();
+ </script>
+ <script>
  
  
  
