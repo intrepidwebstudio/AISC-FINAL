@@ -16,7 +16,7 @@
 	{
 		if (document.readyState === 'complete')
 		{	  
-			alert('asd');
+			//alert('asd');
 			
 			
 			
@@ -1022,11 +1022,11 @@ function loadcontacts()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 alert("loadContacsFromLocalDb");
+		 //alert("loadContacsFromLocalDb");
 		loadContactsFromLocalDb(); 
 		 }
 		else{
-			alert("loadContacsFromserver");
+			//alert("loadContacsFromserver");
 			loadcontactsfromserver(); 
 			//fetch contacts from online and update in local db 
 			//then call loadcontacts from local db function afgain;	
@@ -1036,12 +1036,12 @@ function loadcontacts()
 	 
 function loadContactsFromLocalDb()
 {
-	alert("loadContacsFromLocalDb");
+	//alert("loadContacsFromLocalDb");
 	db.transaction(populateContactDB, errorContactCB, successContactCB);
 	}	 
 
 function populateContactDB(tx) {
-	alert("loadContacsFromLocalDb  sdfsa asedf asdf");
+	//alert("loadContacsFromLocalDb  sdfsa asedf asdf");
 tx.executeSql('CREATE TABLE IF NOT EXISTS contacts (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL , contactemail TEXT NOT NULL , imagepath TEXT NOT NULL  , status INTEGER )');
 }
 
@@ -1056,12 +1056,12 @@ tx.executeSql('SELECT * FROM contacts where status=? ',[value],queryContactSucce
 
 function errorContactCB(err){
 	
-	alert("ERROR : "+err);
+	//alert("ERROR : "+err);
 	}
 
 function queryContactSuccess(tx,result){
 		var length = result.rows.length;
-		alert('length');
+		//alert('length');
 		var contactappend='';
 			if(length >0)
 			{
@@ -1069,7 +1069,7 @@ function queryContactSuccess(tx,result){
 				for(var i=0; i< length ; i++)
 				{
 					
-					alert(result.rows.item(i).name);
+					//alert(result.rows.item(i).name);
 					var name =	result.rows.item(i).name;
 					var	contactemail =result.rows.item(i).contactemail;
 					var image =	result.rows.item(i).imagepath;
@@ -1095,7 +1095,7 @@ function queryContactSuccess(tx,result){
 			else{
 				//CONNECT TO SERVER
 				 if(navigator.network.connection.type == Connection.NONE){
-						navigator.notification.alert("No contacts available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+						navigator.notification.//alert("No contacts available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
 					loadcontactsfromserver(); 
 					 }
@@ -1104,7 +1104,7 @@ function queryContactSuccess(tx,result){
 
 function loadcontactsfromserver()
 {
-	alert("loadContacsFromserver  populate");
+	//alert("loadContacsFromserver  populate");
 	db.transaction(populateContactDB, errorContactCB, successContactCBServer);
 }
 
@@ -1117,11 +1117,11 @@ function deletedata(tx){
 	}
 
 function ErrorDeleteCallBack(err){
-	alert('ERROR FOR DELETE = '+err.message);
+	//alert('ERROR FOR DELETE = '+err.message);
 	
 	} 
 function successContactCBServer(){
-	alert('adasda !!!!');
+	//alert('adasda !!!!');
 	console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
 	$.support.cors = true;
 	$.ajax({
@@ -1136,13 +1136,13 @@ function successContactCBServer(){
 		 
 	db.transaction( function(tx){ deletedata(tx) }, ErrorDeleteCallBack );	
 		
-		alert(data.status.code);
+		//alert(data.status.code);
 			if(data.status.code=='100')
 			{
-				alert(data.Response);
-				alert('11');
+				//alert(data.Response);
+				//alert('11');
 				var	Response = data.Response;
-				alert('14');
+				//alert('14');
 			
 			$.each(Response, function(index, element) {
 				
@@ -1152,12 +1152,12 @@ function successContactCBServer(){
 				loadContactsFromLocalDb();
 				
 		}else{
-				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				navigator.notification.//alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
 				}	
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	   navigator.notification.//alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
 	
@@ -1165,15 +1165,15 @@ function successContactCBServer(){
  
  
 function ErrorCallBack(err){
-	alert("ERROR :"+err);
+	//alert("ERROR :"+err);
 }
 
 
 
 function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 {
-	alert('121');
-	alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
+	//alert('121');
+	//alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
 	
 	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
 	
@@ -1234,12 +1234,12 @@ function onDirectorySuccess(parent) {
 
 function onDirectoryFail(error) {
     //Error while creating directory   
-    alert("Unable to create new directory: " + error.code);
+    //alert("Unable to create new directory: " + error.code);
 }
 
   function fileSystemFail(evt) {
     //Unable to access file system
-    alert(evt.target.error.code);
+    //alert(evt.target.error.code);
  }
 }
 
@@ -1249,13 +1249,13 @@ var fileTransfer = new FileTransfer();
 // File download function with URL and local path
 fileTransfer.download(download_link, fp,
                     function (entry) {
-                        alert("download complete: " + entry.fullPath);
+                        //alert("download complete: " + entry.fullPath);
                     },
                  function (error) {
                      //Download abort errors or download failed errors
-                     alert("download error source " + error.source);
-                     //alert("download error target " + error.target);
-                     //alert("upload error code" + error.code);
+                     //alert("download error source " + error.source);
+                     ////alert("download error target " + error.target);
+                     ////alert("upload error code" + error.code);
                  }
             );
 }
@@ -1275,11 +1275,11 @@ function loadupcomingevents()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 alert("loadupcomingevents local");
+		 //alert("loadupcomingevents local");
 		loadEventsFromLocalDb(); 
 		 }
 		else{
-			alert("loadupcomingevents server");
+			//alert("loadupcomingevents server");
 			loadEventsfromserver(); 
 			//fetch contacts from online and update in local db 
 			//then call loadcontacts from local db function afgain;	
@@ -1289,12 +1289,12 @@ function loadupcomingevents()
 	 
 function loadEventsFromLocalDb()
 {
-	alert("loadupcomingevents LocalDb");
+	//alert("loadupcomingevents LocalDb");
 	db.transaction(populateEventsDB, errorEventsCB, successEventsCB);
 	}	 
 
 function populateEventsDB(tx) {
-	alert("loadupcomingevents FromLocalDb  sdfsa asedf asdf");
+	//alert("loadupcomingevents FromLocalDb  sdfsa asedf asdf");
 tx.executeSql('CREATE TABLE IF NOT EXISTS upcomingevents (id INTEGER PRIMARY KEY AUTOINCREMENT, event_id INTEGER ,eventname TEXT NOT NULL , datetime TEXT NOT NULL , readstatus TEXT NOT NULL , status INTEGER )');
 }
 
@@ -1309,14 +1309,14 @@ tx.executeSql('SELECT * FROM upcomingevents where status=?',[value],queryEventsS
 
 function errorEventsCB(err){
 	
-	alert("ERROR : "+err);
+	//alert("ERROR : "+err);
 	}
 
 function queryEventsSuccess(tx,result){
 		var length = result.rows.length;
 		
 		
-		alert("EVENTS LENGTH  = "+ length);
+		//alert("EVENTS LENGTH  = "+ length);
 		
 		var Eventsappend='';
 			if(length >0)
@@ -1324,7 +1324,7 @@ function queryEventsSuccess(tx,result){
 			$('#events_id').html('');	
 				for(var i=0; i< length ; i++)
 				{
-			alert(result.rows.item(i).eventname);
+			//alert(result.rows.item(i).eventname);
 		var eventname =	result.rows.item(i).eventname;
 		var	datetime =result.rows.item(i).datetime;
 		var readstatus = result.rows.item(i).readstatus;
@@ -1344,7 +1344,7 @@ function queryEventsSuccess(tx,result){
 	
 			}
 			
-			alert("Eventsappend  "+Eventsappend);
+			//alert("Eventsappend  "+Eventsappend);
 			
 		$('#events_id').empty().append(Eventsappend);
 		$('#events_id').trigger("create");
@@ -1353,9 +1353,9 @@ function queryEventsSuccess(tx,result){
 			}//if close
 			else{
 				//CONNECT TO SERVER
-				alert(' again reload ');
+				//alert(' again reload ');
 				 if(navigator.network.connection.type == Connection.NONE){
-						navigator.notification.alert("No Events available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+						navigator.notification.//alert("No Events available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
 					loadEventsfromserver(); 
 					 }
@@ -1367,7 +1367,7 @@ function queryEventsSuccess(tx,result){
 
 function loadEventsfromserver()
 {
-	alert("loadEventsFromserver  populate");
+	//alert("loadEventsFromserver  populate");
 	db.transaction(populateEventsDB, errorEventsCB, successEventsCBServer);
 	
 }
@@ -1375,7 +1375,7 @@ function loadEventsfromserver()
 
 function successEventsCBServer(){
 	
-	alert('adasda !!!!');
+	//alert('adasda !!!!');
 	
 	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
 	
@@ -1404,14 +1404,14 @@ function successEventsCBServer(){
 	{
 	
 	deleteEvents_data();	
-	alert('evennts loaded');
-		alert(data.status.code);
+	//alert('evennts loaded');
+		//alert(data.status.code);
 			if(data.status.code=='100')
 			{
-				alert(data.Response);
-				alert('11');
+				//alert(data.Response);
+				//alert('11');
 				var	Response = data.Response;
-				alert('14');
+				//alert('14');
 
 			$.each(Response, function(index, element) {
 				db.transaction( function(tx){ insertEventsvalues(tx, element.event_id, element.eventsname, element.datetime, element.readstatus ,element.status )}, ErrorCallBack );	
@@ -1419,26 +1419,26 @@ function successEventsCBServer(){
 				loadEventsFromLocalDb();
 				
 		}else{
-				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				navigator.notification.//alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
 				}	
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	   navigator.notification.//alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
  }
  
  
 function ErrorCallBack(err){
-	alert("ERROR 11 :"+err.message);
+	//alert("ERROR 11 :"+err.message);
 }
 
 
 function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3,parameter5)
 {
-	alert('122');
-	alert(parameter1+'===='+parameter4+'======'+parameter2+'===='+parameter3+'====='+parameter5);
+	//alert('122');
+	//alert(parameter1+'===='+parameter4+'======'+parameter2+'===='+parameter3+'====='+parameter5);
 	tx.executeSql('INSERT INTO upcomingevents( event_id, eventname ,datetime , readstatus ,status ) VALUES (?,?,?,?,?)',[parameter1,parameter4,parameter2,parameter3,parameter5]);
  }
 
@@ -1450,7 +1450,7 @@ function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3,param
 
 function deleteEvents_data()
 {
-	alert('aa');
+	//alert('aa');
 	
 		var value='1';
 		var cond='0';
@@ -1461,7 +1461,7 @@ function deleteEvents_data()
 				tx.executeSql('SELECT event_id FROM upcomingevents where readstatus=? and status=? ',[readstatusval,value], successSelectEventsCB,errorEventsCB);
 			 },ErrordelteCB);
 			 
-			 alert('completed selecrt events');
+			 //alert('completed selecrt events');
 			 
 	db.transaction(function(tx){
 				var value='0';
@@ -1475,25 +1475,25 @@ function deleteEvents_data()
 	
 function ErrordeletteCB(err)
 {
-	alert("Error event delete = "+err.message);
+	//alert("Error event delete = "+err.message);
 	
 	} 	
 	
 function ErrordelteCB(err){
-	alert("ErrordelteCB "+err.message);
+	//alert("ErrordelteCB "+err.message);
 	
 	}
 
 function successSelectEventsCB(tx,result){
 	
-	alert("Length of rows in table = "+ result.rows.length);
+	//alert("Length of rows in table = "+ result.rows.length);
 	  var length = result.rows.length;
 				for(var i=0; i< length ; i++)
 				{
-					alert("array push ="+result.rows.item(i).event_id);
+					//alert("array push ="+result.rows.item(i).event_id);
 					event_read_array.push(result.rows.item(i).event_id);
  				}
-		alert(" Every ");
+		//alert(" Every ");
 	}
 
 
@@ -1507,11 +1507,11 @@ function loadupcomingNewsletter()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 alert("loadupcomingNewsletter local");
+		 //alert("loadupcomingNewsletter local");
 		loadNewsletterFromLocalDb(); 
 		 }
 		else{
-			alert("loadupcomingNewsletter server");
+			//alert("loadupcomingNewsletter server");
 			loadNewsletterfromserver(); 
 			//fetch contacts from online and update in local db 
 			//then call loadcontacts from local db function afgain;	
@@ -1521,12 +1521,12 @@ function loadupcomingNewsletter()
 	 
 function loadNewsletterFromLocalDb()
 {
-	alert("loadupcomingNewsletter LocalDb");
+	//alert("loadupcomingNewsletter LocalDb");
 	db.transaction(populateNewsletterDB, errorNewsletterCB, successNewsletterCB);
 	}	 
 
 function populateNewsletterDB(tx) {
-	alert("loadupcomingNewsletter FromLocalDb  sdfsa asedf asdf");
+	//alert("loadupcomingNewsletter FromLocalDb  sdfsa asedf asdf");
 tx.executeSql('CREATE TABLE IF NOT EXISTS newsletter (id INTEGER PRIMARY KEY AUTOINCREMENT, newsletter_id INTEGER , name TEXT NOT NULL , department TEXT NOT NULL , newsimage TEXT NOT NULL , newsurl TEXT NOT NULL , status INTEGER )');
 }
 
@@ -1541,14 +1541,14 @@ tx.executeSql('SELECT * FROM newsletter where status=?',[value],queryNewsletterS
 
 function errorNewsletterCB(err){
 	
-	alert("ERROR : "+err);
+	//alert("ERROR : "+err);
 	}
 
 function queryNewsletterSuccess(tx,result){
 		var length = result.rows.length;
 		
 		
-		alert("Newsletter LENGTH  = "+ length);
+		//alert("Newsletter LENGTH  = "+ length);
 		
 		var Newsletterappend='';
 			if(length >0)
@@ -1556,7 +1556,7 @@ function queryNewsletterSuccess(tx,result){
 			$('#Newsletter_id').html('');	
 				for(var i=0; i< length ; i++)
 				{
-			alert(result.rows.item(i).newsurl);
+			//alert(result.rows.item(i).newsurl);
 			
 		var department =	result.rows.item(i).department;
 		var	name =result.rows.item(i).name;
@@ -1571,7 +1571,7 @@ function queryNewsletterSuccess(tx,result){
 	
 			}
 			
-			alert("Newsletterappend  "+Newsletterappend);
+			//alert("Newsletterappend  "+Newsletterappend);
 			
 		$('#Newsletter_id').empty().append(Newsletterappend);
 		$('#Newsletter_id').trigger("create");
@@ -1580,9 +1580,9 @@ function queryNewsletterSuccess(tx,result){
 			}//if close
 			else{
 				//CONNECT TO SERVER
-				alert(' again reload ');
+				//alert(' again reload ');
 				 if(navigator.network.connection.type == Connection.NONE){
-						navigator.notification.alert("No Newsletter available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+						navigator.notification.//alert("No Newsletter available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
 					loadNewsletterfromserver(); 
 					 }
@@ -1594,7 +1594,7 @@ function queryNewsletterSuccess(tx,result){
 
 function loadNewsletterfromserver()
 {
-	alert("loadNewsletterFromserver  populate");
+	//alert("loadNewsletterFromserver  populate");
 	db.transaction(populateNewsletterDB, errorNewsletterCB, successNewsletterCBServer);
 	
 }
@@ -1602,7 +1602,7 @@ function loadNewsletterfromserver()
 
 function successNewsletterCBServer(){
 	
-	alert('adasda !!!!');
+	//alert('adasda !!!!');
 	
 	console.log(ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId);
 		
@@ -1618,14 +1618,14 @@ function successNewsletterCBServer(){
 	{
 	
 	deleteNewsletter_data();	
-	alert('evennts loaded');
-		alert(data.status.code);
+	//alert('evennts loaded');
+		//alert(data.status.code);
 			if(data.status.code=='100')
 			{
-				alert(data.Response);
-				alert('11');
+				//alert(data.Response);
+				//alert('11');
 				var	Response = data.Response;
-				alert('14');
+				//alert('14');
 
 			$.each(Response, function(index, element) {
 				db.transaction( function(tx){ insertNewslettervalues(tx, element.newsletter_id, element.name, element.department, element.newsimage, element.newsurl ,element.status )}, ErrorCallBack );	
@@ -1633,26 +1633,26 @@ function successNewsletterCBServer(){
 				loadNewsletterFromLocalDb();
 				
 		}else{
-				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				navigator.notification.//alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
 				}	
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	   navigator.notification.//alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
  }
  
  
 function ErrorCallBack(err){
-	alert("ERROR 11 :"+err.message);
+	//alert("ERROR 11 :"+err.message);
 }
 
 
 function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,parameter5,parameter6)
 {
-	alert('122');
-	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
+	//alert('122');
+	//alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
 	tx.executeSql('INSERT INTO newsletter( newsletter_id, name ,department ,newsimage, newsurl ,status ) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,parameter3,parameter4,parameter5,parameter6]);
  }
 
@@ -1664,7 +1664,7 @@ function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,p
 
 function deleteNewsletter_data()
 {
-	alert('aa');
+	//alert('aa');
 	
 	db.transaction(function(tx){
 				var value='0';
@@ -1676,19 +1676,19 @@ function deleteNewsletter_data()
 	
 function ErrordeletteCB(err)
 {
-	alert("Error event delete = "+err.message);
+	//alert("Error event delete = "+err.message);
 	
 	} 	
 	
 function ErrordelteCB(err){
-	alert("ErrordelteCB "+err.message);
+	//alert("ErrordelteCB "+err.message);
 	
 	}
 
 function successSelectNewsletterCB(tx,result){
 	
-	alert("Length of rows in table = "+ result.rows.length);
-		alert(" Every ");
+	//alert("Length of rows in table = "+ result.rows.length);
+		//alert(" Every ");
 	}
 
 
@@ -1733,7 +1733,7 @@ function upcomingevents()
 	
 function validate_user()
 {
-alert(ajaxpath+'userinsert.php?username='+username+'&userphone='+userphone+'&branch_id='+branch_id+'&company_id='+company_id);
+//alert(ajaxpath+'userinsert.php?username='+username+'&userphone='+userphone+'&branch_id='+branch_id+'&company_id='+company_id);
 $.support.cors = true;
 $.ajax({
 url:ajaxpath+'userinsert.php?username='+username+'&userphone='+userphone+'&branch_id='+branch_id+'&company_id='+company_id,
@@ -1744,22 +1744,22 @@ dataType: 'json',
 crossDomain: true,
 success: function(data)
 	{
-		alert(data.Response);
-		alert(data.Response.status);
+		//alert(data.Response);
+		//alert(data.Response.status);
 			if(data.Response.status=='100')
 			{
-				alert('11');
+				//alert('11');
 				var	Response = data.Response;
-				alert('14');
+				//alert('14');
 				var	readstatus='0';
 				db.transaction( function(tx){ insertvalues(tx, Response.eventsname, Response.user_id, readstatus )}, ErrorCallBack );	
 		}else{
-				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
+				navigator.notification.//alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
 				}	
 	},
 	error: function(e)
 	{
- 	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "Ebbu", "Done");
+ 	   navigator.notification.//alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "Ebbu", "Done");
 	}
   });
 }	
@@ -1767,11 +1767,11 @@ success: function(data)
 	
 function insertvalues(tx,parameter1,parameter2,parameter3)
 {
-	alert('121');
+	//alert('121');
 	globalusername = parameter1;
 	globaluserid= parameter2;
 	globaluserphone= parameter3;
-	alert(parameter1+'===='+parameter2+'===='+parameter3);
+	//alert(parameter1+'===='+parameter2+'===='+parameter3);
 	tx.executeSql('INSERT INTO atozuser(username, user_id , phone ) VALUES (?,?,?)',[parameter1,parameter2,parameter3],userinsert);
 	
 	}
@@ -1801,7 +1801,7 @@ function ErrorCallBack(err){
 
 
 function checkConnection() {
-	alert('sssssss');
+	//alert('sssssss');
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -1814,7 +1814,7 @@ function checkConnection() {
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
 
-    alert('Connection type: ' + states[networkState]);
+    //alert('Connection type: ' + states[networkState]);
 }
 
 
