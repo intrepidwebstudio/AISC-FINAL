@@ -66,6 +66,8 @@
     <gap:plugin name="com.pushapps.phonegap" version="1.6.0" />
 	<gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
 	
+	<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.6.4" />
+	
 	
 	
 	
