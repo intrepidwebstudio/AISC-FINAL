@@ -16,10 +16,7 @@
 	{
 		if (document.readyState === 'complete')
 		{	  
-			alert('asd');
-			
-			
-			
+					
 		}
 	};
    </script>
@@ -1624,7 +1621,7 @@ function queryNewsletterSuccess(tx,result){
 		console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
 
 
-		Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') style="background-image:url(img1/cbg@2x.png);  height:80px !important;"><img style="margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="'+imagepath+newsimage+'" /><p> '+department+' </p>';
+		Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') style="background-image:url(img1/cbg@2x.png) !important;  height:80px !important;"><img  style="height:30px; margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="'+imagepath+newsimage+'" /><p> '+department+' </p>';
 		Newsletterappend+='<p> <strong>'+name+'</strong> </p></li>';
 			}
 			
@@ -1786,7 +1783,7 @@ function loadNotificationsFromLocalDb()
 
 function populateNotificationsDB(tx) {
 	//alert("loadupcomingNotifications FromLocalDb  sdfsa asedf asdf");
-tx.executeSql('CREATE TABLE IF NOT EXISTS Notifications (id INTEGER PRIMARY KEY AUTOINCREMENT, notifications_id INTEGER , notifications TEXT NOT NULL , datetime TEXT NOT NULL , status INTEGER )');
+tx.executeSql('CREATE TABLE IF NOT EXISTS notifications (id INTEGER PRIMARY KEY AUTOINCREMENT, notifications_id INTEGER , notifications TEXT NOT NULL , datetime TEXT NOT NULL , status INTEGER )');
 }
 
 function successNotificationsCB() {
@@ -1794,7 +1791,7 @@ function successNotificationsCB() {
 }
 function queryNotificationsDB(tx){
 	var value ='1';
-tx.executeSql('SELECT * FROM Notifications where status=?',[value],queryNotificationsSuccess,errorNotificationsCB);
+tx.executeSql('SELECT * FROM notifications where status=?',[value],queryNotificationsSuccess,errorNotificationsCB);
 }
 
 
@@ -1909,7 +1906,7 @@ function ErrorCallBack(err){
 function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter4)
 {
 //	alert('122');
-//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
+	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
 	tx.executeSql('INSERT INTO notifications( notifications_id, notification ,datetime ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
  }
 
