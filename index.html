@@ -1907,7 +1907,7 @@ function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter
 {
 //	alert('122');
 	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
-	tx.executeSql('INSERT INTO notifications( notifications_id, notification ,datetime ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
+	tx.executeSql('INSERT INTO notifications( notifications_id, notifications ,datetime ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
  }
 
 
