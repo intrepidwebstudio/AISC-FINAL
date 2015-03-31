@@ -31,12 +31,17 @@
 		.example-wrapper, .example-wrapper div.iscroll-scroller {
 		width: 100% !important;
 		}
-
+.homeheader1{
+	
+	font-family:Arial, Helvetica, sans-serif !important;
+	
+	}
 
  @media only screen and (min-device-width: 320px) and (min-device-height: 480px) {
 	
 	/* Home */
 	.homeheader1{
+		
 		background-color:#38549B;
 		color:white;
 		padding:14px;
@@ -215,15 +220,15 @@
 	}
 	.homeimage1{
 	
-		max-height:193px !important; 
-		min-height:193px !important;
+		max-height:225px !important; 
+		min-height:225px !important;
 		width:100% !important;
 	
 	}
 	.homeimage{
 	
-		max-height:80px !important; 
-		min-height:80px !important;
+		max-height:69px !important; 
+		min-height:69px !important;
 		width:100% !important;
 	
 	}
@@ -242,10 +247,10 @@
 	.yellowtext1{
 		width:100%;
 		background-color:#E9A802;
-		height:29px;
+		height:32px;
 	}
 	.yellowimage1{
-		padding:4px;
+		padding:6px;
 		height:20px;
 	}
 	.yellowcontent1{
@@ -867,11 +872,11 @@
     <!--/header---->
     <!----content---->
    	<div class="socialmediaimage1">
-    	<img class="socialmediamain" src="iconimage/111 (1).png" />
-   		<img class="socialmediamain" src="iconimage/222 (1).png" />
-        <img class="socialmediamain" src="iconimage/333 (1).png" />
-        <img class="socialmediamain" src="iconimage/444 (1).png" />
-        <img class="socialmediamain" src="iconimage/555 (1).png" />
+    	<img class="socialmediamain" onclick="loadurl('https://www.facebook.com/pages/American-International-School-Chennai/550697601613642');" src="iconimage/111 (1).png" />
+   		<img class="socialmediamain" onclick="loadurl('https://plus.google.com/+AischOrgPage/posts')" src="iconimage/222 (1).png" />
+        <img class="socialmediamain" onclick="loadurl('http://instagram.com/aischennai')" src="iconimage/333 (1).png" />
+        <img class="socialmediamain" onclick="loadurl('https://twitter.com/search?q=aischennai&src=typd')" src="iconimage/444 (1).png" />
+        <img class="socialmediamain" onclick="loadurl('https://www.youtube.com/channel/UCYyOwWYsuhLJ2TqU3KPPJwQ')" src="iconimage/555 (1).png" />
     </div>
    
 </div>
@@ -1839,9 +1844,9 @@ function checkConnection() {
         }
         function iabShare(event){
         }
-        function loadurl(){
+        function loadurl(url_link){
 			
-			iabRef = window.open('http://www.google.co.in', '_blank','toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
+			iabRef = window.open(url_link, '_blank','toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 			$.support.cors = true;
 			iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);
