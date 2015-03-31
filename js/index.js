@@ -29,16 +29,16 @@ function registerDevice() {
                                     }, function (error) {
                                     alert('gggg='+error);
                                     });
-	 alert('ss1');
+	
 	document.removeEventListener('pushapps.message-received');
 	document.addEventListener('pushapps.message-received', function(event) {
                               var notification = event.notification;
                               var devicePlatform = device.platform;
                               if (devicePlatform === "iOS") {
-                              
-                              alert("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
+                              console.log('ss2');
+                              console.log("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
                               } else {
-                              alert("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
+                              console.log("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
                               }
                               });
 							  
@@ -187,14 +187,14 @@ var app = {
 	document.removeEventListener('pushapps.message-received');
 	document.addEventListener('pushapps.message-received', function(event) {
                               var notification = event.notification;
-                              alert('ss2');
-							  alert(notification);
+                              console.log(' asd asd asd asd asda sd ss2');
+							  console.log("NOTIFICATIONNNNN = "+notification);
                               var devicePlatform = device.platform;
                               if (devicePlatform === "iOS") {
                               
-                              alert("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
+                              console.log("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
                               } else {
-                              alert("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
+                              console.log("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
                               }
                               });
 	
