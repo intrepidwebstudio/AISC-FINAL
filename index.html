@@ -1341,16 +1341,18 @@ function queryEventsSuccess(tx,result){
 		var event_id = result.rows.item(i).event_id;
 		
 		console.log("Event name ="+eventname+" datetime  "+datetime +'REaD Statuds = '+readstatus );
-
+		
+		var value_id = 'event'+event_id;
+		
 		if(readstatus=='1')
 		{
-		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important " onclick="addeventcalendar()" id="event'+event_id+'" >';	
+		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important " onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 			}
 		else{	
-		Eventsappend+='<li style="padding-left:35px !important;">';
+		Eventsappend+='<li style="padding-left:35px !important;" onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 		}
-		Eventsappend+='<p style="color:#718497;">'+eventname+'</p>';
-		Eventsappend+='<p class="eventcontenttext2"><strong>'+datetime+'</strong></p></li>';
+		Eventsappend+='<p style="color:#000;">'+eventname+'</p>';
+		Eventsappend+='<p class="eventcontenttext2" style="color:#000" ><strong>'+datetime+'</strong></p></li>';
 	
 			}
 			
@@ -1702,6 +1704,34 @@ function successSelectNewsletterCB(tx,result){
 	}
 
 
+  
+  
+  
+  
+  
+  
+  
+function addeventcalendar(event_id)
+{
+	
+var eventtitle = $('#event'+event_id).attr('data-value1');
+var datetime = $('#event'+event_id).attr('data-value2');
+var readstatus = $('#event'+event_id).attr('data-value3');
+
+
+		var startDate = new Date(2015,4,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
+		var endDate = new Date(2015,4,15,19,30,0,0,0);
+		var title = "aisc event added";
+		var location = "Home";
+		var notes = "Some notes about this event.";
+		var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+		var error = function(message) { alert("Error: " + message); };
+
+	
+	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+	
+	}  
+  
   
   /*
   
