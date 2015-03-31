@@ -1324,7 +1324,7 @@ function queryEventsSuccess(tx,result){
 			$('#events_id').html('');	
 				for(var i=0; i< length ; i++)
 				{
-			alert(result.rows.item(i).eventname);
+		//	alert(result.rows.item(i).eventname);
 		var eventname =	result.rows.item(i).eventname;
 		var	datetime =result.rows.item(i).datetime;
 		var readstatus = result.rows.item(i).readstatus;
@@ -1353,7 +1353,7 @@ function queryEventsSuccess(tx,result){
 			}//if close
 			else{
 				//CONNECT TO SERVER
-				alert(' again reload ');
+			//	alert(' again reload ');
 				 if(navigator.network.connection.type == Connection.NONE){
 						navigator.notification.alert("No Events available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
@@ -1375,7 +1375,7 @@ function loadEventsfromserver()
 
 function successEventsCBServer(){
 	
-	alert('adasda !!!!');
+//	alert('adasda !!!!');
 	
 	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
 	
@@ -1404,14 +1404,14 @@ function successEventsCBServer(){
 	{
 	
 	deleteEvents_data();	
-	alert('evennts loaded');
-		alert(data.status.code);
+//	alert('evennts loaded');
+	//	alert(data.status.code);
 			if(data.status.code=='100')
 			{
-				alert(data.Response);
+		//		alert(data.Response);
 				alert('11');
 				var	Response = data.Response;
-				alert('14');
+			//	alert('14');
 
 			$.each(Response, function(index, element) {
 				db.transaction( function(tx){ insertEventsvalues(tx, element.event_id, element.eventsname, element.datetime, element.readstatus ,element.status )}, ErrorCallBack );	
@@ -1437,8 +1437,8 @@ function ErrorCallBack(err){
 
 function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3,parameter5)
 {
-	alert('122');
-	alert(parameter1+'===='+parameter4+'======'+parameter2+'===='+parameter3+'====='+parameter5);
+//	alert('122');
+//	alert(parameter1+'===='+parameter4+'======'+parameter2+'===='+parameter3+'====='+parameter5);
 	tx.executeSql('INSERT INTO upcomingevents( event_id, eventname ,datetime , readstatus ,status ) VALUES (?,?,?,?,?)',[parameter1,parameter4,parameter2,parameter3,parameter5]);
  }
 
@@ -1450,7 +1450,7 @@ function insertEventsvalues(tx,parameter1,parameter4,parameter2,parameter3,param
 
 function deleteEvents_data()
 {
-	alert('aa');
+//	alert('aa');
 	
 		var value='1';
 		var cond='0';
@@ -1461,7 +1461,7 @@ function deleteEvents_data()
 				tx.executeSql('SELECT event_id FROM upcomingevents where readstatus=? and status=? ',[readstatusval,value], successSelectEventsCB,errorEventsCB);
 			 },ErrordelteCB);
 			 
-			 alert('completed selecrt events');
+	//		 alert('completed selecrt events');
 			 
 	db.transaction(function(tx){
 				var value='0';
@@ -1580,7 +1580,7 @@ function queryNewsletterSuccess(tx,result){
 			}//if close
 			else{
 				//CONNECT TO SERVER
-				alert(' again reload ');
+		//		alert(' again reload ');
 				 if(navigator.network.connection.type == Connection.NONE){
 						navigator.notification.alert("No Newsletter available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
@@ -1602,7 +1602,7 @@ function loadNewsletterfromserver()
 
 function successNewsletterCBServer(){
 	
-	alert('adasda !!!!');
+//	alert('adasda !!!!');
 	
 	console.log(ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId);
 		
@@ -1618,14 +1618,14 @@ function successNewsletterCBServer(){
 	{
 	
 	deleteNewsletter_data();	
-	alert('evennts loaded');
-		alert(data.status.code);
+//	alert('evennts loaded');
+	//	alert(data.status.code);
 			if(data.status.code=='100')
 			{
-				alert(data.Response);
-				alert('11');
+		//		alert(data.Response);
+			//	alert('11');
 				var	Response = data.Response;
-				alert('14');
+			//	alert('14');
 
 			$.each(Response, function(index, element) {
 				db.transaction( function(tx){ insertNewslettervalues(tx, element.newsletter_id, element.name, element.department, element.newsimage, element.newsurl ,element.status )}, ErrorCallBack );	
@@ -1651,8 +1651,8 @@ function ErrorCallBack(err){
 
 function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,parameter5,parameter6)
 {
-	alert('122');
-	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
+//	alert('122');
+//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
 	tx.executeSql('INSERT INTO newsletter( newsletter_id, name ,department ,newsimage, newsurl ,status ) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,parameter3,parameter4,parameter5,parameter6]);
  }
 
@@ -1664,7 +1664,7 @@ function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,p
 
 function deleteNewsletter_data()
 {
-	alert('aa');
+	//alert('aa');
 	
 	db.transaction(function(tx){
 				var value='0';
