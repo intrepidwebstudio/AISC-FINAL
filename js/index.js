@@ -25,9 +25,9 @@ var PUSHAPPS_APP_TOKEN = "6f747f13-5c54-41f0-84c5-892d4c0ffdf6";
  */
 function registerDevice() {
 	PushNotification.registerDevice(GOOGLE_PROJECT_ID, PUSHAPPS_APP_TOKEN, function (pushToken) {
-                                    alert('registerDevice, push token' + pushToken);
+                              //      alert('registerDevice, push token' + pushToken);
                                     }, function (error) {
-                                    alert('gggg='+error);
+                            //        alert('gggg='+error);
                                     });
 	
 	document.removeEventListener('pushapps.message-received');
@@ -201,18 +201,3 @@ var app = {
 
 
 
-
-	document.removeEventListener('pushapps.message-received');
-	document.addEventListener('pushapps.message-received', function(event) {
-                              var notification = event.notification;
-                              console.log(' asd asd asd asd asda sd ss2');
-							  console.log("NOTIFICATIONNNNN = "+notification);
-                              var devicePlatform = device.platform;
-                              if (devicePlatform === "iOS") {
-                              
-                              console.log("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
-                              } else {
-                              console.log("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
-                              }
-                              });
-	

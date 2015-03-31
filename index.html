@@ -1719,13 +1719,14 @@ var datetime = $('#event'+event_id).attr('data-value2');
 var readstatus = $('#event'+event_id).attr('data-value3');
 
 
-		var startDate = new Date(2015,4,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
-		var endDate = new Date(2015,4,15,19,30,0,0,0);
+		var startDate = new Date(2015,5,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
+		var endDate = new Date(2015,5,15,19,30,0,0,0);
 		var title = "aisc event added";
 		var location = "Home";
 		var notes = "Some notes about this event.";
-		var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-		var error = function(message) { alert("Error: " + message); };
+		var success = function(message) { navigator.notification.alert("Successfully added the event to calendar", alertCallback, "AISC",JSON.stringify(message)); }
+		
+		var error = function(message) { navigator.notification.alert("Error accessing calendar", alertCallback, "AISC", message ); };
 
 	
 	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
