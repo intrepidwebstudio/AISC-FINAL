@@ -41,8 +41,7 @@ function registerDevice() {
                               console.log("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
                               }
                               });
-							  
-							   alert('ss3');
+							
     
 }
 
@@ -175,7 +174,7 @@ var app = {
 			loadupcomingevents();
 			loadcontacts();
 			loadupcomingNewsletter();
-
+			loadnotifications();
 		
 		
 						// Android customization
