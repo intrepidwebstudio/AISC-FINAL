@@ -1003,10 +1003,10 @@
         <div class="schoolheadertext2">Notification</div>
     </div>
     
-     	<div data-role="content">	
+     	<div data-role="content" style="margin-top:12px !important;" >	
         	
              <div class="example-wrapper" data-iscroll>            
-                <ul id="Notifications_id" data-role="listview"  data-divider="true" >
+                <ul id="Notifications_id" data-role="listview"  data-divider  >
                 
                 </ul>
             </div>    
@@ -1804,7 +1804,7 @@ function queryNotificationsSuccess(tx,result){
 		var length = result.rows.length;
 		
 		
-		alert("Notifications LENGTH  = "+ length);
+	//	alert("Notifications LENGTH  = "+ length);
 		
 		var Notificationsappend='';
 			if(length >0)
@@ -1833,8 +1833,6 @@ function queryNotificationsSuccess(tx,result){
 				
 			}//if close
 			else{
-				//CONNECT TO SERVER
-			alert(' again reload ');
 				 if(navigator.network.connection.type == Connection.NONE){
 						navigator.notification.alert("No Notifications available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
@@ -1848,9 +1846,7 @@ function queryNotificationsSuccess(tx,result){
 
 function loadNotificationsfromserver()
 {
-	//alert("loadNotificationsFromserver  populate");
 	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCBServer);
-	
 }
 
 
@@ -1877,9 +1873,9 @@ function successNotificationsCBServer(){
 			if(data.status.code=='100')
 			{
 		//		alert(data.Response);
-				alert('11');
+		//		alert('11');
 				var	Response = data.Response;
-				alert('14');
+		//		alert('14');
 
 			$.each(Response, function(index, element) {
 				db.transaction( function(tx){ insertNotificationsvalues(tx, element.notifications_id, element.notification, element.datetime, element.status )}, ErrorCallBack );	
@@ -1906,7 +1902,7 @@ function ErrorCallBack(err){
 function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter4)
 {
 //	alert('122');
-	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
+//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
 	tx.executeSql('INSERT INTO notifications( notifications_id, notifications ,datetime ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
  }
 
