@@ -107,7 +107,7 @@
 	.eventcontenttext1{
 		font-size:13px;
 		text-align:center;
-		font-weight:bold;
+		
 		}
 	.eventcontenttext2{
 		font-size:15px;
@@ -279,7 +279,7 @@
 	.eventcontenttext1{
 		font-size:13px;
 		text-align:center;
-		font-weight:bold;
+		
 		}
 	.eventcontenttext2{
 		font-size:15px;
@@ -452,7 +452,7 @@
 	.eventcontenttext1{
 		font-size:13px;
 		text-align:center;
-		font-weight:bold;
+		
 		}
 	.eventcontenttext2{
 		font-size:15px;
@@ -623,7 +623,7 @@
 	.eventcontenttext1{
 		font-size:13px;
 		text-align:center;
-		font-weight:bold;
+		
 		}
 	.eventcontenttext2{
 		font-size:15px;
@@ -783,7 +783,7 @@
 <!--------------------EventPage----------------->
 <div  data-role="page" id="event" data-title="School Apps" style="background:url(images/gallery/newpattern4.png) repeat;">
     <!---header -->
-     <div  data-role="header" data-id="persistent"  data-position="fixed">
+     <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
     	<div class="eventtop1">
         <div style="float:left;">
         	<a href="#index" class="aaa">
@@ -797,13 +797,15 @@
          </div>
        	 <div style="clear:both;"></div>
     </div>
+    
+
+            <P class="eventcontenttext1" style="font-weight:normal !important; background-color: transparent !important ;padding-left:15px !important; padding-right:15px; " >To add Events to your Phones Calender,Select multiple items and Press Add</P>
+
    </div> 
    	<!--/header---->
     <!----content---->
 	<div data-role="content">
-        <div style="padding-bottom:25px !important;">
-            <P class="eventcontenttext1">To add Events to your Phones Calender,Select multiple items and Press Add</P>
-        </div>
+        
      
      <div class="example-wrapper" data-iscroll>            
             <ul id="events_id" data-role="listview"  data-divider="true" >
@@ -980,6 +982,9 @@
 <script src="js/responsiveslides.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/pushapps.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
+
 
 <script>
     // You can also use "$(window).load(function() {"
