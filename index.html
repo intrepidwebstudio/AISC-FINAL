@@ -924,11 +924,12 @@
     <!--/header---->
     
     
-    <div data-role="content" >
+    <div data-role="content" style="margin-top:12px !important;" >
          <div class="example-wrapper" data-iscroll>            
             <ul id="Newsletter_id" data-role="listview"  data-divider="true" >
-            
-           </ul>
+<!--            	<li style="background-image:url(img1/cbg@2x.png);  height:80px !important;"><img style="margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="img1/Head.png" /><p> Head of elementary school </p>
+                <p> <strong>Andrew Hoover</strong> </p> </li>
+-->           </ul>
         </div>    
     </div>
     
@@ -960,9 +961,21 @@
         <p style="text-align:center;">Chennai-600 113, India</p>
         <p style="text-align:center; color:#008FD5;">Tel: &ensp;91 44 22549000</p>
    
+    <script>
+	
+     if(navigator.network.connection.type == Connection.NONE){
+		 
+	 </script>	 
+		 
+   
+	<script> }else{ </script> 
     
-   <!--	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31101.52074852343!2d80.24288045000003!3d12.991662749999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267891f335e13%3A0xad60d1ce4c5881c9!2sTaramani%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1426759615649" width="100%" height="263px"  frameborder="0" style="border:0;"></iframe>
-    -->
+   	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31101.52074852343!2d80.24288045000003!3d12.991662749999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267891f335e13%3A0xad60d1ce4c5881c9!2sTaramani%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1426759615649" width="100%" height="263px"  frameborder="0" style="border:0;"></iframe>
+    
+    
+    <script> } </script>
+    
+    
     </div>
    
 </div>
@@ -978,7 +991,21 @@
         <div class="schoolheadertext1">Home</div>
         <div class="schoolheadertext2">Notification</div>
     </div>
-    <!--/header---->
+    
+     	<div data-role="content">	
+        	
+             <div class="example-wrapper" data-iscroll>            
+                <ul id="Notifications_id" data-role="listview"  data-divider="true" >
+                
+                </ul>
+            </div>    
+
+            
+        </div>
+			    
+    </div>
+    
+    <!---header---->
 </div>
 <!---------------/Notification---------------->
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -1076,6 +1103,11 @@ function queryContactSuccess(tx,result){
 			if(length >0)
 			{
 			$('#contact_id').html('');	
+			
+			contactappend+='<div class="contactsimagetop examplecolor" style="width:100%;">';
+			contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">Main Reception <br /><a style="text-decoration:none !important; color:#000 !important; " href="mailto:'+contactemail+'" >'+contactemail+'</a></p></div></div>';
+			
+			
 				for(var i=0; i< length ; i++)
 				{
 					
@@ -1097,7 +1129,7 @@ function queryContactSuccess(tx,result){
 				contactappend+='<img class="contactsimage" src="'+imagepath+image+'">';		
 				}
 		contactappend+='</div><div style="float:right;  width:80% !important;">';
-		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a style="text-decoration:none !important; " href="mailto:'+contactemail+'" >'+contactemail+'</a></p></div></div></div>';
+		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a style="text-decoration:none !important; color:#000 !important; " href="mailto:'+contactemail+'" >'+contactemail+'</a></p></div></div></div>';
 		}
 		$('#contact_id').html(contactappend);		
 				
@@ -1577,10 +1609,9 @@ function queryNewsletterSuccess(tx,result){
 		
 		console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
 
-		Newsletterappend+='<li style="padding-left:35px !important;">';
-		Newsletterappend+='<p style="color:#718497;">'+name+'</p>';
-		Newsletterappend+='<p class="eventcontenttext2"><strong>'+department+'</strong></p></li>';
-	
+
+		Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') style="background-image:url(img1/cbg@2x.png);  height:80px !important;"><img style="margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="'+imagepath+newsimage+'" /><p> '+department+' </p>';
+		Newsletterappend+='<p> <strong>'+name+'</strong> </p></li>';
 			}
 			
 			//alert("Newsletterappend  "+Newsletterappend);
@@ -1704,6 +1735,206 @@ function successSelectNewsletterCB(tx,result){
 	}
 
 
+
+
+
+
+
+
+
+/******************************************************************************************************************************************************
+	
+	 NOTIFICATIONS CODE BELOW
+
+*******************************************************************************************************************************************************/
+
+function loadnotifications()
+ {
+	 if(navigator.network.connection.type == Connection.NONE)
+	 {
+		 //alert("loadupcomingNotifications local");
+		loadNotificationsFromLocalDb(); 
+		 }
+		else{
+			//alert("loadupcomingNotifications server");
+			loadNotificationsfromserver(); 
+			//fetch contacts from online and update in local db 
+			//then call loadcontacts from local db function afgain;	
+		}		 
+	 }
+	 
+	 
+function loadNotificationsFromLocalDb()
+{
+	//alert("loadupcomingNotifications LocalDb");
+	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCB);
+	}	 
+
+function populateNotificationsDB(tx) {
+	//alert("loadupcomingNotifications FromLocalDb  sdfsa asedf asdf");
+tx.executeSql('CREATE TABLE IF NOT EXISTS Notifications (id INTEGER PRIMARY KEY AUTOINCREMENT, notifications_id INTEGER , notifications TEXT NOT NULL , datetime TEXT NOT NULL , status INTEGER )');
+}
+
+function successNotificationsCB() {
+	db.transaction(queryNotificationsDB,errorNotificationsCB);
+}
+function queryNotificationsDB(tx){
+	var value ='1';
+tx.executeSql('SELECT * FROM Notifications where status=?',[value],queryNotificationsSuccess,errorNotificationsCB);
+}
+
+
+function errorNotificationsCB(err){
+	
+	//alert("ERROR : "+err);
+	}
+
+function queryNotificationsSuccess(tx,result){
+		var length = result.rows.length;
+		
+		
+		//alert("Notifications LENGTH  = "+ length);
+		
+		var Notificationsappend='';
+			if(length >0)
+			{
+			$('#Notifications_id').html('');	
+				for(var i=0; i< length ; i++)
+				{
+			//alert(result.rows.item(i).newsurl);
+			
+		var notifications =	result.rows.item(i).notifications;
+		var	datetime =result.rows.item(i).datetime;
+		
+		console.log("notifications ="+notifications+" datetime  "+datetime );
+
+		Notificationsappend+='<li style="padding-left:35px !important;">';
+		Notificationsappend+='<p style="color:#718497;">'+notifications+'</p>';
+		Notificationsappend+='<p class="eventcontenttext2"><strong>'+datetime+'</strong></p></li>';
+	
+			}
+			
+			//alert("Notificationsappend  "+Notificationsappend);
+			
+		$('#Notifications_id').empty().append(Notificationsappend);
+		$('#Notifications_id').trigger("create");
+		$('#Notifications_id').listview().listview('refresh');		
+				
+			}//if close
+			else{
+				//CONNECT TO SERVER
+		//		alert(' again reload ');
+				 if(navigator.network.connection.type == Connection.NONE){
+						navigator.notification.alert("No Notifications available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+				 }else{
+					loadNotificationsfromserver(); 
+					 }
+			}
+}
+
+
+
+
+function loadNotificationsfromserver()
+{
+	//alert("loadNotificationsFromserver  populate");
+	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCBServer);
+	
+}
+
+
+function successNotificationsCBServer(){
+	
+//	alert('adasda !!!!');
+	
+	console.log(ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId);
+		
+	$.support.cors = true;
+	$.ajax({
+	url:ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+	
+	deleteNotifications_data();	
+//	alert('evennts loaded');
+	//	alert(data.status.code);
+			if(data.status.code=='100')
+			{
+		//		alert(data.Response);
+			//	alert('11');
+				var	Response = data.Response;
+			//	alert('14');
+
+			$.each(Response, function(index, element) {
+				db.transaction( function(tx){ insertNotificationsvalues(tx, element.notifications_id, element.notification, element.datetime, element.status )}, ErrorCallBack );	
+			});
+				loadNotificationsFromLocalDb();
+				
+		}else{
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				}	
+	},
+	error: function(e)
+	{
+	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	}
+	});
+ }
+ 
+ 
+function ErrorCallBack(err){
+	//alert("ERROR 11 :"+err.message);
+}
+
+
+function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter4)
+{
+//	alert('122');
+//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
+	tx.executeSql('INSERT INTO notifications( notifications_id, notification ,datetime ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
+ }
+
+
+
+
+
+
+
+function deleteNotifications_data()
+{
+	//alert('aa');
+	
+	db.transaction(function(tx){
+				var value='0';
+				var cond='0';
+        		tx.executeSql("UPDATE notifications set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+		},ErrordeletteCB);	 
+		
+	}
+	
+function ErrordeletteCB(err)
+{
+	//alert("Error event delete = "+err.message);
+	
+	} 	
+	
+function ErrordelteCB(err){
+	//alert("ErrordelteCB "+err.message);
+	
+	}
+
+function successSelectNotificationsCB(tx,result){
+	
+	//alert("Length of rows in table = "+ result.rows.length);
+		//alert(" Every ");
+	}
+
+
   
   
   
@@ -1724,9 +1955,9 @@ var readstatus = $('#event'+event_id).attr('data-value3');
 		var title = "aisc event added";
 		var location = "Home";
 		var notes = "Some notes about this event.";
-		var success = function(message) { navigator.notification.alert("Successfully added the event to calendar", alertCallback, "AISC",JSON.stringify(message)); }
+		var success = function(message) { alert("Success: " + JSON.stringify(message));  }
 		
-		var error = function(message) { navigator.notification.alert("Error accessing calendar", alertCallback, "AISC", message ); };
+		var error = function(message) { alert("Error: " + message);  };
 
 	
 	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);

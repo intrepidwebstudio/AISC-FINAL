@@ -3734,7 +3734,7 @@ fieldset.ui-controlgroup {
 	font-size: .75em;
 	font-weight: normal;
 	display: block;
-	margin: .6em 0;
+	margin: 1.6em 0;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
