@@ -1621,7 +1621,7 @@ function queryNewsletterSuccess(tx,result){
 		console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
 
 
-		Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') style="background-image:url(img1/cbg@2x.png) !important;  height:80px !important;"><img  style="height:30px; margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="'+imagepath+newsimage+'" /><p> '+department+' </p>';
+		Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') style="background-image:url(img1/cbg@2x.png) !important;  height:80px !important;"><img  style="margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="'+imagepath+newsimage+'" /><p> '+department+' </p>';
 		Newsletterappend+='<p> <strong>'+name+'</strong> </p></li>';
 			}
 			
@@ -1804,7 +1804,7 @@ function queryNotificationsSuccess(tx,result){
 		var length = result.rows.length;
 		
 		
-		//alert("Notifications LENGTH  = "+ length);
+		alert("Notifications LENGTH  = "+ length);
 		
 		var Notificationsappend='';
 			if(length >0)
@@ -1834,7 +1834,7 @@ function queryNotificationsSuccess(tx,result){
 			}//if close
 			else{
 				//CONNECT TO SERVER
-		//		alert(' again reload ');
+			alert(' again reload ');
 				 if(navigator.network.connection.type == Connection.NONE){
 						navigator.notification.alert("No Notifications available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
@@ -1877,9 +1877,9 @@ function successNotificationsCBServer(){
 			if(data.status.code=='100')
 			{
 		//		alert(data.Response);
-			//	alert('11');
+				alert('11');
 				var	Response = data.Response;
-			//	alert('14');
+				alert('14');
 
 			$.each(Response, function(index, element) {
 				db.transaction( function(tx){ insertNotificationsvalues(tx, element.notifications_id, element.notification, element.datetime, element.status )}, ErrorCallBack );	
