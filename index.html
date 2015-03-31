@@ -1061,7 +1061,7 @@ function errorContactCB(err){
 
 function queryContactSuccess(tx,result){
 		var length = result.rows.length;
-		alert('length');
+//		alert('length');
 		var contactappend='';
 			if(length >0)
 			{
@@ -1069,7 +1069,7 @@ function queryContactSuccess(tx,result){
 				for(var i=0; i< length ; i++)
 				{
 					
-					alert(result.rows.item(i).name);
+		//			alert(result.rows.item(i).name);
 					var name =	result.rows.item(i).name;
 					var	contactemail =result.rows.item(i).contactemail;
 					var image =	result.rows.item(i).imagepath;
@@ -1117,11 +1117,11 @@ function deletedata(tx){
 	}
 
 function ErrorDeleteCallBack(err){
-	alert('ERROR FOR DELETE = '+err.message);
+//	alert('ERROR FOR DELETE = '+err.message);
 	
 	} 
 function successContactCBServer(){
-	alert('adasda !!!!');
+//	alert('adasda !!!!');
 	console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
 	$.support.cors = true;
 	$.ajax({
@@ -1136,13 +1136,13 @@ function successContactCBServer(){
 		 
 	db.transaction( function(tx){ deletedata(tx) }, ErrorDeleteCallBack );	
 		
-		alert(data.status.code);
+//		alert(data.status.code);
 			if(data.status.code=='100')
 			{
-				alert(data.Response);
-				alert('11');
+			//	alert(data.Response);
+		//		alert('11');
 				var	Response = data.Response;
-				alert('14');
+		//		alert('14');
 			
 			$.each(Response, function(index, element) {
 				
@@ -1172,8 +1172,8 @@ function ErrorCallBack(err){
 
 function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 {
-	alert('121');
-	alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
+//	alert('121');
+	//alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
 	
 	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
 	
@@ -1239,7 +1239,7 @@ function onDirectoryFail(error) {
 
   function fileSystemFail(evt) {
     //Unable to access file system
-    alert(evt.target.error.code);
+   // alert(evt.target.error.code);
  }
 }
 
@@ -1409,7 +1409,7 @@ function successEventsCBServer(){
 			if(data.status.code=='100')
 			{
 		//		alert(data.Response);
-				alert('11');
+			//	alert('11');
 				var	Response = data.Response;
 			//	alert('14');
 
