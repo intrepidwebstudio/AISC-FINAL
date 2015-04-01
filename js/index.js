@@ -205,8 +205,13 @@ var app = {
 function loadimages()
 {
 		  
-					var screenwidth=window.innerWidth;
-					var screenheight=window.innerHeight;
+					var screenwidth=window.screen.width;
+					var screenheight=window.screen.height;
+					
+					
+					alert(screenwidth +'    '+screenheight );
+					
+					
 					
 					if(screenwidth == 320 && screenheight == 480)
 					{
