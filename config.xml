@@ -31,7 +31,7 @@
     <preference name="webviewbounce"              value="flase" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
-    <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+    <preference name="ios-statusbarstyle"         value="translucent" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
     <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
     <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
     <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
@@ -72,7 +72,6 @@
 	
 	
 <gap:platform name="ios" />
-<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.2.0" />
 <gap:plugin name="com.kerosieben.cordova.plugins.ios7scrollfix" version="0.1.0" />
 <gap:plugin name="hu.dpal.phonegap.plugins.spinnerdialog" version="1.2.0" />
 <!--<gap:plugin name="com.wizardlogic.cordova.ios_keyboard" version="2.0.0" />-->
@@ -80,13 +79,6 @@
 <preference name="IOS7PreventWebViewScrolling" value="true"/>
 
 
-	<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
-	<preference name="StatusBarOverlaysWebView" value="false" />
-	<preference name="StatusBarBackgroundColor" value="#FFFFFF" />
-	
-	<feature name="StatusBar">
-	<param name="ios-package" value="CDVStatusBar" onload="false" />
-	</feature>
 <feature name="NetworkStatus">
     <param name="ios-package" value="CDVConnection" />
 </feature>
@@ -101,13 +93,17 @@
     <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
     <icon src="res/icon/webos/icon-64.png"          gap:platform="webos" />
 
+
+
+
     <!-- Define app splash screen for each platform. -->
-    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
-    <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
-	
+    <gap:splash src="res/screen/ios/Default.png" 				        gap:platform="ios"     width="320" height="480" />
+    <gap:splash src="res/screen/ios/Default@2x.png"      				gap:platform="ios"     width="640" height="960" />
+    <gap:splash src="res/screen/ios/Default-568h@2x.png" 		gap:platform="ios"     width="640" height="1136" />
+	<gap:splash src="res/screen/ios/Default-667h@2x.png" 		gap:platform="ios"     width="750" height="1334" />
+	<gap:splash src="res/screen/ios/Default-736h@3x.png"			gap:platform="ios"     width="1242" height="2208" />
+
+
 	
 	<access origin="*"/>
 	<access origin="*" subdomains="true" /> 
