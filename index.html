@@ -37,7 +37,7 @@
 	
 	
 	.ui-listview > li p.list {
-	font-size: .75em;
+	font-size: .80em;
 	font-weight: normal;
 	display: block !important;
 	margin: 0.6em 0 !important;
@@ -46,6 +46,17 @@
 	white-space: nowrap;
 }
 
+
+ul li.eventlist{
+	padding:0em 1em !important;
+	}
+	
+.backbutton{
+		left: 10px !important;
+		position: relative !important;
+		top: 35% !important;
+		width: 20% !important;
+	}	
 	
 
  @media only screen and (min-device-width: 320px) and (min-device-height: 480px) {
@@ -739,7 +750,11 @@
 <div data-role="page" id="index"  data-title="School Apps">
     <!-- /header -->
     <div data-role="header" data-id="persistent"  data-position="fixed">
-        <div class="homeheader1"><center>Home</center></div>
+        <div style="background-color:#38549b; height:70px; width:100% !important"  >
+          <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+                Home
+            </span> 
+
     </div>
     <!-- /header -->
     <!--content--->
@@ -795,25 +810,18 @@
 <!--------------------/Home Page---------------->
 
 <!--------------------EventPage----------------->
-<div  data-role="page" id="event" data-title="School Apps" style="background:url(images/gallery/newpattern4.png) repeat;">
+<div  data-role="page" id="event" data-title="School Apps" >
     <!---header -->
      <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
-    	<div class="eventtop1">
-        <div style="float:left;">
-        	<a href="#index" class="aaa">
-        	<img class="eventtopimage11" src="images/gallery/previousarrow.png" />
-        	<div class="eventtoptext1">Home</div></a>
-        </div>
-        <div style="float:right; margin-right:7px;">
-        	<a href="#" class="aaa">
-        	<img class="eventtopimage22" src="images/gallery/plusicon.png" />
-            </a>
-         </div>
-       	 <div style="clear:both;"></div>
+    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+               		Events
+                </span> 
     </div>
     
 
-            <P class="eventcontenttext1" style="font-weight:normal !important; background-color: transparent !important ;padding-left:15px !important; padding-top:15px !important; padding-bottom:10px !important; padding-right:15px; " >To add Events to your Phones Calender,Select multiple items and Press Add</P>
+            <P class="eventcontenttext1" style="font-weight:normal !important; background-color: transparent !important ;padding-left:15px !important; padding-top:15px !important; padding-bottom:5px !important; padding-right:15px; " >To add Events to your Phones Calender,Select multiple items and Press Add</P>
 
    </div> 
    	<!--/header---->
@@ -824,7 +832,27 @@
      <div class="example-wrapper" data-iscroll>            
             <ul id="events_id" data-role="listview"  data-divider="true" >
             
-           </ul>
+<li style="padding-left:35px !important;" class="eventlist">	
+<p class="list" style="color:#000;">Some event sample title goes here</p>
+<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+
+<li style="padding-left:35px !important;" class="eventlist">	
+<p class="list" style="color:#000;">Some event sample title goes here</p>
+<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+
+<li style="padding-left:35px !important;" class="eventlist">	
+<p class="list" style="color:#000;">Some event sample title goes here</p>
+<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+
+<li style="padding-left:35px !important;" class="eventlist">	
+<p class="list" style="color:#000;">Some event sample title goes here</p>
+<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+
+<li style="padding-left:35px !important;" class="eventlist">	
+<p class="list" style="color:#000;">Some event sample title goes here</p>
+<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+
+       </ul>
         </div>    
  
     </div>
@@ -837,25 +865,23 @@
 <!-------------------contactsPage--------------->
 <div  data-role="page" id="contact" data-title="School Apps">
     <!---header -->
-    <div  data-role="header" data-id="persistent"  data-position="fixed">
-    	<div class="schoolheadertop">
-        	<a href="#index" class="aaa"><img class="schoolheaderimage" src="images/gallery/previousarrow.png" /></a>
-        </div>
-        <div class="schoolheadertext1">Home</div>
-        <div class="schoolheadertext2">Contacts</div>
+    <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:#38549b !important">
+    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+               		Contacts
+                </span> 
+       </div>
+           
     </div>
    <!--/header---->
     <!----content---->
    <div data-role="content" id="contact_id" class="example-wrapper" data-iscroll>     
    
+   <!----
    
-   
-   			
-<!--	<div class="contactsimagetop examplecolor" style="width:100%; height:50px;">
-	<div><p style="font-size:15px; vertical-align:central !important; text-align:center !important">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div></div>
-
-   
-   
+<div class="contactsimagetop examplecolor" style="width:100%; height:50px;">
+	<p style="font-size:15px; vertical-align:central !important; position:relative !important; top:35% !important; text-align:center !important">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div>
 <center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
 		<img class="contactsimage" src="img/noimageicon.png">
 		<img class="contactsimage" src="'+imagepath+image+'">		
@@ -890,7 +916,8 @@
     	testing@gmail.com
     </a></p></div></div></div></center>
     
---> 
+   --->
+    
 <!--    <div class="contactsmain examplecolor">
     	<div style="padding:1px;"><p style="text-align:center !important; vertical-align:middle !important">Main Reception &emsp; 004-22549000</p></div>
     </div>
@@ -913,11 +940,11 @@
 <div  data-role="page" id="socialmedia" data-title="School Apps" style="background-color:#36559E;">
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
-    	<div class="schoolheadertop">
-        	<a href="#index" class="aaa"><img class="schoolheaderimage" src="images/gallery/previousarrow.png" /></a>
-        </div>
-        <div class="schoolheadertext1">Home</div>
-        <div class="schoolheadertext2">Social Media</div>
+        <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+               		Social Media
+                </span> 
     </div>
     <!--/header---->
     <!----content---->
@@ -936,11 +963,11 @@
 <div  data-role="page" id="newsletter" data-title="School Apps" style="background:url(images/gallery/newpattern4.png) repeat;">
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
-    	<div class="schoolheadertop">
-        	<a href="#index" class="aaa"><img class="schoolheaderimage" src="images/gallery/previousarrow.png" /></a>
-        </div>
-        <div class="schoolheadertext1">Home</div>
-        <div class="schoolheadertext2">Newsletters</div>
+    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+               		Newsletter
+                </span> 
     </div>
     <!--/header---->
     <!----content---->
@@ -965,11 +992,11 @@
 <div  data-role="page" id="newsletterlogedin" data-title="School Apps" style="background:url(images/gallery/newpattern4.png) repeat;">
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
-    	<div class="schoolheadertop">
-        	<a href="#index" class="aaa"><img class="schoolheaderimage" src="images/gallery/previousarrow.png" /></a>
-        </div>
-        <div class="schoolheadertext1">Home</div>
-        <div class="schoolheadertext2">Newsletters</div>
+    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+               		Newsletter
+                </span> 
     </div>
     <!--/header---->
     
@@ -997,11 +1024,11 @@
 
     <!---header -->
      <div  data-role="header" data-id="persistent"  data-position="fixed">
-    	<div class="schoolheadertop">
-        	<a href="#index" class="aaa"><img class="schoolheaderimage" src="images/gallery/previousarrow.png" /></a>
-        </div>
-        <div class="schoolheadertext1">Home</div>
-        <div class="schoolheadertext2">Locate us</div>
+    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+               		Locate Us
+                </span> 
     </div>
     <!--/header---->
     <!----content---->
@@ -1155,7 +1182,7 @@ function queryContactSuccess(tx,result){
 			$('#contact_id').html('');	
 			
 			contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%; height:50px;">';
-			contactappend+='<div><p style="font-size:15px; vertical-align:middle !important;position:relative; top:75%;">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div></div></center>';
+			contactappend+='<p style="font-size:15px; vertical-align:middle !important;position:relative; top:35%;">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div></center>';
 			
 			
 				for(var i=0; i< length ; i++)
@@ -2009,6 +2036,14 @@ var readstatus = $('#event'+event_id).attr('data-value3');
 	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
 	
 	}  
+  
+  
+  
+function gohomepage()
+{
+	$.mobile.changePage('#index');
+	}
+  
   
   
   /*
