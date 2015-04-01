@@ -39,6 +39,9 @@
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+	
+	<preference name="StatusBarBackgroundColor" value="#FFFFFF"/>
+
 
     <!-- Plugins -->
 
@@ -91,9 +94,6 @@
     <icon src="res/icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
     <icon src="res/icon/ios/icon-57-2x.png"         gap:platform="ios"        width="114" height="114" />
     <icon src="res/icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
-
-
-
 
 
     <!-- Define app splash screen for each platform. -->
