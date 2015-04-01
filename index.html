@@ -164,9 +164,9 @@
 	.contactsimagetop{
 		height:75px;
 		background-color:#D2D5D7;
-		margin-right:7px;
+		margin-right:0px;
 		margin-top:11px;
-		margin-left:7px;
+		margin-left:0px;
 		border-radius:2px;
 	}
 	.contactsimagetop1{
@@ -337,9 +337,9 @@
 	.contactsimagetop{
 		height:75px;
 		background-color:#D2D5D7;
-		margin-right:7px;
+		margin-right:0px;
 		margin-top:11px;
-		margin-left:7px;
+		margin-left:0px;
 		border-radius:2px;
 	}
 	.contactsimagetop1{
@@ -511,9 +511,9 @@
 	.contactsimagetop{
 		height:75px;
 		background-color:#D2D5D7;
-		margin-right:7px;
+		margin-right:0px;
 		margin-top:11px;
-		margin-left:7px;
+		margin-left:0px;
 		border-radius:2px;
 	}
 	.contactsimagetop1{
@@ -682,9 +682,9 @@
 	.contactsimagetop{
 		height:75px;
 		background-color:#D2D5D7;
-		margin-right:7px;
+		margin-right:0px;
 		margin-top:11px;
-		margin-left:7px;
+		margin-left:0px;
 		border-radius:2px;
 	}
 	.contactsimagetop1{
@@ -852,8 +852,49 @@
     <!----content---->
    <div data-role="content" id="contact_id" class="example-wrapper" data-iscroll>     
    
+   
+   
+   			
+<!--	<div class="contactsimagetop examplecolor" style="width:100%; height:50px;">
+	<div><p style="font-size:15px; vertical-align:central !important; text-align:center !important">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div></div>
 
+   
+   
+<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
+		<img class="contactsimage" src="img/noimageicon.png">
+		<img class="contactsimage" src="'+imagepath+image+'">		
+	</div><div style="float:right;  width:80% !important;">
     
+	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
+<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
+		<img class="contactsimage" src="img/noimageicon.png">
+		<img class="contactsimage" src="'+imagepath+image+'">		
+	</div><div style="float:right;  width:80% !important;">
+    
+	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
+<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
+		<img class="contactsimage" src="img/noimageicon.png">
+		<img class="contactsimage" src="'+imagepath+image+'">		
+	</div><div style="float:right;  width:80% !important;">
+    
+	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
+    
+--> 
 <!--    <div class="contactsmain examplecolor">
     	<div style="padding:1px;"><p style="text-align:center !important; vertical-align:middle !important">Main Reception &emsp; 004-22549000</p></div>
     </div>
@@ -1117,8 +1158,8 @@ function queryContactSuccess(tx,result){
 			{
 			$('#contact_id').html('');	
 			
-			contactappend+='<div class="contactsimagetop examplecolor" style="width:100%; height:50px;">';
-			contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div></div>';
+			contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%; height:50px;">';
+			contactappend+='<div><p style="font-size:15px; vertical-align:middle !important;position:relative; top:75%;">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div></div></center>';
 			
 			
 				for(var i=0; i< length ; i++)
@@ -1133,7 +1174,7 @@ function queryContactSuccess(tx,result){
 		
 		console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
 		
-		contactappend+='<div class="contactsimagetop examplecolor" style="width:100%;"><div style="float:left; width:20% !important;">';
+		contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%;"><div style="float:left; width:20% !important;">';
 		
 			if((image=='') || (navigator.network.connection.type == Connection.NONE) ){
 				//image = '';
@@ -1142,7 +1183,7 @@ function queryContactSuccess(tx,result){
 				contactappend+='<img class="contactsimage" src="'+imagepath+image+'">';		
 				}
 		contactappend+='</div><div style="float:right;  width:80% !important;">';
-		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:'+contactemail+'" >'+contactemail+'</a></p></div></div></div>';
+		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:'+contactemail+'" >'+contactemail+'</a></p></div></div></div></center>';
 		}
 		$('#contact_id').html(contactappend);		
 				
