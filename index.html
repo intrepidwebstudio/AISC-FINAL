@@ -17,6 +17,68 @@
 		if (document.readyState === 'complete')
 		{	  
 					
+					alert(window.innerWidth+'  '+window.innerHeight);
+					
+					var screenwidth=window.innerWidth;
+					var screenheight=window.innerHeight;
+					
+					if(screenwidth == 320 && screenheight == 480)
+					{
+						document.getElementById("sliderres1").style.height = "136px";
+						document.getElementById("sliderres2").style.height = "136px";
+						document.getElementById("sliderres3").style.height = "136px";
+						document.getElementById("sliderres4").style.height = "136px";
+						
+						$('#sliderres1').html('<img style="width:100%; height:100%;" src="slider/courage.png" >');
+						$('#sliderres2').html('<img style="width:100%; height:100%;"  src="slider/compassion.png" >');
+						$('#sliderres3').html('<img style="width:100%; height:100%;"  src="slider/confidence.png" >');
+						$('#sliderres4').html('<img style="width:100%; height:100%;"  src="slider/creativity.png" >');
+					}else 
+					if(screenwidth == 320 && screenheight == 568){
+						
+						document.getElementById("sliderres1").style.height = "229px";
+						document.getElementById("sliderres2").style.height = "229px";
+						document.getElementById("sliderres3").style.height = "229px";
+						document.getElementById("sliderres4").style.height = "229px";
+						
+						$('#sliderres1').html('<img style="width:100%; height:100%;" src="slider/courage@2x.png" >');
+						$('#sliderres2').html('<img style="width:100%; height:100%;"  src="slider/compassion@2x.png" >');
+						$('#sliderres3').html('<img style="width:100%; height:100%;"  src="slider/confidence@2x.png" >');
+						$('#sliderres4').html('<img style="width:100%; height:100%;"  src="slider/creativity@2x.png" >');
+						
+						}else if(screenwidth == 375 && screenheight == 667){
+						
+						
+						$('#locateusicon').attr('src','homeicons/LocateUs@3x.png');
+						$('#notification').attr('src','homeicons/notification@3x.png');
+						
+						document.getElementById("sliderres1").style.height = "323px";
+						document.getElementById("sliderres2").style.height = "323px";
+						document.getElementById("sliderres3").style.height = "323px";
+						document.getElementById("sliderres4").style.height = "323px";
+						
+						$('#sliderres1').html('<img style="width:100%; height:100%;"  src="slider/courage@3x.png" >');
+						$('#sliderres2').html('<img style="width:100%; height:100%;"  src="slider/compassion@3x.png" >');
+						$('#sliderres3').html('<img style="width:100%; height:100%;"  src="slider/confidence@3x.png" >');
+						$('#sliderres4').html('<img style="width:100%; height:100%;"  src="slider/creativity@3x.png" >');
+											
+						}else if(screenwidth == 414 && screenheight == 736){
+							
+						$('#locateusicon').attr('src','homeicons/LocateUs@3x.png');
+						$('#notification').attr('src','homeicons/notification@3x.png');
+							
+						document.getElementById("sliderres1").style.height = "392px";
+						document.getElementById("sliderres2").style.height = "392px";
+						document.getElementById("sliderres3").style.height = "392px";
+						document.getElementById("sliderres4").style.height = "392px";
+						
+						$('#sliderres1').html('<img style="width:100%; height:100%;" src="slider/courage@3x.png" >');
+						$('#sliderres2').html('<img style="width:100%; height:100%;"  src="slider/compassion@3x.png" >');
+						$('#sliderres3').html('<img style="width:100%; height:100%;"  src="slider/confidence@3x.png" >');
+						$('#sliderres4').html('<img style="width:100%; height:100%;"  src="slider/creativity@3x.png" >');
+							
+			        }
+					
 		}
 	};
    </script>
@@ -62,8 +124,8 @@ ul li.eventlist{
  @media only screen and (min-device-width: 320px) and (min-device-height: 480px) {
 	
 	/* Home */
-	.homeheader1{
-		
+	
+.homeheader1{
 		background-color:#38549B;
 		color:white;
 		padding:14px;
@@ -235,6 +297,10 @@ ul li.eventlist{
 @media  (min-device-width: 320px) and (min-device-height: 568px){
 	
 	/* Home */
+	
+	
+
+	
 	.homeheader1{
 		background-color:#38549B;
 		color:white;
@@ -743,6 +809,41 @@ ul li.eventlist{
 	}
 
 }
+
+
+
+.firstrowwidth1{
+		width:63.5% !important;
+	}
+.firstrowwidth2{
+	width:36.5% !important; 
+	}	
+.secondrowwidth1{
+	width:41.5% !important;
+	}
+.secondrowwidth2{
+	width:58.5% !important;
+	}	
+.thirdrowwidth1{
+	width:54.5% !important;
+	}
+.thirdrowwidth2{
+	width:45.5% !important;
+	}	
+.footerwidth{
+	width:50%;	
+	}	
+.customheight{
+	width:100%;
+	height:70px;
+	}	
+.customfooter{
+	width:100%;
+	height:40px;
+	}	
+	
+	
+
 </style>
 </head>
 <body class="app">
@@ -750,57 +851,54 @@ ul li.eventlist{
 <div data-role="page" id="index"  data-title="School Apps">
     <!-- /header -->
     <div data-role="header" data-id="persistent"  data-position="fixed">
-        <div style="background-color:#38549b; height:70px; width:100% !important"  >
+        <div style="background-color:#38549b; height:60px; width:100% !important"  >
           <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
                 Home
             </span> 
-
+		</div>
     </div>
     <!-- /header -->
     <!--content--->
     <div data-role='content'>
-    <div>
+    
         <ul class="rslides" id="slider1">
-            <li><img class="homeimage1"  src="iconimage/111 (2).png" /></li>
-            <li><img class="homeimage1"  src="iconimage/222 (2).png" /></li>
-            <li><img class="homeimage1"  src="iconimage/333 (2).png" /></li>
-            <li><img class="homeimage1"  src="iconimage/444 (2).png" /></li>
+            <li id="sliderres1"></li>
+            <li id="sliderres2"></li>
+            <li id="sliderres3"></li>
+            <li id="sliderres4"></li>
         </ul>
-    </div>
+    
     <div>
-       <div class="yellowtext1">
-            <div style="float:left;">
-                <img class="yellowimage1"  src="images/gallery/slidelogo.png" />
-                <div class="yellowcontent1">Welcome To AISC</div>
-            </div>
+       <div style="background-color:#E9A802 !important; width:100%; height:35px !important;">
+            <img src="yellow/storyboard.png" style=" height:100% !important;"   />
         </div>
         
-        <div style="width:60%;float:left;">
-            <a href="#event"><img class="homeimage" src="img/upcoming_Events@3x.png" /></a>
+        <div class="firstrowwidth1" style="float:left;">
+            <a href="#event"><img class="customheight" src="homeicons/upcoming_Events@3x.png" /></a>
         </div>
-        <div style="width:40%; float:right;">
-            <a href="#contact"><img class="homeimage" src="img/Contacts@3x.png" /></a>
+        <div class="firstrowwidth2" style="float:right;">
+            <a href="#contact"><img  class="customheight" src="homeicons/Contacts@3x.png" /></a>
         </div>
             
-        <div style="width:40%;float:left;">
-            <a href="#socialmedia"><img class="homeimage" src="iconimage/333.png" /></a>
+        <div class="secondrowwidth1" style="float:left;">
+            <a href="#socialmedia"><img class="customheight"  src="homeicons/Facebook@3x.png" /></a>
         </div>
-        <div style="width:60%; float:right;">
-            <a href="#newsletterlogedin"><img class="homeimage" src="iconimage/444.png" /></a>
-        </div>
-        
-        <div style="width:50%;float:left;"  >
-            <a href="#"><img  class="homeimage" onclick="loadurl('http://www.google.co.in')" src="iconimage/555.png" /></a>
-        </div>
-        <div style="width:50%; float:right;">
-            <a href="#"><img  class="homeimage" onclick="loadurl('http://aiscgallery.smugmug.com/')" src="iconimage/666.png" /></a>
+        <div class="secondrowwidth2"  style="float:right;">
+            <a href="#newsletterlogedin"><img class="customheight"  src="homeicons/Communication@3x.png" /></a>
         </div>
         
-        <div style="width:50%;float:left;">
-            <a href="#locateus"><img  class="homefooter" src="iconimage/777.png" /></a>
+        <div  class="thirdrowwidth1"  style="float:left;"  >
+            <a href="#"><img  class="customheight" onclick="loadurl('http://www.google.co.in')" src="homeicons/AISC_Live@3x.png" /></a>
         </div>
-        <div style="width:50%; float:right;">
-            <a href="#notification"><img  class="homefooter"  src="iconimage/888.png" /></a>
+        <div  class="thirdrowwidth2" style="float:right;">
+            <a href="#"><img class="customheight"   onclick="loadurl('http://aiscgallery.smugmug.com/')" src="homeicons/Photo_gallery@3x.png" /></a>
+        </div>
+        
+        <div  class="footerwidth" style="float:left;">
+            <a href="#locateus"><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
+        </div>
+        <div class="footerwidth" style="float:right;">
+            <a href="#notification"><img  class="customfooter" id="notification"  src="homeicons/notification.png" /></a>
         </div>
 		<div style="clear:both;"></div>
     </div>
@@ -813,7 +911,7 @@ ul li.eventlist{
 <div  data-role="page" id="event" data-title="School Apps" >
     <!---header -->
      <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
-    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
                		Events
@@ -866,7 +964,7 @@ ul li.eventlist{
 <div  data-role="page" id="contact" data-title="School Apps">
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:#38549b !important">
-    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
                		Contacts
@@ -940,11 +1038,12 @@ ul li.eventlist{
 <div  data-role="page" id="socialmedia" data-title="School Apps" style="background-color:#36559E;">
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
-        <div style="background-color:#38549b; height:70px; width:100% !important"  >
+        <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
                		Social Media
                 </span> 
+            </div>    
     </div>
     <!--/header---->
     <!----content---->
@@ -963,11 +1062,12 @@ ul li.eventlist{
 <div  data-role="page" id="newsletter" data-title="School Apps" style="background:url(images/gallery/newpattern4.png) repeat;">
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
-    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
                		Newsletter
                 </span> 
+    </div>
     </div>
     <!--/header---->
     <!----content---->
@@ -992,16 +1092,16 @@ ul li.eventlist{
 <div  data-role="page" id="newsletterlogedin" data-title="School Apps" style="background:url(images/gallery/newpattern4.png) repeat;">
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
-    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+    <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
                		Newsletter
                 </span> 
+           </div>     
     </div>
     <!--/header---->
     
-    
-    <div data-role="content" style="margin-top:12px !important;" >
+ <div data-role="content" style="margin-top:12px !important;" >
          <div class="example-wrapper" data-iscroll>            
             <ul id="Newsletter_id" data-role="listview"  data-divider="true" >
 <!--            	<li style="background-image:url(img1/cbg@2x.png);  height:80px !important;"><img style="margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="img1/Head.png" /><p> Head of elementary school </p>
@@ -1023,12 +1123,13 @@ ul li.eventlist{
 <div data-role="page" id="locateus" data-title="School Apps">
 
     <!---header -->
-     <div  data-role="header" data-id="persistent"  data-position="fixed">
-    <div style="background-color:#38549b; height:70px; width:100% !important"  >
+  <div  data-role="header" data-id="persistent"  data-position="fixed">
+    <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
                 <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
                		Locate Us
                 </span> 
+             </div>   
     </div>
     <!--/header---->
     <!----content---->
@@ -1038,7 +1139,7 @@ ul li.eventlist{
             Chennai-600 113, India<br />
             Tel: &ensp;91 44 22549000</p>
    
-    <script>
+   <!-- <script>
 	
      if(navigator.network.connection.type == Connection.NONE){
 		 
@@ -1050,7 +1151,7 @@ ul li.eventlist{
    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31101.52074852343!2d80.24288045000003!3d12.991662749999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267891f335e13%3A0xad60d1ce4c5881c9!2sTaramani%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1426759615649" width="100%" height="360px"  frameborder="0" style="border:0;"></iframe>
     
     
-    <script> } </script>
+    <script> } </script>-->
     
     
     </div>
@@ -1062,11 +1163,12 @@ ul li.eventlist{
 <div  data-role="page" id="notification" data-title="School Apps" style="background-color:#1E3869;">
     <!---header -->
      <div  data-role="header" data-id="persistent"  data-position="fixed">
-    	<div class="schoolheadertop">
-        	<a href="#index" class="aaa"><img class="schoolheaderimage" src="images/gallery/previousarrow.png" /></a>
-        </div>
-        <div class="schoolheadertext1">Home</div>
-        <div class="schoolheadertext2">Notification</div>
+        <div style="background-color:#38549b; height:60px; width:100% !important"  >
+                    <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                    <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+                        Notification
+                    </span> 
+                 </div>   
     </div>
     
      	<div data-role="content" style="margin-top:12px !important;" >	
