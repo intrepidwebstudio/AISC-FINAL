@@ -162,9 +162,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         registerDevice();
-		
-		loadimages();
-		
 					
             if(navigator.network.connection.type == Connection.NONE){
                // alert("nocon");
@@ -173,11 +170,12 @@ var app = {
             }
 			browser_setting();
 			
+			loadlinks();
 			loadupcomingevents();
 			loadcontacts();
 			loadupcomingNewsletter();
 			loadnotifications();
-		
+			
 		
 						// Android customization
 						cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
@@ -193,17 +191,16 @@ var app = {
 								});
 							}, 5000);
 						}
-
-		
     }
 };
 
 
 
 
-
+/*
 function loadimages()
 {
+	
 		  
 					var screenwidth=window.screen.width;
 					var screenheight=window.screen.height;
@@ -272,4 +269,4 @@ function loadimages()
 					
 		
 	
-	}
+	} */

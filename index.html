@@ -801,7 +801,7 @@ ul li.eventlist{
 	width:50%;	
 	}	
 .customheight{
-	width:100%;
+	width:101%;
 	height:70px;
 	}	
 .customfooter{
@@ -851,21 +851,21 @@ ul li.eventlist{
             <a href="#socialmedia"><img class="customheight"  src="homeicons/Facebook@3x.png" /></a>
         </div>
         <div class="secondrowwidth2"  style="float:right;">
-            <a href="#newsletterlogedin"><img class="customheight"  src="homeicons/Communication@3x.png" /></a>
+            <a href="#newsletter"><img class="customheight"  src="homeicons/Communication@3x.png" /></a>
         </div>
         
         <div  class="thirdrowwidth1"  style="float:left;"  >
-            <a href="#"><img  class="customheight" onclick="loadurl('http://www.google.co.in')" src="homeicons/AISC_Live@3x.png" /></a>
+            <a href="#"><img  class="customheight" id="aisclive" onclick="loadurl('http://www.google.co.in')" src="homeicons/AISC_Live@3x.png" /></a>
         </div>
         <div  class="thirdrowwidth2" style="float:right;">
-            <a href="#"><img class="customheight"   onclick="loadurl('http://aiscgallery.smugmug.com/')" src="homeicons/Photo_gallery@3x.png" /></a>
+            <a href="#"><img class="customheight" id="aiscgallery"   onclick="loadurl('http://aiscgallery.smugmug.com/')" src="homeicons/Photo_gallery@3x.png" /></a>
         </div>
         
         <div  class="footerwidth" style="float:left;">
             <a href="#locateus"><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
         </div>
         <div class="footerwidth" style="float:right;">
-            <a href="#notification"><img  class="customfooter" id="notification"  src="homeicons/notification.png" /></a>
+            <a href="#notification" onclick="loadnotificationpage()"><img  class="customfooter" id="notification"  src="homeicons/notification.png" /></a>
         </div>
 		<div style="clear:both;"></div>
     </div>
@@ -892,33 +892,30 @@ ul li.eventlist{
    	<!--/header---->
     <!----content---->
 	<div data-role="content">
-        
-     
-     <div class="example-wrapper" data-iscroll>            
-            <ul id="events_id" data-role="listview"  data-divider="true" >
+            <div class="example-wrapper" data-iscroll>            
+                <ul id="events_id" data-role="listview"  data-divider="true" >
+                    <li style="padding-left:35px !important;" class="eventlist">	
+                    <p class="list" style="color:#000;">Some event sample title goes here</p>
+                    <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+                    
+                    <li style="padding-left:35px !important;" class="eventlist">	
+                    <p class="list" style="color:#000;">Some event sample title goes here</p>
+                    <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+                    
+                    <li style="padding-left:35px !important;" class="eventlist">	
+                    <p class="list" style="color:#000;">Some event sample title goes here</p>
+                    <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+                    
+                    <li style="padding-left:35px !important;" class="eventlist">	
+                    <p class="list" style="color:#000;">Some event sample title goes here</p>
+                    <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+                    
+                    <li style="padding-left:35px !important;" class="eventlist">	
+                    <p class="list" style="color:#000;">Some event sample title goes here</p>
+                    <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
             
-<li style="padding-left:35px !important;" class="eventlist">	
-<p class="list" style="color:#000;">Some event sample title goes here</p>
-<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
-
-<li style="padding-left:35px !important;" class="eventlist">	
-<p class="list" style="color:#000;">Some event sample title goes here</p>
-<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
-
-<li style="padding-left:35px !important;" class="eventlist">	
-<p class="list" style="color:#000;">Some event sample title goes here</p>
-<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
-
-<li style="padding-left:35px !important;" class="eventlist">	
-<p class="list" style="color:#000;">Some event sample title goes here</p>
-<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
-
-<li style="padding-left:35px !important;" class="eventlist">	
-<p class="list" style="color:#000;">Some event sample title goes here</p>
-<p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
-
-       </ul>
-        </div>    
+                </ul>
+            </div>    
  
     </div>
     
@@ -1015,11 +1012,11 @@ ul li.eventlist{
     <!--/header---->
     <!----content---->
    	<div class="socialmediaimage1">
-    	<img class="socialmediamain" onclick="loadurl('https://www.facebook.com/pages/American-International-School-Chennai/550697601613642');" src="social_Images/fb@3x.png" />
-   		<img class="socialmediamain" onclick="loadurl('https://plus.google.com/+AischOrgPage/posts')" src="social_Images/google@3x.png" />
-        <img class="socialmediamain" onclick="loadurl('http://instagram.com/aischennai')" src="social_Images/instagram@3x.png" />
-        <img class="socialmediamain" onclick="loadurl('https://twitter.com/search?q=aischennai&src=typd')" src="social_Images/twitter@3x.png" />
-        <img class="socialmediamain" onclick="loadurl('https://www.youtube.com/channel/UCYyOwWYsuhLJ2TqU3KPPJwQ')" src="social_Images/youtube@3x.png" />
+    	<img class="socialmediamain" id="facebook" onclick="loadurl('https://www.facebook.com/pages/American-International-School-Chennai/550697601613642');" src="social_Images/fb@3x.png" />
+   		<img class="socialmediamain" id="google" onclick="loadurl('https://plus.google.com/+AischOrgPage/posts')" src="social_Images/google@3x.png" />
+        <img class="socialmediamain" id="instagram" onclick="loadurl('http://instagram.com/aischennai')" src="social_Images/instagram@3x.png" />
+        <img class="socialmediamain" id="twitter" onclick="loadurl('https://twitter.com/search?q=aischennai&src=typd')" src="social_Images/twitter@3x.png" />
+        <img class="socialmediamain" id="youtube" onclick="loadurl('https://www.youtube.com/channel/UCYyOwWYsuhLJ2TqU3KPPJwQ')" src="social_Images/youtube@3x.png" />
     </div>
    
 </div>
@@ -1048,7 +1045,7 @@ ul li.eventlist{
         	<img style="width:19px;margin-left:10px;margin-top:-4px;" src="images/gallery/checkbox1.png" /><p style="margin-top:-19px;margin-left:36px;color:#718497;">Remember me</p>
         </div>
         <div style="float:right; margin-top:-40px;">
-        	<div><p style="color:#1F87F8;">Submit</p></div>
+        	<div><p style="color:#1F87F8;" onclick="checkuser()">Submit</p></div>
         </div>
     </div>
    
@@ -2077,9 +2074,241 @@ function successSelectNotificationsCB(tx,result){
 	}
 
 
+ /************************************************************************************************************************************************
+	
+	LOAD LINKS CODE BELOW
+
+*******************************************************************************************************************************************************/
+
+function loadlinks()
+ {
+	 if(navigator.network.connection.type == Connection.NONE)
+	 {
+		 //alert("loadupcominglinks local");
+		loadlinksFromLocalDb(); 
+		 }
+		else{
+			//alert("loadupcominglinks server");
+			loadlinksfromserver(); 
+			//fetch contacts from online and update in local db 
+			//then call loadcontacts from local db function afgain;	
+		}		 
+	 }
+	 
+	 
+function loadlinksFromLocalDb()
+{
+	//alert("loadupcominglinks LocalDb");
+	db.transaction(populatelinksDB, errorlinksCB, successlinksCB);
+	}	 
+
+function populatelinksDB(tx) {
+	//alert("loadupcominglinks FromLocalDb  sdfsa asedf asdf");
+tx.executeSql('CREATE TABLE IF NOT EXISTS links (id INTEGER PRIMARY KEY AUTOINCREMENT, links_id INTEGER , links TEXT NOT NULL , linkpage TEXT NOT NULL , status INTEGER )');
+}
+
+function successlinksCB() {
+	db.transaction(querylinksDB,errorlinksCB);
+}
+function querylinksDB(tx){
+	var value ='1';
+tx.executeSql('SELECT * FROM links where status=?',[value],querylinksSuccess,errorlinksCB);
+}
+
+
+function errorlinksCB(err){
+	
+	//alert("ERROR : "+err);
+	}
+
+function querylinksSuccess(tx,result){
+		var length = result.rows.length;
+		
+		
+	//	alert("links LENGTH  = "+ length);
+		
+		var linksappend='';
+			if(length >0)
+			{
+			$('#links_id').html('');	
+				for(var i=0; i< length ; i++)
+				{
+			//alert(result.rows.item(i).newsurl);
+			
+		var links =	result.rows.item(i).links;
+		var	datetime =result.rows.item(i).linkpage;
+		
+		console.log("links ="+links+" datetime  "+linkpage );
+		
+		
+		console.log(linkpage+' onclick '+links);
+		$('#'+linkpage).attr('onclick',links);
+		
+/*		if(linkpage=='facebook')
+		{
+			$('#')
+			
+			}
+		else if(linkpage=='google')
+		{
+			
+			}
+		else if(linkpage=='instagram')
+		{
+
+
+			}
+		else if(linkpage=='twitter')	
+		{}
+		else if(linkpage=='youtube')	
+		{}
+		else if(linkpage=='aisclive')	
+		{}
+		else if(linkpage=='aiscgallery')	
+		{}
+		*/
+			
+				}// for close
+			
+			//alert("linksappend  "+linksappend);
+				
+			}//if close
+			else{
+				 if(navigator.network.connection.type == Connection.NONE){
+						navigator.notification.alert("No links available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+				 }else{
+					loadlinksfromserver(); 
+					 }
+			}
+}
+
+
+
+
+function loadlinksfromserver()
+{
+	db.transaction(populatelinksDB, errorlinksCB, successlinksCBServer);
+}
+
+
+function successlinksCBServer(){
+	
+//	alert('adasda !!!!');
+	
+	console.log(ajaxpath+'loadlinks.php?AppTokenId='+AppTokenId);
+		
+	$.support.cors = true;
+	$.ajax({
+	url:ajaxpath+'loadlinks.php?AppTokenId='+AppTokenId,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+	
+	deletelinks_data();	
+//	alert('evennts loaded');
+	//	alert(data.status.code);
+			if(data.status.code=='100')
+			{
+		//		alert(data.Response);
+		//		alert('11');
+				var	Response = data.Response;
+		//		alert('14');
+
+			$.each(Response, function(index, element) {
+				db.transaction( function(tx){ insertlinksvalues(tx, element.links_id, element.links, element.linkpage, element.status )}, ErrorCallBack );	
+			});
+				loadlinksFromLocalDb();
+				
+		}else{
+				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+				}	
+	},
+	error: function(e)
+	{
+	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	}
+	});
+ }
+ 
+ 
+function ErrorCallBack(err){
+	//alert("ERROR 11 :"+err.message);
+}
+
+
+function insertlinksvalues(tx,parameter1,parameter2,parameter3,parameter4)
+{
+//	alert('122');
+//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
+	tx.executeSql('INSERT INTO links( links_id, links ,linkpage ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
+ }
+
+
+
+
+
+
+
+function deletelinks_data()
+{
+	//alert('aa');
+	
+	db.transaction(function(tx){
+				var value='0';
+				var cond='0';
+        		tx.executeSql("UPDATE links set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+		},ErrordeletteCB);	 
+		
+	}
+	
+function ErrordeletteCB(err)
+{
+	//alert("Error event delete = "+err.message);
+	
+	} 	
+	
+function ErrordelteCB(err){
+	//alert("ErrordelteCB "+err.message);
+	
+	}
+
+function successSelectlinksCB(tx,result){
+	
+	//alert("Length of rows in table = "+ result.rows.length);
+		//alert(" Every ");
+	}
+
+
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  function loadnotificationpage()
+  {
+	  
+	  loadlinks();
+	  
+	  
+	  
+	  }
   
   
   
@@ -2114,131 +2343,68 @@ function gohomepage()
 	}
   
   
-  
-  /*
-  
-  	var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it
+ 
+ function checkuser()
+ {
+	 
+	 var password = $('#password').val();
+	 
+ if(navigator.network.connection.type == Connection.NONE){
+	 
+	 navigator.notification.alert("No network available ", alertCallback, "AISC", "OK"); 
+ }else{
+	 	 
+	 if(password!='' && password!=null)
+	 {
+						$.support.cors = true;
+						$.ajax({
+						url:ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password,
+						type:'POST',
+						contentType: "application/json",
+						async: true,
+						dataType: 'json',
+						crossDomain: true,
+						success: function(data)
+						{
+						
+					//	deleteNotifications_data();	
+						//	alert('evennts loaded');
+						//	alert(data.status.code);
+								if(data.status.code=='100')
+								{
+									
+								var	Response = data.Response;
+								
+								if(Response.passwordStatus=='success')
+								{
+									$.mobile.changePage('#newsletterloggedin');
+	    						  }
+								else{
+									navigator.notification.alert("Password Incorrect", alertCallback, "AISC", "OK");
+									}	
+									
+									
+									}else{
+									navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+							}	
+						},
+						error: function(e)
+						{
+						   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+						}
+						});
 
-function populateDB(tx) {
-tx.executeSql('CREATE TABLE IF NOT EXISTS upcomingevents (id INTEGER PRIMARY KEY AUTOINCREMENT, eventname TEXT NOT NULL , datetime DATETIME , readstatus INTEGER )');
-}
-function errorCB(err) {
-}
-function successCB() {
-	db.transaction(queryDB,errorCB);
-}
-function queryDB(tx){
-tx.executeSql('SELECT * FROM upcomingevents ',[],querySuccess,errorCB);
-}
-function querySuccess(tx,result){
-		var length = result.rows.length;
-			if(length >0)
-			{
-				for(var i=0; i< length ; i++)
-				{
-				var	eventname = result.rows.item(i).eventname;
-				var	datetime= result.rows.item(i).datetime;				
-				var	readstatus = result.rows.item(i).readstatus;
-				}
-			}//if close
-			else{
-				//CONNECT TO SERVER
-			}
-}
-function upcomingevents()
-{
-  db.transaction(populateDB, errorCB, successCB);	
-	}
-	
-	
-	
-	
-function validate_user()
-{
-alert(ajaxpath+'userinsert.php?username='+username+'&userphone='+userphone+'&branch_id='+branch_id+'&company_id='+company_id);
-$.support.cors = true;
-$.ajax({
-url:ajaxpath+'userinsert.php?username='+username+'&userphone='+userphone+'&branch_id='+branch_id+'&company_id='+company_id,
-type:'POST',
-contentType: "application/json",
-async: true,
-dataType: 'json',
-crossDomain: true,
-success: function(data)
-	{
-		alert(data.Response);
-		alert(data.Response.status);
-			if(data.Response.status=='100')
-			{
-				alert('11');
-				var	Response = data.Response;
-				alert('14');
-				var	readstatus='0';
-				db.transaction( function(tx){ insertvalues(tx, Response.eventsname, Response.user_id, readstatus )}, ErrorCallBack );	
-		}else{
-				navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "Ebbu", "OK");
-				}	
-	},
-	error: function(e)
-	{
- 	   navigator.notification.alert("System error 83014. Please try again in a couple of minutes.", alertCallback, "Ebbu", "Done");
-	}
-  });
-}	
-	
-	
-function insertvalues(tx,parameter1,parameter2,parameter3)
-{
-	alert('121');
-	globalusername = parameter1;
-	globaluserid= parameter2;
-	globaluserphone= parameter3;
-	alert(parameter1+'===='+parameter2+'===='+parameter3);
-	tx.executeSql('INSERT INTO atozuser(username, user_id , phone ) VALUES (?,?,?)',[parameter1,parameter2,parameter3],userinsert);
-	
-	}
-function userinsert()
-{
-	swiperParent.swipeTo(2);
-	
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	function alertCallback(){
-}
-function ErrorCallBack(err){
-}
-
-
-
-*/
-
-
-function checkConnection() {
-	alert('sssssss');
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    alert('Connection type: ' + states[networkState]);
-}
-
+		 
+		 
+		 }else{
+				navigator.notification.alert("Please enter the password", alertCallback, "AISC", "OK"); 
+			 }
+			 
+			 
+      }
+	 
+} 
+ 
 
 
 
