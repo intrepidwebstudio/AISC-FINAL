@@ -894,7 +894,7 @@ ul li.eventlist{
 	<div data-role="content">
             <div class="example-wrapper" data-iscroll>            
                 <ul id="events_id" data-role="listview"  data-divider="true" >
-                    <li style="padding-left:35px !important;" class="eventlist">	
+<!--                    <li style="padding-left:35px !important;" class="eventlist">	
                     <p class="list" style="color:#000;">Some event sample title goes here</p>
                     <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
                     
@@ -913,7 +913,7 @@ ul li.eventlist{
                     <li style="padding-left:35px !important;" class="eventlist">	
                     <p class="list" style="color:#000;">Some event sample title goes here</p>
                     <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
-            
+-->            
                 </ul>
             </div>    
  
@@ -1037,7 +1037,7 @@ ul li.eventlist{
     <!----content---->
    	<center>
     	<div style="width:75%; margin-top:80px;">
-        	<input placeholder="Enter Your Password" form="" class="" />
+        	<input placeholder="Enter Your Password" id="getpassword" form="" class="" />
     	</div>
     </center>
     <div style="margin-left:46px;margin-right:46px;margin-top:60px;">
@@ -2347,7 +2347,7 @@ function gohomepage()
  function checkuser()
  {
 	 
-	 var password = $('#password').val();
+	 var password = $('#getpassword').val();
 	 
  if(navigator.network.connection.type == Connection.NONE){
 	 
