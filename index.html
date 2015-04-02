@@ -855,10 +855,10 @@ ul li.eventlist{
         </div>
         
         <div  class="thirdrowwidth1"  style="float:left;"  >
-            <a href="#"><img  class="customheight" id="aisclive"  /></a>
+            <a href="#"><img  class="customheight" id="aisclive"  src="homeicons/AISC_Live@3x.png" /></a>
         </div>
         <div  class="thirdrowwidth2" style="float:right;">
-            <a href="#"><img class="customheight" id="aiscgallery"    /></a>
+            <a href="#"><img class="customheight" id="aiscgallery"  src="homeicons/Photo_gallery@3x.png"   /></a>
         </div>
         
         <div  class="footerwidth" style="float:left;">
@@ -2149,7 +2149,7 @@ function querylinksSuccess(tx,result){
 		console.log(linkpage+' onclick '+links);
 		
 		
-		$('#'+linkpage).on('click',function(){ loadurl(links)	});
+		$('#'+linkpage).attr('onclick','loadurl(\''+links+'\')' );
 		
 /*		if(linkpage=='facebook')
 		{
