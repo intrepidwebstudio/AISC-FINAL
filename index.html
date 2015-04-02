@@ -855,10 +855,10 @@ ul li.eventlist{
         </div>
         
         <div  class="thirdrowwidth1"  style="float:left;"  >
-            <a href="#"><img  class="customheight" id="aisclive" onclick="loadurl('http://www.google.co.in')" src="homeicons/AISC_Live@3x.png" /></a>
+            <a href="#"><img  class="customheight" id="aisclive"  /></a>
         </div>
         <div  class="thirdrowwidth2" style="float:right;">
-            <a href="#"><img class="customheight" id="aiscgallery"   onclick="loadurl('http://aiscgallery.smugmug.com/')" src="homeicons/Photo_gallery@3x.png" /></a>
+            <a href="#"><img class="customheight" id="aiscgallery"    /></a>
         </div>
         
         <div  class="footerwidth" style="float:left;">
@@ -1012,11 +1012,11 @@ ul li.eventlist{
     <!--/header---->
     <!----content---->
    	<div class="socialmediaimage1">
-    	<img class="socialmediamain" id="facebook" onclick="loadurl('https://www.facebook.com/pages/American-International-School-Chennai/550697601613642');" src="social_Images/fb@3x.png" />
-   		<img class="socialmediamain" id="google" onclick="loadurl('https://plus.google.com/+AischOrgPage/posts')" src="social_Images/google@3x.png" />
-        <img class="socialmediamain" id="instagram" onclick="loadurl('http://instagram.com/aischennai')" src="social_Images/instagram@3x.png" />
-        <img class="socialmediamain" id="twitter" onclick="loadurl('https://twitter.com/search?q=aischennai&src=typd')" src="social_Images/twitter@3x.png" />
-        <img class="socialmediamain" id="youtube" onclick="loadurl('https://www.youtube.com/channel/UCYyOwWYsuhLJ2TqU3KPPJwQ')" src="social_Images/youtube@3x.png" />
+    	<img class="socialmediamain" id="facebook"  src="social_Images/fb@3x.png" />
+   		<img class="socialmediamain" id="google"  src="social_Images/google@3x.png" />
+        <img class="socialmediamain" id="instagram"  src="social_Images/instagram@3x.png" />
+        <img class="socialmediamain" id="twitter"  src="social_Images/twitter@3x.png" />
+        <img class="socialmediamain" id="youtube"  src="social_Images/youtube@3x.png" />
     </div>
    
 </div>
@@ -2149,7 +2149,7 @@ function querylinksSuccess(tx,result){
 		console.log(linkpage+' onclick '+links);
 		
 		
-		$('#'+linkpage).attr('onclick',links);
+		$('#'+linkpage).on('click',function(){ loadurl(links)	});
 		
 /*		if(linkpage=='facebook')
 		{
