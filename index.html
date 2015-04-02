@@ -2351,7 +2351,7 @@ function gohomepage()
 	 
  if(navigator.network.connection.type == Connection.NONE){
 	 
-	 navigator.notification.alert("No network available ", alertCallback, "AISC", "OK"); 
+	 navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
  }else{
 	 	 
 	 if(password!='' && password!=null)
@@ -2424,12 +2424,26 @@ function gohomepage()
         }
         function loadurl(url_link){
 			
+			
+if(navigator.network.connection.type == Connection.NONE)
+	{
+		navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
+		
+		}
+		else{
+			
 			iabRef = window.open(url_link, '_blank','toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
-			$.support.cors = true;
+			
+						$.support.cors = true;
 			iabRef.addEventListener('exit', iabClose);
             iabRef.addEventListener('share', iabShare);
             iabRef.addEventListener('loadstart', iabLoadStart);
             iabRef.addEventListener('loadstop', iabLoadStop);
+
+			
+			}
+			
+			
         }
 		
 		
