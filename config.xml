@@ -70,9 +70,9 @@
 	<gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
 	<gap:plugin name="nl.x-services.plugins.calendar" />
 	<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.6.4" />
+	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.6" />
 	
-	
-	
+
 	
 <gap:platform name="ios" />
 <gap:plugin name="com.kerosieben.cordova.plugins.ios7scrollfix" version="0.1.0" />
@@ -80,6 +80,15 @@
 <!--<gap:plugin name="com.wizardlogic.cordova.ios_keyboard" version="2.0.0" />-->
 <gap:plugin name="com.ionic.keyboard" version="1.0.3" />
 <preference name="IOS7PreventWebViewScrolling" value="true"/>
+
+
+
+<!-- for iOS -->
+<feature name="SocialSharing">
+  <param name="ios-package" value="SocialSharing" />
+</feature>
+<!-- for iOS -->
+
 
 
 <feature name="NetworkStatus">

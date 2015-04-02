@@ -1159,7 +1159,7 @@ ul li.eventlist{
 <script type="text/javascript" src="js/pushapps.js"></script>
 <script type="text/javascript" src="js/iscroll.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.iscrollview.js"></script>
-
+<script type="text/javascript" src="js/SocialSharing.js"></script>
 
 <script>
     // You can also use "$(window).load(function() {"
@@ -1272,7 +1272,7 @@ function queryContactSuccess(tx,result){
 				contactappend+='<img class="contactsimage" src="'+imagepath+image+'">';		
 				}
 		contactappend+='</div><div style="float:right;  width:80% !important;">';
-		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:'+contactemail+'" >'+contactemail+'</a></p></div></div></div></center>';
+		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " onclick="gotomail(\''+contactemail+'\')" >'+contactemail+'</a></p></div></div></div></center>';
 		}
 		$('#contact_id').html(contactappend);		
 				
@@ -2341,6 +2341,27 @@ function gohomepage()
 {
 	$.mobile.changePage('#index');
 	}
+	
+	
+function gotomail(emaillink)
+{
+	var mailid =[];
+	
+	mailid.push(emaillink);
+	
+window.plugins.socialsharing.shareViaEmail(
+  '', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+  '',
+  mailid, // TO: must be null or an array
+  null, // CC: must be null or an array
+  null, // BCC: must be null or an array
+  null // FILES: can be null, a string, or an array
+		);					
+	   
+	
+	
+	}	
+	
   
   
  
