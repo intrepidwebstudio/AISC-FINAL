@@ -1058,7 +1058,7 @@ ul li.eventlist{
 <!-----------------/Newsletter---------------->
 
 <!------------------Newsletter---------------->
-<div  data-role="page" id="newsletterlogedin" data-title="School Apps" >
+<div  data-role="page" id="newsletterloggedin" data-title="School Apps" >
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
@@ -2463,7 +2463,7 @@ window.plugins.socialsharing.shareViaEmail(
         }
         function loadurl(url_link){
 			
-			
+			alert(url_link);
 if(navigator.network.connection.type == Connection.NONE)
 	{
 		navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
@@ -2471,6 +2471,7 @@ if(navigator.network.connection.type == Connection.NONE)
 		}
 		else{
 			
+			alert('urrl  = '+ url_link);
 			iabRef = window.open(url_link, '_blank','toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 			
 						$.support.cors = true;
