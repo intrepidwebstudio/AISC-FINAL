@@ -2123,30 +2123,32 @@ tx.executeSql('SELECT * FROM links where status=?',[value],querylinksSuccess,err
 
 function errorlinksCB(err){
 	
-	//alert("ERROR : "+err);
+	alert("ERROR : "+err);
 	}
 
 function querylinksSuccess(tx,result){
 		var length = result.rows.length;
 		
 		
-	//	alert("links LENGTH  = "+ length);
+		alert("links LENGTH  = "+ length);
 		
 		var linksappend='';
 			if(length >0)
 			{
-			$('#links_id').html('');	
-				for(var i=0; i< length ; i++)
-				{
+			
+	for(var i=0; i< length ; i++)
+	{
 			//alert(result.rows.item(i).newsurl);
 			
 		var links =	result.rows.item(i).links;
-		var	datetime =result.rows.item(i).linkpage;
+		var	linkpage =result.rows.item(i).linkpage;
 		
 		console.log("links ="+links+" datetime  "+linkpage );
 		
 		
 		console.log(linkpage+' onclick '+links);
+		
+		
 		$('#'+linkpage).attr('onclick',links);
 		
 /*		if(linkpage=='facebook')
@@ -2380,11 +2382,16 @@ window.plugins.socialsharing.shareViaEmail(
 	 
  if(navigator.network.connection.type == Connection.NONE){
 	 
+		console.log(' intrenet not working'); 	 
 	 navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
  }else{
 	 	 
+		console.log(' password check ajax '); 
+		 
 	 if(password!='' && password!=null)
 	 {
+		 
+		 console.log(ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password);
 						$.support.cors = true;
 						$.ajax({
 						url:ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password,
@@ -2398,11 +2405,14 @@ window.plugins.socialsharing.shareViaEmail(
 						
 					//	deleteNotifications_data();	
 						//	alert('evennts loaded');
-						//	alert(data.status.code);
+							alert(data.status.code);
+							
 								if(data.status.code=='100')
 								{
 									
 								var	Response = data.Response;
+								
+								alert("Response===="+Response.passwordStatus);
 								
 								if(Response.passwordStatus=='success')
 								{
