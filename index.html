@@ -1023,7 +1023,7 @@ ul li.eventlist{
 <!------------------/Socialmedia---------------->
 
 <!------------------Newsletter---------------->
-<div  data-role="page" id="newsletter" data-title="School Apps" style="background:url(images/gallery/newpattern4.png) repeat;">
+<div  data-role="page" id="newsletter" data-title="School Apps">
     <!---header -->
     <div data-role="header" data-id="persistent"  data-position="fixed">
          <div style="background-color:#38549b; height:60px; width:100% !important"  >
@@ -1035,19 +1035,24 @@ ul li.eventlist{
     </div>
     <!--/header---->
     <!----content---->
-   	<center>
-    	<div style="width:75%; margin-top:80px;">
-        	<input placeholder="Enter Your Password" id="getpassword" form="" class="" />
-    	</div>
-    </center>
-    <div style="margin-left:46px;margin-right:46px;margin-top:60px;">
-    	<div style="float:left; margin-top:-21px; margin-left:-8px;">
-        	<img style="width:19px;margin-left:10px;margin-top:-4px;" src="images/gallery/checkbox1.png" /><p style="margin-top:-19px;margin-left:36px;color:#718497;">Remember me</p>
-        </div>
-        <div style="float:right; margin-top:-40px;">
-        	<div><p style="color:#1F87F8;" onclick="checkuser()">Submit</p></div>
-        </div>
-    </div>
+    <div data-role="content" >
+            <center>
+                <div style="width:75%; padding-top:80px;">
+                    <input placeholder="Enter Your Password" id="getpassword"  form="" class="" />
+                    <br />
+                                    
+
+                	 	<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" /> <p style="color:#718497; margin-top:0px;float:left !important">&emsp;Remember me</p>
+
+                    
+                    <span style="float:right">
+	                    <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; text-decoration:none !important; color:#000 !important" onclick="checkuser()">Submit</a>
+                    </span>
+                    
+                </div>
+            </center>
+            
+   	</div>
    
 </div>
 <!-----------------/Newsletter---------------->
@@ -2084,11 +2089,11 @@ function loadlinks()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 //alert("loadupcominglinks local");
+		 alert("loadupcominglinks local");
 		loadlinksFromLocalDb(); 
 		 }
 		else{
-			//alert("loadupcominglinks server");
+			alert("loadupcominglinks server");
 			loadlinksfromserver(); 
 			//fetch contacts from online and update in local db 
 			//then call loadcontacts from local db function afgain;	
@@ -2243,7 +2248,7 @@ function ErrorCallBack(err){
 function insertlinksvalues(tx,parameter1,parameter2,parameter3,parameter4)
 {
 //	alert('122');
-//	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
+	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
 	tx.executeSql('INSERT INTO links( links_id, links ,linkpage ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
  }
 
@@ -2369,6 +2374,9 @@ window.plugins.socialsharing.shareViaEmail(
  {
 	 
 	 var password = $('#getpassword').val();
+	 
+	 
+	 alert("Password = "+ password);
 	 
  if(navigator.network.connection.type == Connection.NONE){
 	 
