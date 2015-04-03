@@ -68,7 +68,7 @@
     <!-- Third party plugins -->
     <gap:plugin name="com.pushapps.phonegap" version="1.6.0" />
 	<gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
-	<gap:plugin name="nl.x-services.plugins.calendar" />
+	<gap:plugin name="nl.x-services.plugins.calendar" version="4.2" />
 	<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.6.4" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.6" />
 	
