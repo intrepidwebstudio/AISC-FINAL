@@ -2368,17 +2368,22 @@ function successSelectlinksCB(tx,result){
 function addeventcalendar(event_id)
 {
 	
-var eventtitle = $('#event'+event_id).attr('data-value1');
-var datetime = $('#event'+event_id).attr('data-value2');
-var readstatus = $('#event'+event_id).attr('data-value3');
+var eventtitle = $('#'+event_id).attr('data-value1');
+var datetime = $('#'+event_id).attr('data-value2');
+var readstatus = $('#'+event_id).attr('data-value3');
 
 
-console.log("Event Title = " +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
+console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
 
-		alert('event add');
+		var datetime_array = datetime.split(' ');
+		var date_array = datetime_array[0].split('-');
+		var time_array = datetime_array[1].split(':');
+		
+		
+		
 		
 		  // prep some variables
-  var startDate = new Date(2015,4,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
+  var startDate = new Date(date_array[2],date_array[1],date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
   var endDate = new Date(2015,4,15,19,30,0,0,0);
   var title = "My nice event";
   var location = "Home";
