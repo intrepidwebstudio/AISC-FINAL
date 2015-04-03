@@ -2383,7 +2383,7 @@ console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " +
 		
 		
 		  // prep some variables
-  var startDate = new Date(date_array[2],date_array[1],date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
+  var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
   var endDate = new Date(2015,4,15,19,30,0,0,0);
   var title = "My nice event";
   var location = "Home";
