@@ -38,7 +38,7 @@
 	
 	
 	.ui-listview > li p.list {
-	font-size: .80em;
+	font-size: .85em;
 	font-weight: normal;
 	display: block !important;
 	margin: 0.6em 0 !important;
@@ -809,6 +809,33 @@ ul li.eventlist{
 	height:40px;
 	}	
 	
+	.ui-listview .ui-li-has-thumb > img:first-child, .ui-listview .ui-li-has-thumb > .ui-btn > img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb
+	{
+	
+	left:10px;
+	top:7px;	
+		
+		}
+
+.newslettericons
+{
+	background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
+	}		
+.newslettericons img
+{
+  width:20% !important;	
+	}	
+.newslettericons p{
+	margin-top:10px !important; 
+	font-size: 0.85em !important;   
+	}	
+		
+		
+		
+	.ui-listview > .ui-li.newslettericons-has-thumb > .ui-btn, .ui-listview > .ui-li.newslettericons-static.ui-li.newslettericons-has-thumb	
+	{
+		padding-left:5.25em !important;	
+		}
 	
 
 </style>
@@ -819,7 +846,7 @@ ul li.eventlist{
     <!-- /header -->
     <div data-role="header" data-id="persistent"  data-position="fixed">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
-          <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+          <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                 Home
             </span> 
 		</div>
@@ -880,7 +907,7 @@ ul li.eventlist{
      <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
               <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                         Events
                 </span> 
         </div>
@@ -894,10 +921,6 @@ ul li.eventlist{
 	<div data-role="content">
             <div class="example-wrapper" data-iscroll>            
                 <ul id="events_id" data-role="listview"  data-divider="true" >
-<!--                    <li style="padding-left:35px !important;" class="eventlist">	
-                    <p class="list" style="color:#000;">Some event sample title goes here</p>
-                    <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
-                    
                     <li style="padding-left:35px !important;" class="eventlist">	
                     <p class="list" style="color:#000;">Some event sample title goes here</p>
                     <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
@@ -913,7 +936,11 @@ ul li.eventlist{
                     <li style="padding-left:35px !important;" class="eventlist">	
                     <p class="list" style="color:#000;">Some event sample title goes here</p>
                     <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
--->            
+                    
+                    <li style="padding-left:35px !important;" class="eventlist">	
+                    <p class="list" style="color:#000;">Some event sample title goes here</p>
+                    <p class="list eventcontenttext2" style="color:#000" ><strong>08:00:00 AM</strong></p></li>
+    
                 </ul>
             </div>    
  
@@ -930,7 +957,7 @@ ul li.eventlist{
     <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:#38549b !important">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Contacts
                 </span> 
        </div>
@@ -1004,7 +1031,7 @@ ul li.eventlist{
     <div  data-role="header" data-id="persistent"  data-position="fixed">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:38% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+                <span style="position:absolute !important; font-size:20px !important; left:38% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Social Media
                 </span> 
             </div>    
@@ -1028,7 +1055,7 @@ ul li.eventlist{
     <div data-role="header" data-id="persistent"  data-position="fixed">
          <div style="background-color:#38549b; height:60px; width:100% !important"  >
             <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-            <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+            <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                 Newsletter
             </span> 
         </div>
@@ -1063,19 +1090,51 @@ ul li.eventlist{
     <div  data-role="header" data-id="persistent"  data-position="fixed">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Newsletter
                 </span> 
            </div>     
     </div>
     <!--/header---->
     
- <div data-role="content" style="margin-top:12px !important;" >
+ <div data-role="content">
          <div class="example-wrapper" data-iscroll>            
             <ul id="Newsletter_id" data-role="listview"  data-divider="true" >
-<!--            	<li style="background-image:url(img1/cbg@2x.png);  height:80px !important;"><img style="margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="img1/Head.png" /><p> Head of elementary school </p>
-                <p> <strong>Andrew Hoover</strong> </p> </li>
--->           </ul>
+
+
+
+<!--					
+                    <li onclick=loadurl() class="newslettericons" >
+                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/Head@2x.png"  />
+                            <p>Head of High School
+                            <br /><br />
+               	      		<strong style="color:#F00">Andrew Hoover</strong>                             
+                    </li>
+                    <li onclick=loadurl() class="newslettericons">
+                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/e@2x.png" />
+                            <p>Head of High School
+                            <br /><br />
+                         	<strong>Andrew Hoover</strong> </p>
+                         </li>
+
+                    <li onclick=loadurl() class="newslettericons">
+                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/p@2x.png" />
+                            <p>Head of High School
+                            <br /><br />
+                            <strong>Andrew Hoover</strong> </p>
+                         </li>
+
+                    <li onclick=loadurl() class="newslettericons">
+                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/m@2x.png" />
+                            <p>Head of High School
+                            <br /><br />
+                      		<strong>Andrew Hoover</strong> </p>
+                         </li>
+                         
+                         -->
+
+
+			</ul>
         </div>    
     </div>
     
@@ -1095,7 +1154,7 @@ ul li.eventlist{
   <div  data-role="header" data-id="persistent"  data-position="fixed">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Locate Us
                 </span> 
              </div>   
@@ -1108,6 +1167,11 @@ ul li.eventlist{
             Chennai-600 113, India<br />
             Tel: &ensp;91 44 22549000</p>
    
+   
+   
+   <iframe src="http://maps.apple.com/maps?daddr=80.246433,12.982186" height="500px" width="100%" frameborder="0" style="border:none !important"  >
+   
+   </iframe>
    <!-- <script>
 	
      if(navigator.network.connection.type == Connection.NONE){
@@ -1134,7 +1198,7 @@ ul li.eventlist{
      <div  data-role="header" data-id="persistent"  data-position="fixed">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
                     <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                    <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:lighter !important ">
+                    <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                         Notification
                     </span> 
                  </div>   
@@ -1253,7 +1317,7 @@ function queryContactSuccess(tx,result){
 			$('#contact_id').html('');	
 			
 			contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%; height:50px;">';
-			contactappend+='<p style="font-size:15px; vertical-align:middle !important;position:relative; top:35%;">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div></center>';
+			contactappend+='<p style="font-size:15px; vertical-align:middle !important;position:relative; top:35%;">Main Reception 044 - 22549000 </p></div></center>';
 			
 			
 				for(var i=0; i< length ; i++)
@@ -1719,7 +1783,7 @@ function loadNewsletterFromLocalDb()
 
 function populateNewsletterDB(tx) {
 	//alert("loadupcomingNewsletter FromLocalDb  sdfsa asedf asdf");
-tx.executeSql('CREATE TABLE IF NOT EXISTS newsletter (id INTEGER PRIMARY KEY AUTOINCREMENT, newsletter_id INTEGER , name TEXT NOT NULL , department TEXT NOT NULL , newsimage TEXT NOT NULL , newsurl TEXT NOT NULL , status INTEGER )');
+tx.executeSql('CREATE TABLE IF NOT EXISTS newsletter (id INTEGER PRIMARY KEY AUTOINCREMENT, newsletter_id INTEGER , name TEXT NOT NULL , department TEXT NOT NULL , newsimage TEXT NOT NULL , newsurl TEXT NOT NULL , color TEXT NOT NULL, status INTEGER )');
 }
 
 function successNewsletterCB() {
@@ -1754,12 +1818,18 @@ function queryNewsletterSuccess(tx,result){
 		var	name =result.rows.item(i).name;
 		var newsimage = result.rows.item(i).newsimage;
 		var newsurl = result.rows.item(i).newsurl;
+		var color = result.rows.item(i).color;
 		
 		console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
 
 
-		Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') style="background-image:url(img1/cbg@2x.png) !important;  height:80px !important;"><img  style="margin-top:25px; margin-left:25px; !important; vertical-align:middle !important"  src="'+imagepath+newsimage+'" /><p> '+department+' </p>';
-		Newsletterappend+='<p> <strong>'+name+'</strong> </p></li>';
+Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') class="newslettericons" >';
+Newsletterappend+='<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="'+imagepath+newsimage+'"  />';
+Newsletterappend+='<p>'+department+'<br />';
+Newsletterappend+='<strong style="color:'+color+'">'+name+'</strong>';                             
+Newsletterappend+='</li>';
+
+
 			}
 			
 			//alert("Newsletterappend  "+Newsletterappend);
@@ -1819,7 +1889,7 @@ function successNewsletterCBServer(){
 			//	alert('14');
 
 			$.each(Response, function(index, element) {
-				db.transaction( function(tx){ insertNewslettervalues(tx, element.newsletter_id, element.name, element.department, element.newsimage, element.newsurl ,element.status )}, ErrorCallBack );	
+				db.transaction( function(tx){ insertNewslettervalues(tx, element.newsletter_id, element.name, element.department, element.newsimage, element.newsurl , element.color ,element.status )}, ErrorCallBack );	
 			});
 				loadNewsletterFromLocalDb();
 				
@@ -1840,11 +1910,11 @@ function ErrorCallBack(err){
 }
 
 
-function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,parameter5,parameter6)
+function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,parameter5,parameter6,parameter7)
 {
 //	alert('122');
 //	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4+'====='+parameter5+'====='+parameter6);
-	tx.executeSql('INSERT INTO newsletter( newsletter_id, name ,department ,newsimage, newsurl ,status ) VALUES (?,?,?,?,?,?)',[parameter1,parameter2,parameter3,parameter4,parameter5,parameter6]);
+	tx.executeSql('INSERT INTO newsletter( newsletter_id, name ,department ,newsimage, newsurl, color ,status ) VALUES (?,?,?,?,?,?,?)',[parameter1,parameter2,parameter3,parameter4,parameter5,parameter6,parameter7]);
  }
 
 
@@ -2089,11 +2159,11 @@ function loadlinks()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 alert("loadupcominglinks local");
+		// alert("loadupcominglinks local");
 		loadlinksFromLocalDb(); 
 		 }
 		else{
-			alert("loadupcominglinks server");
+		//	alert("loadupcominglinks server");
 			loadlinksfromserver(); 
 			//fetch contacts from online and update in local db 
 			//then call loadcontacts from local db function afgain;	
@@ -2123,14 +2193,14 @@ tx.executeSql('SELECT * FROM links where status=?',[value],querylinksSuccess,err
 
 function errorlinksCB(err){
 	
-	alert("ERROR : "+err);
+	//alert("ERROR : "+err);
 	}
 
 function querylinksSuccess(tx,result){
 		var length = result.rows.length;
 		
 		
-		alert("links LENGTH  = "+ length);
+	//	alert("links LENGTH  = "+ length);
 		
 		var linksappend='';
 			if(length >0)
@@ -2329,7 +2399,7 @@ var readstatus = $('#event'+event_id).attr('data-value3');
 
 
 		var startDate = new Date(2015,5,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
-		var endDate = new Date(2015,5,15,19,30,0,0,0);
+		var endDate = new Date(2015,6,15,19,30,0,0,0);
 		var title = "aisc event added";
 		var location = "Home";
 		var notes = "Some notes about this event.";
@@ -2378,7 +2448,7 @@ window.plugins.socialsharing.shareViaEmail(
 	 var password = $('#getpassword').val();
 	 
 	 
-	 alert("Password = "+ password);
+	// alert("Password = "+ password);
 	 
  if(navigator.network.connection.type == Connection.NONE){
 	 
@@ -2405,14 +2475,14 @@ window.plugins.socialsharing.shareViaEmail(
 						
 					//	deleteNotifications_data();	
 						//	alert('evennts loaded');
-							alert(data.status.code);
+						//	alert(data.status.code);
 							
 								if(data.status.code=='100')
 								{
 									
 								var	Response = data.Response;
 								
-								alert("Response===="+Response.passwordStatus);
+							//	alert("Response===="+Response.passwordStatus);
 								
 								if(Response.passwordStatus=='success')
 								{
@@ -2463,7 +2533,7 @@ window.plugins.socialsharing.shareViaEmail(
         }
         function loadurl(url_link){
 			
-			alert(url_link);
+		//	alert(url_link);
 if(navigator.network.connection.type == Connection.NONE)
 	{
 		navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
@@ -2471,7 +2541,7 @@ if(navigator.network.connection.type == Connection.NONE)
 		}
 		else{
 			
-			alert('urrl  = '+ url_link);
+			//alert('urrl  = '+ url_link);
 			iabRef = window.open(url_link, '_blank','toolbarposition=bottom,location=no,presentationstyle=formsheet,closebuttoncaption=Close');//presentationstyle: Set to pagesheet, formsheet or fullscreen 
 			
 						$.support.cors = true;

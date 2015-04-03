@@ -3550,7 +3550,7 @@ fieldset.ui-controlgroup {
 }
 .ui-content .ui-listview,
 .ui-panel-inner > .ui-listview {
-	margin: -1em;
+	
 }
 .ui-content .ui-listview-inset,
 .ui-panel-inner > .ui-listview-inset {
@@ -3671,7 +3671,7 @@ fieldset.ui-controlgroup {
 .ui-listview > .ui-li-has-thumb > .ui-btn,
 .ui-listview > .ui-li-static.ui-li-has-thumb {
 	min-height: 3.625em;
-	padding-left: 6.25em;
+	padding-left: 5.25em;
 }
 /* ui-li-has-icon deprecated in 1.4. TODO: remove in 1.5 */
 .ui-listview > .ui-li-has-icon > .ui-btn,
