@@ -1213,6 +1213,7 @@ var ajaxpath = 'http://www.safelearners.com/aisc/appajax/';
 var imagepath = 'http://www.safelearners.com/aisc/';
 var event_read_array=[];
 var event_read_list='';
+var imageuri;
 	
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
 	
@@ -1303,7 +1304,7 @@ function queryContactSuccess(tx,result){
 					var	contactemail =result.rows.item(i).contactemail;
 					var image =	result.rows.item(i).imagepath;
 					var status = result.rows.item(i).status; 
-		
+		imageuri =imagepath+image;
 		
 		console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
 		
@@ -1411,84 +1412,62 @@ function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 
 /***=========================================================DOWNLOAD FILE SCRIPT=====================================================================================================***/
 	
-	function DownloadFile(URL, Folder_Name, File_Name) {
-//Parameters mismatch check
-if (URL == null && Folder_Name == null && File_Name == null) {
-    return;
-}
-else {
-    //checking Internet connection availablity
-    var networkState = navigator.connection.type;
-    if (networkState == Connection.NONE) {
-        return;
-    } else {
-        download(URL, Folder_Name, File_Name); //If available download function call
-    }
-  }
-}
+ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+
+          
+		  console.log(" window.requestFileSystem  =   ");
+		  
+		    function fileSystemSuccess(fileSystem) {
+
+               var uri = imageuri; // Get URL
+
+               var download_link = encodeURI(uri);
+
+               var path = download_link,
+               ext = path.substr(path.lastIndexOf('.') + 1); //Get extension of URL
+
+               var folder_name ='aisc_contact';// Get folder name
+               var file_name = 'newimageee'; //Get file name 
+
+               var directoryEntry = fileSystem.root; // to get root path to directory
+               directoryEntry.getDirectory(folder_name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
+               var rootdir = fileSystem.root;
+               var fp = rootdir.fullPath;
 
 
-function download(URL, Folder_Name, File_Name) {
-//step to request a file system 
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
-
-function fileSystemSuccess(fileSystem) {
-	
-	
-	console.log("filesystem == "+fileSystem);
-	
-    var download_link = encodeURI(URL);
-    ext = download_link.substr(download_link.lastIndexOf('.') + 1); //Get extension of URL
-	
-	console.log("Extension ExT"+ext);
-
-    var directoryEntry = fileSystem.root; // to get root path of directory
-	
-	console.log('Directory  ='+ directoryEntry );
-    directoryEntry.getDirectory(Folder_Name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
-    var rootdir = fileSystem.root;
-    var fp = rootdir.fullPath; // Returns Fulpath of local directory
-
-console.log("Full path = "+fp);
-    fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
-    // download function call
-	
-console.log("Download Link = "+download_link+ " Full path link "+ fp);	
-    filetransfer(download_link, fp);
-}
-
-function onDirectorySuccess(parent) {
-    // Directory created successfuly
-}
-
-function onDirectoryFail(error) {
-    //Error while creating directory   
-    //alert("Unable to create new directory: " + error.code);
-}
-
-  function fileSystemFail(evt) {
-    //Unable to access file system
-   // alert(evt.target.error.code);
- }
-}
-
-
-function filetransfer(download_link, fp) {
-var fileTransfer = new FileTransfer();
-// File download function with URL and local path
-fileTransfer.download(download_link, fp,
+          fp = fp + "/" + folder_name + "/" + file_name + "." + ext; // fullpath and name of the file which we want to give
+		  
+		  console.log('fp fp fp = '+fp);
+		  
+            // download function call
+            var fileTransfer = new FileTransfer();
+            //File download function with URL and local path
+            fileTransfer.download(download_link, fp,
                     function (entry) {
-                        //alert("download complete: " + entry.fullPath);
+                        alert("download complete: " + entry.fullPath);
+
                     },
                  function (error) {
-                     //Download abort errors or download failed errors
-                     //alert("download error source " + error.source);
-                     ////alert("download error target " + error.target);
-                     ////alert("upload error code" + error.code);
+                     alert("download error source " + error.source);
+                     alert("download error target " + error.target);
+                     alert("upload error code" + error.code);
+
                  }
             );
-}
-	
+
+        }
+        function onDirectorySuccess(parent) {
+            //alert(parent);
+        }
+
+        function onDirectoryFail(error) {
+            //Error while creating directory
+            alert("Unable to create new directory: " + error.code);
+        }
+
+        function fileSystemFail(evt) {
+            alert(evt.target.error.code);
+        }	
 	
 /***==============================================================================================================================================================***/
 
