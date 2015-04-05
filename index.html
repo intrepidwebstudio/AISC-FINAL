@@ -1306,6 +1306,8 @@ function queryContactSuccess(tx,result){
 					var status = result.rows.item(i).status; 
 		imageuri =imagepath+image;
 		
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+		
 		console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
 		
 		contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%;"><div style="float:left; width:20% !important;">';
@@ -1412,7 +1414,7 @@ function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 
 /***=========================================================DOWNLOAD FILE SCRIPT=====================================================================================================***/
 	
- window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+ 
 
           
 		  console.log(" window.requestFileSystem  =   ");
