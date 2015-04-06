@@ -1949,7 +1949,7 @@ tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[val
 }
 
 function errorNotificationsCB(err){
-	//alert("ERROR : "+err);
+	alert("ERROR : "+err);
 	}
 
 function queryNotificationsSuccess(tx,result){
@@ -2009,11 +2009,13 @@ function queryNotificationsupdateDB(tx){
 	alert("Query update section ");
 	console.log("queryNotificationsupdateDB");
 	var value='1';
-	tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],
-									function(tx,result)
-									{
-										cosole.log(" sss s ss s s s  ");
-										var length =  result.rows.length;
+	tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],queryselectsuccesNotifications,errorNotificationsCB);
+	
+	}
+	
+function queryselectsuccesNotifications(tx,result){
+					cosole.log(" sss s ss s s s  ");
+					var length =  result.rows.length;
 									  if(length>0)	
 									  {
 										 for(var i=0; i< length ; i++)
@@ -2025,28 +2027,26 @@ function queryNotificationsupdateDB(tx){
 													 }										
 											}
 										  }
-										
-									var	undreadstatus=0;
-									var valuestatus=1;
-										tx.executeSql('SELECT * FROM notifications where readstatus=? and status=?',[undreadstatus,valuestatus],function(tx,result){
-															var length1 = result.rows.length;
-															
-															console.log("NOTIFICATION UNREAD STATUS = "+length1);
-															var Notificationunread='';
-															if(length1 >0)
-															{
-																$.mobile.changePage('#notification');
-																
-																}
-										});
-										
-										
-										
-										}
-									,errorNotificationsCB);
+	}		
 	
-	
+function resetreadstatus(){
+					var	undreadstatus=0;
+					var valuestatus=1;
+					tx.executeSql('SELECT * FROM notifications where readstatus=? and status=?',[undreadstatus,valuestatus],resetreadstatussuccess,resetreadstatuserror);
+					
 	}	
+	
+function resetreadstatussuccess(tx,result){
+									var length1 = result.rows.length;
+									console.log("NOTIFICATION UNREAD STATUS = "+length1);
+									var Notificationunread='';
+									if(length1 >0)
+									{
+										$.mobile.changePage('#notification');
+										}
+	}	
+function resetreadstatuserror(err){ alert("Error : "+err.message); } 	
+	
 	
 function loadNotificationsfromserver()
 {
@@ -2119,33 +2119,29 @@ function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter
 function deleteNotifications_data()
 {
 	//alert('aa');
+	console.log('aaa');
 	
 	db.transaction(function(tx){
 				var value='0';
 				var cond='0';
 				var readstatus='1';
-				
-			
-			
-				tx.executeSql('SELECT * FROM notifications where readstatus=? order by id desc',[readstatus],function(tx,result){
-															
-															var length = result.rows.length;
-															var Notificationunread='';
-															if(length >0)
-															{
-																for(var i=0; i< length ; i++)
-																{
-																 notifications_ids =	result.rows.item(i).notifications_id;
-																 console.log(" notificationarray ="+notifications_ids);
-																}
-															}
-					
-					},errorNotificationsCB);
-				
+				tx.executeSql('SELECT * FROM notifications where readstatus=? order by id desc',[readstatus],successreadarray,errorNotificationsCB);
         		tx.executeSql("UPDATE notifications set status=? where id!=?;", [value, cond ]); // array of values for the ? placeholders
 		},ErrordeletteCB);	 
 		
 	}
+function successreadarray(tx,result){
+									var length = result.rows.length;
+									var Notificationunread='';
+									if(length >0)
+									{
+										for(var i=0; i< length ; i++)
+										{
+										 notifications_ids =	result.rows.item(i).notifications_id;
+										 console.log(" notificationarray ="+notifications_ids);
+										}
+									}
+					}	
 	
 function ErrordeletteCB(err)
 {
