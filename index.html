@@ -2006,10 +2006,12 @@ function errorNotificationsupdateCB(){
 	
 	
 function queryNotificationsupdateDB(tx){
-	
+	alert("Query update section ");
+	console.log("queryNotificationsupdateDB");
 	tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],
 									function(tx,result)
 									{
+										cosole.log(" sss s ss s s s  ");
 										var length =  result.rows.length;
 									  if(length>0)	
 									  {
