@@ -822,7 +822,7 @@ ul li.eventlist{
 	background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
 	}		
 .newslettericons img
-{
+0{
   width:20% !important;	
 	}	
 .newslettericons p{
@@ -856,7 +856,7 @@ ul li.eventlist{
     <div data-role='content'>
 
         <ul class="rslides" id="slider1">
-            <li class="sliderres"><img style="width:100%; height:100%;" src="slider/courage@3x.png" ></li>
+            <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/courage@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/compassion@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/confidence@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/creativity@3x.png" ></li>
@@ -1047,18 +1047,12 @@ ul li.eventlist{
                 <div style="width:75%; padding-top:80px;">
                     <input placeholder="Enter Your Password" id="getpassword"  form="" class="" />
                     <br />
-                                    
-
                 	 	<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" /> <p style="color:#718497; margin-top:0px;float:left !important">&emsp;Remember me</p>
-
-                    
                     <span style="float:right">
 	                    <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; text-decoration:none !important; color:#000 !important" onclick="checkuser()">Submit</a>
                     </span>
-                    
                 </div>
             </center>
-            
    	</div>
    
 </div>
@@ -1214,9 +1208,10 @@ var imagepath = 'http://www.safelearners.com/aisc/';
 var event_read_array=[];
 var event_read_list='';
 var imageuri;
+
+var	notifications_ids=[];
 	
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
-	
 	
     $(function () {
 
@@ -1875,10 +1870,6 @@ function insertNewslettervalues(tx,parameter1,parameter2,parameter3,parameter4,p
 
 
 
-
-
-
-
 function deleteNewsletter_data()
 {
 	//alert('aa');
@@ -1946,7 +1937,7 @@ function loadNotificationsFromLocalDb()
 
 function populateNotificationsDB(tx) {
 	//alert("loadupcomingNotifications FromLocalDb  sdfsa asedf asdf");
-tx.executeSql('CREATE TABLE IF NOT EXISTS notifications (id INTEGER PRIMARY KEY AUTOINCREMENT, notifications_id INTEGER , notifications TEXT NOT NULL , datetime TEXT NOT NULL , status INTEGER )');
+tx.executeSql('CREATE TABLE IF NOT EXISTS notifications (id INTEGER PRIMARY KEY AUTOINCREMENT, notifications_id INTEGER , notifications TEXT NOT NULL , datetime TEXT NOT NULL , status INTEGER , readstatus INTEGER )');
 }
 
 function successNotificationsCB() {
@@ -1954,12 +1945,10 @@ function successNotificationsCB() {
 }
 function queryNotificationsDB(tx){
 	var value ='1';
-tx.executeSql('SELECT * FROM notifications where status=?',[value],queryNotificationsSuccess,errorNotificationsCB);
+tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],queryNotificationsSuccess,errorNotificationsCB);
 }
 
-
 function errorNotificationsCB(err){
-	
 	//alert("ERROR : "+err);
 	}
 
@@ -1992,7 +1981,9 @@ function queryNotificationsSuccess(tx,result){
 			
 		$('#Notifications_id').empty().append(Notificationsappend);
 		$('#Notifications_id').trigger("create");
-		$('#Notifications_id').listview().listview('refresh');		
+		$('#Notifications_id').listview().listview('refresh');	
+		
+		update_readstatus_notification();	
 				
 			}//if close
 			else{
@@ -2005,8 +1996,55 @@ function queryNotificationsSuccess(tx,result){
 }
 
 
-
-
+function update_readstatus_notification()
+{
+	db.transaction(queryNotificationsupdateDB,errorNotificationsupdateCB);
+	}
+function errorNotificationsupdateCB(){
+	alert("Error updateing readstatus = "+err.message);
+	}
+	
+	
+function errorNotificationsupdateCB(tx){
+	
+	tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],
+									function(tx,result)
+									{
+										var length =  result.rows.length;
+									  if(length>0)	
+									  {
+										 for(var i=0; i< length ; i++)
+											{
+													console.log("notification unread id"+result.rows.item(i).notifications_id);	
+													if(notifications_ids.indexOf(notifications_id) > -1)
+													{	
+													 tx.executeSql("UPDATE notifications set readstatus=? where status=? ;",[,readstatus,status]);	
+													 }										
+											}
+										  }
+										
+									var	undreadstatus=0;
+									var valuestatus=1;
+										tx.executeSql('SELECT * FROM notifications where readstatus=? and status=?',[undreadstatus,valuestatus],function(tx,result){
+															var length1 = result.rows.length;
+															
+															console.log("NOTIFICATION UNREAD STATUS = "+length1);
+															var Notificationunread='';
+															if(length1 >0)
+															{
+																$.mobile.changePage('#notification');
+																
+																}
+										});
+										
+										
+										
+										}
+									,errorNotificationsCB);
+	
+	
+	}	
+	
 function loadNotificationsfromserver()
 {
 	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCBServer);
@@ -2040,7 +2078,7 @@ function successNotificationsCBServer(){
 				var	Response = data.Response;
 		//		alert('14');
 
-			$.each(Response, function(index, element) {
+			    $.each(Response, function(index, element) {
 				db.transaction( function(tx){ insertNotificationsvalues(tx, element.notifications_id, element.notification, element.datetime, element.status )}, ErrorCallBack );	
 			});
 				loadNotificationsFromLocalDb();
@@ -2066,7 +2104,7 @@ function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter
 {
 //	alert('122');
 //	alert(parameter1+'===='+parameter2+'======'+parameter3+'===='+parameter4);
-	tx.executeSql('INSERT INTO notifications( notifications_id, notifications ,datetime ,status ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
+	tx.executeSql('INSERT INTO notifications( notifications_id, notifications ,datetime ,status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
  }
 
 
@@ -2082,7 +2120,26 @@ function deleteNotifications_data()
 	db.transaction(function(tx){
 				var value='0';
 				var cond='0';
-        		tx.executeSql("UPDATE notifications set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
+				var readstatus='1';
+				
+			
+			
+				tx.executeSql('SELECT * FROM notifications where readstatus=? order by id desc',[readstatus],function(tx,result){
+															
+															var length = result.rows.length;
+															var Notificationunread='';
+															if(length >0)
+															{
+																for(var i=0; i< length ; i++)
+																{
+																 notifications_ids =	result.rows.item(i).notifications_id;
+																 console.log(" notificationarray ="+notifications_ids);
+																}
+															}
+					
+					},errorNotificationsCB);
+				
+        		tx.executeSql("UPDATE notifications set status=? where id!=?;", [value, cond ]); // array of values for the ? placeholders
 		},ErrordeletteCB);	 
 		
 	}
