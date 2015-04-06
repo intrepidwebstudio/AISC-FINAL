@@ -1954,7 +1954,7 @@ function successNotificationsCB() {
 }
 function queryNotificationsDB(tx){
 	var value ='1';
-tx.executeSql('SELECT * FROM notifications where status=?',[value],queryNotificationsSuccess,errorNotificationsCB);
+tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],queryNotificationsSuccess,errorNotificationsCB);
 }
 
 
