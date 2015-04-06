@@ -1301,7 +1301,7 @@ function queryContactSuccess(tx,result){
 					var status = result.rows.item(i).status; 
 		imageuri =imagepath+image;
 		
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+	//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
 		
 		console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
 		
@@ -2008,6 +2008,7 @@ function errorNotificationsupdateCB(){
 function queryNotificationsupdateDB(tx){
 	alert("Query update section ");
 	console.log("queryNotificationsupdateDB");
+	var value='1';
 	tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],
 									function(tx,result)
 									{
