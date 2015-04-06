@@ -2005,7 +2005,7 @@ function errorNotificationsupdateCB(){
 	}
 	
 	
-function errorNotificationsupdateCB(tx){
+function queryNotificationsupdateDB(tx){
 	
 	tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],
 									function(tx,result)
