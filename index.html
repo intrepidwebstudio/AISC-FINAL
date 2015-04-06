@@ -2144,7 +2144,7 @@ function successreadarray(tx,result){
 									{
 										for(var i=0; i< length ; i++)
 										{
-										 notifications_ids =	result.rows.item(i).notifications_id;
+										 notifications_ids.push(result.rows.item(i).notifications_id);
 										 console.log(" notificationarray ="+notifications_ids);
 										}
 									}
