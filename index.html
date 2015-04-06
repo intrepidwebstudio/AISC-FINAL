@@ -1949,7 +1949,7 @@ tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[val
 }
 
 function errorNotificationsCB(err){
-	alert("ERROR : "+err);
+	alert("ERROR : "+err.message);
 	}
 
 function queryNotificationsSuccess(tx,result){
@@ -2134,7 +2134,11 @@ function deleteNotifications_data()
 		
 	}
 function successreadarray(tx,result){
+	
+	console.log('array inside');
 									var length = result.rows.length;
+							console.log('length =length =length =length ='+ length);		
+									
 									var Notificationunread='';
 									if(length >0)
 									{
