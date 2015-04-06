@@ -1983,7 +1983,7 @@ function queryNotificationsSuccess(tx,result){
 		$('#Notifications_id').trigger("create");
 		$('#Notifications_id').listview().listview('refresh');	
 		
-		update_readstatus_notification();	
+		resetupdate();	
 				
 			}//if close
 			else{
@@ -1994,7 +1994,10 @@ function queryNotificationsSuccess(tx,result){
 					 }
 			}
 }
-
+function resetupdate()
+{
+db.transaction(populateNotificationsDB, errorNotificationsCB, update_readstatus_notification);
+}
 
 function update_readstatus_notification()
 {
