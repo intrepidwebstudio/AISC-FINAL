@@ -161,8 +161,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        registerDevice();
-					
+        callbanner();   
+		
+		$('#abc div.ui-checkbox label').removeClass('ui-btn');
+		
+		registerDevice();
             if(navigator.network.connection.type == Connection.NONE){
                // alert("nocon");
             }else{
@@ -175,23 +178,9 @@ var app = {
 			loadcontacts();
 			loadupcomingNewsletter();
 			loadnotifications();
+			loadpassword();
 			
-		
-						// Android customization
-						cordova.plugins.backgroundMode.setDefaults({ text:'Doing heavy tasks.'});
-						// Enable background mode
-						cordova.plugins.backgroundMode.enable();
-					
-						// Called when background mode has been activated
-						cordova.plugins.backgroundMode.onactivate = function () {
-							setTimeout(function () {
-								// Modify the currently displayed notification
-								cordova.plugins.backgroundMode.configure({
-									text:'Running in background for more than 5s now.'
-								});
-							}, 5000);
-						}
-    }
+	    }
 };
 
 

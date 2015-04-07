@@ -36,7 +36,6 @@
 	}
 	
 	
-	
 	.ui-listview > li p.list {
 	font-size: .85em;
 	font-weight: normal;
@@ -63,6 +62,22 @@ ul li.eventlist{
  @media only screen and (min-device-width: 320px) and (min-device-height: 480px) {
 	
 	/* Home */
+	
+	
+.newslettericons
+{
+background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
+}		
+.newslettericons img
+{
+width:20% !important;	
+}	
+.newslettericons p{
+margin-top:10px !important; 
+font-size: 0.85em !important;   
+}	
+
+	
 	
 	.sliderres{
 	
@@ -244,6 +259,21 @@ ul li.eventlist{
 	/* Home */
 	
 	
+.newslettericons
+{
+background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
+}		
+.newslettericons img
+{
+width:20% !important;	
+}	
+.newslettericons p{
+margin-top:10px !important; 
+font-size: 0.85em !important;   
+}	
+
+	
+	
 	.sliderres{
 	
 		height:229px !important;
@@ -421,6 +451,23 @@ ul li.eventlist{
 
 @media (min-device-width: 375px) and (min-device-height: 667px){
 	/* Home */
+	
+	
+	
+.newslettericons
+{
+background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:72px !important;
+}		
+.newslettericons img
+{
+width:20% !important;	
+}	
+.newslettericons p{
+margin-top:10px !important; 
+font-size: 0.85em !important;   
+padding-left:10px !important;
+}	
+
 	
 	.sliderres{
 	
@@ -600,6 +647,25 @@ ul li.eventlist{
 
 @media (min-device-width: 414px) and (min-device-height: 736px){
 	/* Home */
+
+
+	
+.newslettericons
+{
+background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:77px !important;
+}		
+.newslettericons img
+{
+width:20% !important;	
+}	
+.newslettericons p{
+margin-top:10px !important; 
+font-size: 0.85em !important;   
+padding-left:15px !important;
+}	
+
+
+
 	
 		.sliderres{
 	
@@ -638,7 +704,6 @@ ul li.eventlist{
 		width:100% !important;
 		min-height:67px !important;
 		max-height:67px !important;
-	
 	}
 	
 	.yellowtext1{
@@ -817,18 +882,6 @@ ul li.eventlist{
 		
 		}
 
-.newslettericons
-{
-	background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
-	}		
-.newslettericons img
-{
-  width:20% !important;	
-	}	
-.newslettericons p{
-	margin-top:10px !important; 
-	font-size: 0.85em !important;   
-	}	
 		
 		
 		
@@ -836,6 +889,12 @@ ul li.eventlist{
 	{
 		padding-left:5.25em !important;	
 		}
+	
+      ul.notificationcolor li:first-child{
+		 
+		 	border-top:none !important; 
+		  
+		  }
 	
 
 </style>
@@ -856,11 +915,14 @@ ul li.eventlist{
     <div data-role='content'>
 
         <ul class="rslides" id="slider1">
+
+
+<!--
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/courage@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/compassion@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/confidence@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/creativity@3x.png" ></li>
-        </ul>
+-->        </ul>
     
     <div>
        <div style="background-color:#E9A802 !important; width:100%; height:35px !important;">
@@ -892,7 +954,7 @@ ul li.eventlist{
             <a href="#locateus"><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
         </div>
         <div class="footerwidth" style="float:right;">
-            <a href="#notification" onclick="loadnotificationpage()"><img  class="customfooter" id="notification"  src="homeicons/notification.png" /></a>
+            <a href="#notification" onclick="loadnotificationpage()"><img  class="customfooter" id="notificationc"  src="homeicons/notification.png" /></a>
         </div>
 		<div style="clear:both;"></div>
     </div>
@@ -921,6 +983,37 @@ ul li.eventlist{
 	<div data-role="content">
             <div class="example-wrapper" data-iscroll>            
                 <ul id="events_id" data-role="listview"  data-divider="true" >
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+                
+                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
+
                 </ul>
             </div>    
  
@@ -1045,17 +1138,15 @@ ul li.eventlist{
     <div data-role="content" >
             <center>
                 <div style="width:75%; padding-top:80px;">
-                    <input placeholder="Enter Your Password" id="getpassword"  form="" class="" />
+                    <input placeholder="Enter Your Password" type="password" id="getpassword"  form="" class="" />
                     <br />
-                                    
-
-                	 	<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" /> <p style="color:#718497; margin-top:0px;float:left !important">&emsp;Remember me</p>
-
-                    
-                    <span style="float:right">
-	                    <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; text-decoration:none !important; color:#000 !important" onclick="checkuser()">Submit</a>
-                    </span>
-                    
+                	 	<!--<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" />-->
+                        <p style="color:#718497; margin-top:0px;float:left !important">
+                                <input type="checkbox" id="remember_me" name="remember_me" style="float:left; " />
+                                <div onclick="triggercheckbox()" style="float:left;top:-6px; position:relative;left: 35px !important; padding:5px !important;  " >Remember me</div> 
+                                <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; float:right !important; padding-right:10px !important;  text-decoration:none !important; color:#000 !important" onclick="checkuser()">Submit</a>
+                        </p>
+                   
                 </div>
             </center>
             
@@ -1082,10 +1173,8 @@ ul li.eventlist{
             <ul id="Newsletter_id" data-role="listview"  data-divider="true" >
 
 
-
-				
                     <li onclick=loadurl() class="newslettericons" >
-                    		<img  style=" padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/Head@2x.png"  />
+                    		<img  style="padding-top:1%  ;vertical-align:middle !important"  src="newslettericons/Head@2x.png"  />
                             <p>Head of High School</p>
                             <p>
                	      		<strong style="color:#F00">Andrew Hoover</strong>                             </p>
@@ -1146,7 +1235,7 @@ ul li.eventlist{
             Chennai-600 113, India<br />
             Tel: &ensp;91 44 22549000</p>
    
-   
+
  <script>
      if(navigator.network.connection.type != Connection.NONE){
 </script>
@@ -1158,7 +1247,6 @@ ul li.eventlist{
     
 	}
     </script> 
-    
     
     
     </div>
@@ -1181,7 +1269,7 @@ ul li.eventlist{
      	<div data-role="content" style="margin-top:12px !important;" >	
         	
              <div class="example-wrapper" data-iscroll>            
-                <ul id="Notifications_id" data-role="listview"  data-divider  >
+                <ul id="Notifications_id" class="notificationcolor" data-role="listview"  data-divider  >
                 
                 </ul>
             </div>    
@@ -1214,22 +1302,57 @@ var imagepath = 'http://www.safelearners.com/aisc/';
 var event_read_array=[];
 var event_read_list='';
 var imageuri;
-	
+var total_notificationcount=0;	
+var newtotal_notificationcount=0;	
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
-	
-	
-    $(function () {
 
-      // Slideshow 1
-      $("#slider1").responsiveSlides({
+var paswordDbCount=0;
+
+  
+  function callbanner()
+  {
+  var banner='';
+  var screenwidth=window.screen.width;
+  var screenheight=window.screen.height;
+if(screenwidth == 320 && screenheight == 480)
+{
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/1.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/2.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/3.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/4.png" ></li>';
+	}else if(screenwidth == 320 && screenheight == 568){
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/5s/1.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/5s/2.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/5s/3.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/5s/4.png" ></li>';
+	}else if(screenwidth == 375 && screenheight == 667){
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6/1.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6/2.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6/3.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6/4.png" ></li>';
+	}else if(screenwidth == 414 && screenheight == 736){
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6p/1.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6p/2.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6p/3.png" ></li>';
+  banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/6p/4.png" ></li>';
+	}
+  
+if(banner!='')
+{
+
+	$('#slider1').html('');
+	$('#slider1').html(banner);
+	
+	 $("#slider1").responsiveSlides({
         maxwidth: 800,
         speed: 800
       });
-	  
-//  checkConnection();       
+	
+	
+	} 
   
-  });
   
+  }
   
         // device APIs are available
  
@@ -1280,7 +1403,6 @@ tx.executeSql('SELECT * FROM contacts where status=? ',[value],queryContactSucce
 
 
 function errorContactCB(err){
-	
 	//alert("ERROR : "+err);
 	}
 
@@ -1298,17 +1420,16 @@ function queryContactSuccess(tx,result){
 			
 				for(var i=0; i< length ; i++)
 				{
-					
 		//			alert(result.rows.item(i).name);
 					var name =	result.rows.item(i).name;
 					var	contactemail =result.rows.item(i).contactemail;
 					var image =	result.rows.item(i).imagepath;
 					var status = result.rows.item(i).status; 
-		imageuri =imagepath+image;
+					imageuri =imagepath+image;
 		
 	//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
 		
-		console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
+		//console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
 		
 		contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%;"><div style="float:left; width:20% !important;">';
 		
@@ -1354,7 +1475,7 @@ function ErrorDeleteCallBack(err){
 	} 
 function successContactCBServer(){
 //	alert('adasda !!!!');
-	console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
+	//console.log(ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId);
 	$.support.cors = true;
 	$.ajax({
 	url:ajaxpath+'loadcontacts.php?AppTokenId='+AppTokenId,
@@ -1404,74 +1525,11 @@ function ErrorCallBack(err){
 
 function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 {
-//	alert('121');
 	//alert(parameter1+'===='+parameter2+'===='+parameter3+'===='+parameter4);
-	
 	tx.executeSql('INSERT INTO contacts(name , contactemail , imagepath , status  ) VALUES (?,?,?,?)',[parameter1,parameter2,parameter3,parameter4]);
 	
  }
 
-
-/***=========================================================DOWNLOAD FILE SCRIPT=====================================================================================================***/
-	
- 
-
-          
-		  console.log(" window.requestFileSystem  =   ");
-		  
-		    function fileSystemSuccess(fileSystem) {
-
-               var uri = imageuri; // Get URL
-
-               var download_link = encodeURI(uri);
-
-               var path = download_link,
-               ext = path.substr(path.lastIndexOf('.') + 1); //Get extension of URL
-
-               var folder_name ='aisc_contact';// Get folder name
-               var file_name = 'newimageee'; //Get file name 
-
-               var directoryEntry = fileSystem.root; // to get root path to directory
-               directoryEntry.getDirectory(folder_name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
-               var rootdir = fileSystem.root;
-               var fp = rootdir.fullPath;
-
-
-          fp = fp + "/" + folder_name + "/" + file_name + "." + ext; // fullpath and name of the file which we want to give
-		  
-		  console.log('fp fp fp = '+fp);
-		  
-            // download function call
-            var fileTransfer = new FileTransfer();
-            //File download function with URL and local path
-            fileTransfer.download(download_link, fp,
-                    function (entry) {
-                        alert("download complete: " + entry.fullPath);
-
-                    },
-                 function (error) {
-                     alert("download error source " + error.source);
-                     alert("download error target " + error.target);
-                     alert("upload error code" + error.code);
-
-                 }
-            );
-
-        }
-        function onDirectorySuccess(parent) {
-            //alert(parent);
-        }
-
-        function onDirectoryFail(error) {
-            //Error while creating directory
-            alert("Unable to create new directory: " + error.code);
-        }
-
-        function fileSystemFail(evt) {
-            alert(evt.target.error.code);
-        }	
-	
-/***==============================================================================================================================================================***/
 
 
 
@@ -1540,18 +1598,18 @@ function queryEventsSuccess(tx,result){
 		var readstatus = result.rows.item(i).readstatus;
 		var event_id = result.rows.item(i).event_id;
 		
-		console.log("Event name ="+eventname+" datetime  "+datetime +'REaD Statuds = '+readstatus );
+		//console.log("Event name ="+eventname+" datetime  "+datetime +'REaD Statuds = '+readstatus );
 		
 		var value_id = 'event'+event_id;
 		
 		if(readstatus=='1')
 		{
-		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important " onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important ;" onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 			}
 		else{	
 		Eventsappend+='<li style="padding-left:35px !important;" onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 		}
-		Eventsappend+='<p class="list" style="color:#000;">'+eventname+'</p>';
+		Eventsappend+='<p class="list" style="color:#000; font-size: 0.95em !important;  ">'+eventname+'</p>';
 		Eventsappend+='<p class="list eventcontenttext2" style="color:#000" ><strong>'+datetime+'</strong></p></li>';
 	
 			}
@@ -1589,10 +1647,10 @@ function successEventsCBServer(){
 	
 //	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
+	//console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
 	
-	console.log("event_read_list  = "+event_read_list);
-	console.log(" event_read_list arraay length = "+ event_read_array.length );
+	//console.log("event_read_list  = "+event_read_list);
+	//console.log(" event_read_list arraay length = "+ event_read_array.length );
 	
 	if(event_read_array.length>0)
 	{
@@ -1601,7 +1659,7 @@ function successEventsCBServer(){
 	event_read_list ='0';
 		}
 	
-	console.log("event_read_list  = "+event_read_list);	
+	//console.log("event_read_list  = "+event_read_list);	
 		
 	
 	$.support.cors = true;
@@ -1776,7 +1834,7 @@ function queryNewsletterSuccess(tx,result){
 		var newsurl = result.rows.item(i).newsurl;
 		var color = result.rows.item(i).color;
 		
-		console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
+		//console.log("name ="+name+" department  "+department +'newsimage = '+newsimage +' Newsurl = '+newsurl );
 
 
 Newsletterappend+='<li onclick=loadurl(\''+newsurl+'\') class="newslettericons" >';
@@ -1821,7 +1879,7 @@ function successNewsletterCBServer(){
 	
 //	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId);
+	//console.log(ajaxpath+'loadnewsletter.php?AppTokenId='+AppTokenId);
 		
 	$.support.cors = true;
 	$.ajax({
@@ -1955,7 +2013,23 @@ function successNotificationsCB() {
 function queryNotificationsDB(tx){
 	var value ='1';
 tx.executeSql('SELECT * FROM notifications where status=? order by id desc',[value],queryNotificationsSuccess,errorNotificationsCB);
+//tx.executeSql('SELECT distinct(notifications_id) FROM notifications',[],local_successcountCB,localfailcountCB);
+
 }
+/*
+function localfailcountCB(err)
+{
+	//alert("Error localfailcount"+err.message);
+	}
+function local_successcountCB(tx,result){
+		newtotal_notificationcount=result.rows.length;
+		console.log("newtotal_notificationcount = "+newtotal_notificationcount);
+	} 	
+	
+	
+	
+	*/
+	
 
 
 function errorNotificationsCB(err){
@@ -1965,11 +2039,8 @@ function errorNotificationsCB(err){
 
 function queryNotificationsSuccess(tx,result){
 		var length = result.rows.length;
-		
-		
-	//	alert("Notifications LENGTH  = "+ length);
-		
-		var Notificationsappend='';
+		//	alert("Notifications LENGTH  = "+ length);
+			var Notificationsappend='';
 			if(length >0)
 			{
 			$('#Notifications_id').html('');	
@@ -1980,11 +2051,11 @@ function queryNotificationsSuccess(tx,result){
 		var notifications =	result.rows.item(i).notifications;
 		var	datetime =result.rows.item(i).datetime;
 		
-		console.log("notifications ="+notifications+" datetime  "+datetime );
+		//console.log("notifications ="+notifications+" datetime  "+datetime );
 
 		Notificationsappend+='<li style="padding-left:35px !important;">';
-		Notificationsappend+='<p style="color:#718497;" class="list">'+notifications+'</p>';
-		Notificationsappend+='<p class="eventcontenttext2 lists"><strong>'+datetime+'</strong></p></li>';
+		Notificationsappend+='<p style="color:#FFFFFF !important; font-size: 0.95em !important;  " class="list">'+notifications+'</p>';
+		Notificationsappend+='<p class="eventcontenttext2 lists" style="color:#FFFFFF !important" ><strong>'+datetime+'</strong></p></li>';
 	
 			}
 			
@@ -1994,6 +2065,7 @@ function queryNotificationsSuccess(tx,result){
 		$('#Notifications_id').trigger("create");
 		$('#Notifications_id').listview().listview('refresh');		
 				
+			compareNotification();	
 			}//if close
 			else{
 				 if(navigator.network.connection.type == Connection.NONE){
@@ -2006,7 +2078,22 @@ function queryNotificationsSuccess(tx,result){
 
 
 
-
+function compareNotification(){
+	
+	console.log("Notification ===============");
+	
+	console.log("statttttt = "+ newtotal_notificationcount +"===<>=="+total_notificationcount);
+	if((total_notificationcount < newtotal_notificationcount) && total_notificationcount>0 	)
+	{
+		
+		console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
+		$.mobile.changePage('#notification');
+		}else{
+			
+		console.log(' no notification');
+			}
+	
+	}
 function loadNotificationsfromserver()
 {
 	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCBServer);
@@ -2017,7 +2104,7 @@ function successNotificationsCBServer(){
 	
 //	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId);
+	//console.log(ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId);
 		
 	$.support.cors = true;
 	$.ajax({
@@ -2029,18 +2116,19 @@ function successNotificationsCBServer(){
 	crossDomain: true,
 	success: function(data)
 	{
-	
+	getlastnotificationdata();
 	deleteNotifications_data();	
 //	alert('evennts loaded');
 	//	alert(data.status.code);
 			if(data.status.code=='100')
 			{
-		//		alert(data.Response);
-		//		alert('11');
 				var	Response = data.Response;
 		//		alert('14');
 
 			$.each(Response, function(index, element) {
+				
+				newtotal_notificationcount=newtotal_notificationcount+1;
+				
 				db.transaction( function(tx){ insertNotificationsvalues(tx, element.notifications_id, element.notification, element.datetime, element.status )}, ErrorCallBack );	
 			});
 				loadNotificationsFromLocalDb();
@@ -2072,7 +2160,29 @@ function insertNotificationsvalues(tx,parameter1,parameter2,parameter3,parameter
 
 
 
+function getlastnotificationdata()
+{
+	db.transaction(function(tx){
+				var value='1';
+				var cond='0';
+        		tx.executeSql("select distinct(notifications_id) from notifications",[],slectnotificationCB,errorslectnotificationCB);
+		},ErrordeletteCB);	 
+	}
 
+
+function slectnotificationCB(tx,result){
+		var lengthselected = result.rows.length;
+
+		total_notificationcount=lengthselected;
+		//alert('Length selected ====== '+total_notificationcount);
+		//console.log(total_notificationcount);
+		
+	}
+function errorslectnotificationCB(err)
+{
+	alert('error select ='+err.message);
+	
+	}	
 
 
 function deleteNotifications_data()
@@ -2169,10 +2279,10 @@ function querylinksSuccess(tx,result){
 		var links =	result.rows.item(i).links;
 		var	linkpage =result.rows.item(i).linkpage;
 		
-		console.log("links ="+links+" datetime  "+linkpage );
+		//console.log("links ="+links+" datetime  "+linkpage );
 		
 		
-		console.log(linkpage+' onclick '+links);
+		//console.log(linkpage+' onclick '+links);
 		
 		
 		$('#'+linkpage).attr('onclick','loadurl(\''+links+'\')' );
@@ -2228,7 +2338,7 @@ function successlinksCBServer(){
 	
 //	alert('adasda !!!!');
 	
-	console.log(ajaxpath+'loadlinks.php?AppTokenId='+AppTokenId);
+	//console.log(ajaxpath+'loadlinks.php?AppTokenId='+AppTokenId);
 		
 	$.support.cors = true;
 	$.ajax({
@@ -2354,7 +2464,7 @@ var datetime = $('#'+event_id).attr('data-value2');
 var readstatus = $('#'+event_id).attr('data-value3');
 
 
-console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
+//console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
 
 		var datetime_array = datetime.split(' ');
 		var date_array = datetime_array[0].split('-');
@@ -2405,29 +2515,89 @@ window.plugins.socialsharing.shareViaEmail(
 	
 	}	
 	
-  
-  
+function loadpassword(){ console.log("Load password = "); db.transaction(populatePasswordDB, errorPasswordCB , successPasswordCB);}
+function populatePasswordDB(tx) { console.log('dd'); tx.executeSql('CREATE TABLE IF NOT EXISTS password (id INTEGER PRIMARY KEY AUTOINCREMENT, passwords TEXT NOT NULL , status INTEGER )'); }
+function errorPasswordCB(err) { 	alert(" ERROR Password Db = "+err.message); }
+function successPasswordCB(){  console.log('ss'); db.transaction(querysuccessPasswordCB,errorPasswordCB); 	}
+function querysuccessPasswordCB(tx){  console.log('dddddd'); tx.executeSql('SELECT * FROM password',[],queryPasswordSuccess,errorPasswordCB); }
+function queryPasswordSuccess(tx,result)
+{
+  var length = result.rows.length;
+	// alert("Password Length"+length); 
+	if(length>0)
+	{
+		for(var i=0; i< length ; i++)
+		{
+			console.log(result.rows.item(i).passwords);
+			$('#getpassword').val(result.rows.item(i).passwords);	
+			paswordDbCount=1;	
+													if( $('#remember_me').is(':checked') )
+													{
+													
+													}else{
+													
+													$('#remember_me').trigger('click');
+													
+													}
+													
+			 console.log(paswordDbCount);
+			}
+	}else{
+	  paswordDbCount=0;
+	  
+	  console.log(paswordDbCount);
+	  }
+}
+
+
+
+function savepassword()
+{
+	console.log("save passwordss");
+	db.transaction(populatePasswordDB, errorPasswordCB , successPasswordInsertCB);
+	}
+function successPasswordInsertCB()
+{
+	console.log(" successPasswordInsertCB = "+ $('#getpassword').val() );
+		var new_passwords = $('#getpassword').val();
+		var value='1';
+		db.transaction( function(tx){ insertpasswordvalues(tx,new_passwords,value) }, ErrorCallBackpass );
+ }	
+
+
+function ErrorCallBackpass(err){ console.log("ErrorCallBackpass == "+ err.message); }
+function insertpasswordvalues(tx,parameter1,parameter2)
+{
+
+	if(paswordDbCount>0)
+	{
+		console.log(' Password Insert = '+parameter1);
+		tx.executeSql("UPDATE password set passwords=? ", [parameter1]);
+	}else{
+		console.log(' Password Insert = '+parameter1);
+		tx.executeSql('INSERT INTO password (passwords,status) VALUES (?,?)',[parameter1,parameter2]);
+		}
+	loadpassword();
+	}
+
  
  function checkuser()
  {
-	 
 	 var password = $('#getpassword').val();
-	 
-	 
 	// alert("Password = "+ password);
-	 
  if(navigator.network.connection.type == Connection.NONE){
-	 
-		console.log(' intrenet not working'); 	 
+		//console.log(' intrenet not working'); 	 
 	 navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
  }else{
-	 	 
-		console.log(' password check ajax '); 
-		 
+		//console.log(' password check ajax '); 
 	 if(password!='' && password!=null)
 	 {
 		 
-		 console.log(ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password);
+		
+			 savepassword();
+			 
+		 
+		 //console.log(ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password);
 						$.support.cors = true;
 						$.ajax({
 						url:ajaxpath+'newsletterpassword.php?AppTokenId='+AppTokenId+'&password='+password,
@@ -2439,10 +2609,6 @@ window.plugins.socialsharing.shareViaEmail(
 						success: function(data)
 						{
 						
-					//	deleteNotifications_data();	
-						//	alert('evennts loaded');
-						//	alert(data.status.code);
-							
 								if(data.status.code=='100')
 								{
 									
@@ -2534,8 +2700,26 @@ function browser_setting()
                          $.mobile.loader.prototype.options.textonly = false;
                          $.mobile.loader.prototype.options.html ="<img src='../loader.png'/>";
                          $.mobile.allowCrossDomainPages = true;
-                         });
+                        });
 	}
+
+
+
+function triggercheckbox()
+{
+	 if( $('#remember_me').is(':checked') )
+	 {
+		 
+		 $('#remember_me').trigger('click');
+		 
+	 }else{
+	
+		 $('#remember_me').trigger('click');
+		 
+		 }
+	
+	}
+
 
 </script>
 </body>
