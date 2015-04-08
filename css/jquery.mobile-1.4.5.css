@@ -1,4 +1,4 @@
-  /*!
+/*!
 * jQuery Mobile 1.4.5
 * Git HEAD hash: 68e55e78b292634d3991c795f06f5e37a512decc <> Date: Fri Oct 31 2014 17:33:30 UTC
 * http://jquerymobile.com
@@ -900,7 +900,7 @@ html .ui-alt-icon .ui-radio-off:after {
 .ui-checkbox-off:after,
 .ui-btn.ui-radio-off:after {
 	filter: Alpha(Opacity=30);
-	opacity: .3;
+	opacity: 0.0;
 }
 .ui-btn.ui-checkbox-off:after,
 .ui-btn.ui-checkbox-on:after {

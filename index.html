@@ -37,7 +37,7 @@
 	
 	
 	.ui-listview > li p.list {
-	font-size: .85em;
+	font-size: 0.95em !important;
 	font-weight: normal;
 	display: block !important;
 	margin: 0.6em 0 !important;
@@ -63,6 +63,10 @@ ul li.eventlist{
 	
 	/* Home */
 	
+	
+	.custheight{
+		height:55px !important;;
+		}
 	
 .newslettericons
 {
@@ -159,10 +163,7 @@ font-size: 0.85em !important;
 		text-align:center;
 		
 		}
-	.eventcontenttext2{
-		font-size:15px;
-		color:#718497;
-	}
+	
 	/* Contacts,socialmedia,newsletter,locate us, notification header CSS */
 	.schoolheadertop{
 		background-color:#38549B;
@@ -212,11 +213,13 @@ font-size: 0.85em !important;
 	}
 	.contactsimage{
 		width:100%;
-		height:65px;
+		height:100%;
 		margin-top:5px;
 		margin-left:7px; 
-		border-radius:40px;
-	}
+		 border-radius: 50%;
+	
+}
+	
 	/* Social Media */
 	.socialmediamain{
 		width:100%;
@@ -354,10 +357,7 @@ font-size: 0.85em !important;
 		text-align:center;
 		
 		}
-	.eventcontenttext2{
-		font-size:15px;
-		color:#718497;
-	}
+	
 	/* Contacts,socialmedia,newsletter,locate us, notification header CSS */
 	.schoolheadertop{
 		background-color:#38549B;
@@ -406,11 +406,11 @@ font-size: 0.85em !important;
 		 border-radius:2px;
 	}
 	.contactsimage{
-		width:100%;
-		height:65px;
+			width:100%;
+		height:100%;
 		margin-top:5px;
 		margin-left:7px; 
-		border-radius:40px;
+		 border-radius: 50%;
 	}
 	/* Social Media */
 	.socialmediamain{
@@ -552,10 +552,7 @@ padding-left:10px !important;
 		text-align:center;
 		
 		}
-	.eventcontenttext2{
-		font-size:15px;
-		color:#718497;
-	}
+	
 	/* Contacts,socialmedia,newsletter,locate us, notification header CSS */
 	.schoolheadertop{
 		background-color:#38549B;
@@ -605,11 +602,11 @@ padding-left:10px !important;
 		 border-radius:2px;
 	}
 	.contactsimage{
-		width:100%;
-		height:65px;
+			width:100%;
+		height:100%;
 		margin-top:5px;
 		margin-left:7px; 
-		border-radius:40px;
+		 border-radius: 50%;
 	}
 	/* Social Media */
 	.socialmediamain{
@@ -749,10 +746,7 @@ padding-left:15px !important;
 		text-align:center;
 		
 		}
-	.eventcontenttext2{
-		font-size:15px;
-		color:#718497;
-	}
+	
 	/* Contacts,socialmedia,newsletter,locate us, notification header CSS */
 	.schoolheadertop{
 		background-color:#38549B;
@@ -803,10 +797,10 @@ padding-left:15px !important;
 	}
 	.contactsimage{
 		width:100%;
-		height:65px;
+		height:100%;
 		margin-top:5px;
 		margin-left:7px; 
-		border-radius:40px;
+		 border-radius: 50%;
 	}
 	/* Social Media */
 	.socialmediamain{
@@ -889,6 +883,9 @@ padding-left:15px !important;
 	{
 		padding-left:5.25em !important;	
 		}
+
+
+
 	
       ul.notificationcolor li:first-child{
 		 
@@ -896,6 +893,21 @@ padding-left:15px !important;
 		  
 		  }
 	
+	
+	.plusicon{
+	
+			position:absolute; vertical-align:middle; right:4% !important; top:21% !important;	
+			padding:5px !important;
+		
+		}
+		
+	
+	.eventcontenttext2{
+		
+		font-size:0.95em !important;
+		color:#000000 !important;	
+		font-weight:700 !important;
+		}	
 
 </style>
 </head>
@@ -904,8 +916,8 @@ padding-left:15px !important;
 <div data-role="page" id="index"  data-title="School Apps">
     <!-- /header -->
     <div data-role="header" data-id="persistent"  data-position="fixed">
-        <div style="background-color:#38549b; height:60px; width:100% !important"  >
-          <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+        <div style="background-color:#38549b; height:60px; width:100% !important" class="custheight"  >
+          <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:43%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                 Home
             </span> 
 		</div>
@@ -915,8 +927,6 @@ padding-left:15px !important;
     <div data-role='content'>
 
         <ul class="rslides" id="slider1">
-
-
 <!--
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/courage@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/compassion@3x.png" ></li>
@@ -969,9 +979,10 @@ padding-left:15px !important;
      <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
               <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
-                        Events
+                <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                        Events 
                 </span> 
+                <span class="plusicon" onclick="addeventcalendar()"><img src="events/plusicon.png"  style="width:18px !important;" /></span>
         </div>
     
 
@@ -983,35 +994,57 @@ padding-left:15px !important;
 	<div data-role="content">
             <div class="example-wrapper" data-iscroll>            
                 <ul id="events_id" data-role="listview"  data-divider="true" >
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
-                        <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
 
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <li style="padding-left:30px !important;" onclick="addcalenderdata(this)" id="eventevent_id" >
+                        <div style="width:90% !important; float:left !important">
                         <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+                        <p class="list eventcontenttext2" style="color:#000; " >12 08 55 66</p>
+                        </div>
+                            <div style="width:10% !important ;float:right !important">
+                                <img src="events/tick.png" style=" position: relative; padding-top:50%;width:100%; ; display:none !important" /> 
+                                <input name="eventcheck[]" type="checkbox" value="1" style="display:none !important"  />
+                            </div>
+                        
+                        </li>
 
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <li style="padding-left:35px !important;" onclick="addcalenderdata(this)" id="eventevent_id2" >
+                        <div style="width:90% !important; float:left !important">
                         <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p>
+                        </div>
+                            <div style="width:10% !important ;float:right !important">
+                                <img src="events/tick.png" style=" position: relative; padding-top:50%;width:100%; ; display:none !important" /> 
+                                <input name="eventcheck[]" type="checkbox" value="2" style="display:none !important"  />
+                            </div>
+                        
+                        </li>
 
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
-                        <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
 
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
+                        <li style="padding-left:35px !important;" onclick="addcalenderdata(this)" id="eventevent_id3" >
+                        <div style="width:90% !important; float:left !important">
                         <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p>
+                        </div>
+                            <div style="width:10% !important ;float:right !important">
+                                <img src="events/tick.png" style=" position: relative; padding-top:50%;width:100%; ; display:none !important" /> 
+                                <input name="eventcheck[]" type="checkbox" value="3" style="display:none !important"  />
+                            </div>
+                        
+                        </li>
+                        
+                                                <li style="padding-left:35px !important;" onclick="addcalenderdata(this)" id="eventevent_id4" >
+                        <div style="width:90% !important; float:left !important">
+                        <p class="list" style="color:#000;">Aisc test event </p>
+                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p>
+                        </div>
+                            <div style="width:10% !important ;float:right !important">
+                                <img src="events/tick.png" style=" position: relative; padding-top:50%;width:100%; ; display:none !important" /> 
+                                <input name="eventcheck[]" type="checkbox" value="4" style="display:none !important"  />
+                            </div>
+                        
+                        </li>
 
-                
-                        <li style="padding-left:35px !important;" onclick="addeventcalendar()" id="eventevent_id" >
-                        <p class="list" style="color:#000;">Aisc test event </p>
-                        <p class="list eventcontenttext2" style="color:#000" ><strong>12 08 55 66</strong></p></li>
+
 
 
                 </ul>
@@ -1030,7 +1063,7 @@ padding-left:15px !important;
     <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:#38549b !important">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Contacts
                 </span> 
        </div>
@@ -1040,45 +1073,84 @@ padding-left:15px !important;
     <!----content---->
    <div data-role="content" id="contact_id" class="example-wrapper" data-iscroll>     
    
-   <!----
    
 <div class="contactsimagetop examplecolor" style="width:100%; height:50px;">
 	<p style="font-size:15px; vertical-align:central !important; position:relative !important; top:35% !important; text-align:center !important">Main Reception <a style="text-decoration:none !important; color:#000 !important; font-weight:normal ; " href="" >044 - 22549000 </a></p></div>
-<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
-		<img class="contactsimage" src="img/noimageicon.png">
-		<img class="contactsimage" src="'+imagepath+image+'">		
-	</div><div style="float:right;  width:80% !important;">
     
-	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    
+<!--
+<center>
+<div class="contactsimagetop examplecolor" style="width:90%;">
+				<div style="float:left; width:20% !important;">
+				<img class="contactsimage" src="http://www.safelearners.com/aisc/contact_images/89743kevin hall.jpg">
+				</div>
+   		<div style="float:right;  width:80% !important;">
+    	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
     Testing name
     <br />
     <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
     	testing@gmail.com
     </a></p></div></div></div></center>
-<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
-		<img class="contactsimage" src="img/noimageicon.png">
-		<img class="contactsimage" src="'+imagepath+image+'">		
-	</div><div style="float:right;  width:80% !important;">
-    
-	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    <center>
+<div class="contactsimagetop examplecolor" style="width:90%;">
+				<div style="float:left; width:20% !important;">
+				<img class="contactsimage" src="http://www.safelearners.com/aisc/contact_images/89743kevin hall.jpg">
+				</div>
+   		<div style="float:right;  width:80% !important;">
+    	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
     Testing name
     <br />
     <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
     	testing@gmail.com
     </a></p></div></div></div></center>
-<center><div class="contactsimagetop examplecolor" style="width:90%;"><div style="float:left; width:20% !important;">';
-		<img class="contactsimage" src="img/noimageicon.png">
-		<img class="contactsimage" src="'+imagepath+image+'">		
-	</div><div style="float:right;  width:80% !important;">
-    
-	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    <center>
+<div class="contactsimagetop examplecolor" style="width:90%;">
+				<div style="float:left; width:20% !important;">
+				<img class="contactsimage" src="http://www.safelearners.com/aisc/contact_images/89743kevin hall.jpg">
+				</div>
+   		<div style="float:right;  width:80% !important;">
+    	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
     Testing name
     <br />
     <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
     	testing@gmail.com
     </a></p></div></div></div></center>
-    
-   --->
+    <center>
+<div class="contactsimagetop examplecolor" style="width:90%;">
+				<div style="float:left; width:20% !important;">
+				<img class="contactsimage" src="http://www.safelearners.com/aisc/contact_images/89743kevin hall.jpg">
+				</div>
+   		<div style="float:right;  width:80% !important;">
+    	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
+    <center>
+<div class="contactsimagetop examplecolor" style="width:90%;">
+				<div style="float:left; width:20% !important;">
+				<img class="contactsimage" src="http://www.safelearners.com/aisc/contact_images/89743kevin hall.jpg">
+				</div>
+   		<div style="float:right;  width:80% !important;">
+    	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
+    <center>
+<div class="contactsimagetop examplecolor" style="width:90%;">
+				<div style="float:left; width:20% !important;">
+				<img class="contactsimage" src="http://www.safelearners.com/aisc/contact_images/89743kevin hall.jpg">
+				</div>
+   		<div style="float:right;  width:80% !important;">
+    	<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">
+    Testing name
+    <br />
+    <a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " href="mailto:contactemail" >
+    	testing@gmail.com
+    </a></p></div></div></div></center>
     
 <!--    <div class="contactsmain examplecolor">
     	<div style="padding:1px;"><p style="text-align:center !important; vertical-align:middle !important">Main Reception &emsp; 004-22549000</p></div>
@@ -1104,7 +1176,7 @@ padding-left:15px !important;
     <div  data-role="header" data-id="persistent"  data-position="fixed">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:38% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                <span style="position:absolute !important; font-size:22px !important; left:38% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Social Media
                 </span> 
             </div>    
@@ -1128,7 +1200,7 @@ padding-left:15px !important;
     <div data-role="header" data-id="persistent"  data-position="fixed">
          <div style="background-color:#38549b; height:60px; width:100% !important"  >
             <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-            <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+            <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                 Newsletters
             </span> 
         </div>
@@ -1161,8 +1233,8 @@ padding-left:15px !important;
     <div  data-role="header" data-id="persistent"  data-position="fixed">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
-               		Newsletter
+                <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+               		Newsletters
                 </span> 
            </div>     
     </div>
@@ -1222,7 +1294,7 @@ padding-left:15px !important;
   <div  data-role="header" data-id="persistent"  data-position="fixed">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
     			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Locate Us
                 </span> 
              </div>   
@@ -1260,8 +1332,8 @@ padding-left:15px !important;
      <div  data-role="header" data-id="persistent"  data-position="fixed">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
                     <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                    <span style="position:absolute !important; font-size:20px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
-                        Notification
+                    <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
+                        Notifications
                     </span> 
                  </div>   
     </div>
@@ -1298,22 +1370,97 @@ padding-left:15px !important;
 //	GLOBAL VALUES
 var AppTokenId='abcdefghijklmnopqrstuvwxyz';
 var ajaxpath = 'http://www.safelearners.com/aisc/appajax/';
-var imagepath = 'http://www.safelearners.com/aisc/';
+var imagepath ='http://www.safelearners.com/aisc/';
 var event_read_array=[];
 var event_read_list='';
 var imageuri;
 var total_notificationcount=0;	
 var newtotal_notificationcount=0;	
+var currentEventId=0;
+
+var EventCheckValues='';
+
 var db = window.openDatabase("aisc", "1.0", "aisc user local Database", 200000); //will create database Dummy_DB or open it		
 
 var paswordDbCount=0;
 
+
+function callbannerfromserver()
+{
+	alert('sss');
+var screenwidth=window.screen.width;
+var screenheight=window.screen.height;
+
+var phonemodel=''; 
+var banner='';
+		if(screenwidth == 320 && screenheight == 480)
+		{
+		phonemodel='4s';
+		}else if(screenwidth == 320 && screenheight == 568){
+		phonemodel='5s';
+		}else if(screenwidth == 375 && screenheight == 667){
+		phonemodel='6';
+		}else if(screenwidth == 414 && screenheight == 736){
+		phonemodel='6p';
+		}
+	
+	var bannerpath =ajaxpath+'loadbanner.php?AppTokenId='+AppTokenId+'&phonemodel='+phonemodel;
+	//console.log(" bannerpath = "+bannerpath); 
+		$.support.cors = true;
+		$.ajax({
+		url:bannerpath,
+		type:'POST',
+		contentType: "application/json",
+		async: true,
+		dataType: 'json',
+		crossDomain: true,
+		success: function(data)
+		{
+		
+		//		alert(data.status.code);
+		if(data.status.code=='100')
+		{
+		//	alert(data.Response);
+		//		alert('11');
+			var	Response = data.Response;
+		//		alert('14');
+		
+		$.each(Response, function(index, element) {
+					banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="'+imagepath+element.imageurl+'" ></li>';
+		});
+			
+		if(banner!='')
+		{					
+			$('#slider1').html('');
+			$('#slider1').html(banner);
+			
+			 $("#slider1").responsiveSlides({
+				maxwidth: 800,
+				speed: 800
+			  });
+		}
+			
+
+			
+		}else{
+			navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+			}	
+		},
+		error: function(e)
+		{
+		navigator.notification.alert("System error 83014  contact . Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+		}
+		});
+
+	
+	}
+
   
   function callbanner()
   {
-  var banner='';
-  var screenwidth=window.screen.width;
-  var screenheight=window.screen.height;
+var banner='';
+var screenwidth=window.screen.width;
+var screenheight=window.screen.height;
 if(screenwidth == 320 && screenheight == 480)
 {
   banner+='<li class="sliderres"><img style="width:100%; height:100%;"  src="banner/4s/1.png" ></li>';
@@ -1427,8 +1574,6 @@ function queryContactSuccess(tx,result){
 					var status = result.rows.item(i).status; 
 					imageuri =imagepath+image;
 		
-	//	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
-		
 		//console.log("Imahe ="+imagepath+image+" Name = "+name +" contact email "+ contactemail +" status = "+ status);
 		
 		contactappend+='<center><div class="contactsimagetop examplecolor" style="width:95%;"><div style="float:left; width:20% !important;">';
@@ -1442,6 +1587,9 @@ function queryContactSuccess(tx,result){
 		contactappend+='</div><div style="float:right;  width:80% !important;">';
 		contactappend+='<div><p style="font-size:15px; vertical-align:middle !important; text-align:center !important">'+name+'<br /><a style="text-decoration:none !important; color:#000 !important;  font-weight:normal ; " onclick="gotomail(\''+contactemail+'\')" >'+contactemail+'</a></p></div></div></div></center>';
 		}
+		
+		//console.log(contactappend);
+		
 		$('#contact_id').html(contactappend);		
 				
 			}//if close
@@ -1577,7 +1725,7 @@ tx.executeSql('SELECT * FROM upcomingevents where status=?',[value],queryEventsS
 
 function errorEventsCB(err){
 	
-	//alert("ERROR : "+err);
+	alert("ERROR : "+err.message);
 	}
 
 function queryEventsSuccess(tx,result){
@@ -1602,7 +1750,7 @@ function queryEventsSuccess(tx,result){
 		
 		var value_id = 'event'+event_id;
 		
-		if(readstatus=='1')
+/*		if(readstatus=='1')
 		{
 		Eventsappend+='<li style="padding-left:35px !important; background-color: #ccc !important ;" onclick="addeventcalendar(\''+value_id+'\')" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 			}
@@ -1611,6 +1759,22 @@ function queryEventsSuccess(tx,result){
 		}
 		Eventsappend+='<p class="list" style="color:#000; font-size: 0.95em !important;  ">'+eventname+'</p>';
 		Eventsappend+='<p class="list eventcontenttext2" style="color:#000" ><strong>'+datetime+'</strong></p></li>';
+*/	
+	
+		if(readstatus=='1')
+		{
+		Eventsappend+='<li style="padding-left:30px !important; background-color: #ccc !important ;" onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+			}
+		else{	
+		Eventsappend+='<li style="padding-left:30px !important;" onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+		}
+
+Eventsappend+='<div style="width:90% !important; float:left !important">';
+Eventsappend+='<p class="list" style="color:#000;">'+eventname+'</p>';
+Eventsappend+='<p class="list eventcontenttext2" style="color:#000" >'+datetime+'</p></div>';
+Eventsappend+='<div style="width:10% !important ;float:right !important">';
+Eventsappend+='<img src="events/tick.png" style=" position: relative; padding-top:50%; width:130% !important; display:none !important" />';
+Eventsappend+='<input name="eventcheck[]" type="checkbox" style="display:none !important"  value="'+event_id+'" /></div></li>';
 	
 			}
 			
@@ -1638,7 +1802,7 @@ function queryEventsSuccess(tx,result){
 function loadEventsfromserver()
 {
 	//alert("loadEventsFromserver  populate");
-	db.transaction(populateEventsDB, errorEventsCB, successEventsCBServer);
+	db.transaction(populateEventsDB, errorEventsCB, deleteEvents_data);
 	
 }
 
@@ -1646,25 +1810,12 @@ function loadEventsfromserver()
 function successEventsCBServer(){
 	
 //	alert('adasda !!!!');
-	
-	//console.log(ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list);
-	
-	//console.log("event_read_list  = "+event_read_list);
-	//console.log(" event_read_list arraay length = "+ event_read_array.length );
-	
-	if(event_read_array.length>0)
-	{
-	event_read_list=event_read_array.join(",");
-	}else{
-	event_read_list ='0';
-		}
-	
 	//console.log("event_read_list  = "+event_read_list);	
-		
-	
+	var urlpath=ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list;
+	//console.log(urlpath);	
 	$.support.cors = true;
 	$.ajax({
-	url:ajaxpath+'loadevents.php?AppTokenId='+AppTokenId+'&event_read_list='+event_read_list,
+	url:urlpath,
 	type:'POST',
 	contentType: "application/json",
 	async: true,
@@ -1673,7 +1824,7 @@ function successEventsCBServer(){
 	success: function(data)
 	{
 	
-	deleteEvents_data();	
+	
 //	alert('evennts loaded');
 	//	alert(data.status.code);
 			if(data.status.code=='100')
@@ -1739,30 +1890,45 @@ function deleteEvents_data()
         		tx.executeSql("UPDATE upcomingevents set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
 		},ErrordeletteCB);	 
 		
-
-	
 	}
 	
 function ErrordeletteCB(err)
 {
-	//alert("Error event delete = "+err.message);
+	alert("Error event delete = "+err.message);
 	
 	} 	
 	
 function ErrordelteCB(err){
-	//alert("ErrordelteCB "+err.message);
+	alert("ErrordelteCB "+err.message);
 	
 	}
 
 function successSelectEventsCB(tx,result){
 	
-	//alert("Length of rows in table = "+ result.rows.length);
+	alert("Length of rows in table = "+ result.rows.length);
 	  var length = result.rows.length;
 				for(var i=0; i< length ; i++)
 				{
-					//alert("array push ="+result.rows.item(i).event_id);
+					alert("array push ="+result.rows.item(i).event_id);
 					event_read_array.push(result.rows.item(i).event_id);
  				}
+				alert(event_read_array);
+				
+	
+	
+		//console.log(" event_read_list arraay length = "+ event_read_array.length );
+		if(event_read_array.length>0)
+		{
+		//console.log('event added in array');
+		event_read_list=event_read_array.join(); 
+		}else{
+		event_read_list ='0';
+		}
+
+	
+	//console.log(" event_read_list = "+ event_read_list);
+	 successEventsCBServer();
+				
 		//alert(" Every ");
 	}
 
@@ -2023,7 +2189,7 @@ function localfailcountCB(err)
 	}
 function local_successcountCB(tx,result){
 		newtotal_notificationcount=result.rows.length;
-		console.log("newtotal_notificationcount = "+newtotal_notificationcount);
+		//console.log("newtotal_notificationcount = "+newtotal_notificationcount);
 	} 	
 	
 	
@@ -2053,9 +2219,9 @@ function queryNotificationsSuccess(tx,result){
 		
 		//console.log("notifications ="+notifications+" datetime  "+datetime );
 
-		Notificationsappend+='<li style="padding-left:35px !important;">';
+		Notificationsappend+='<li style="padding-left:30px !important;">';
 		Notificationsappend+='<p style="color:#FFFFFF !important; font-size: 0.95em !important;  " class="list">'+notifications+'</p>';
-		Notificationsappend+='<p class="eventcontenttext2 lists" style="color:#FFFFFF !important" ><strong>'+datetime+'</strong></p></li>';
+		Notificationsappend+='<p class="eventcontenttext2 lists" style="color:#FFFFFF !important" >'+datetime+'</strong></p>';
 	
 			}
 			
@@ -2080,17 +2246,17 @@ function queryNotificationsSuccess(tx,result){
 
 function compareNotification(){
 	
-	console.log("Notification ===============");
+	//console.log("Notification ===============");
 	
-	console.log("statttttt = "+ newtotal_notificationcount +"===<>=="+total_notificationcount);
+	//console.log("statttttt = "+ newtotal_notificationcount +"===<>=="+total_notificationcount);
 	if((total_notificationcount < newtotal_notificationcount) && total_notificationcount>0 	)
 	{
 		
-		console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
+		//console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
 		$.mobile.changePage('#notification');
 		}else{
 			
-		console.log(' no notification');
+		//console.log(' no notification');
 			}
 	
 	}
@@ -2453,41 +2619,146 @@ function successSelectlinksCB(tx,result){
 	  
 	  }
   
-  
-  
-  
-function addeventcalendar(event_id)
+
+
+function savereadstatus()
+{
+	//console.log("save savereadstatus");
+	db.transaction(populateEventsDB, errorEventsCB , successEventReadstatusCB);
+	}
+function successEventReadstatusCB()
 {
 	
-var eventtitle = $('#'+event_id).attr('data-value1');
-var datetime = $('#'+event_id).attr('data-value2');
-var readstatus = $('#'+event_id).attr('data-value3');
-
-
-//console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
-
-		var datetime_array = datetime.split(' ');
-		var date_array = datetime_array[0].split('-');
-		var time_array = datetime_array[1].split(':');
-		
-		
-		
-		
-		  // prep some variables
-  var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
-  var endDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0);
-  var title = eventtitle;
-  var location = "";
-  var notes = "";
-  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
-  var error = function(message) { alert("Error: " + message); };
-
-
+	for(var i=0;i<EventCheckValues.length;i++)
+	{	
 	
-	window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+		strattransaction(EventCheckValues[i]);
+		
+		
+	}
+	
+	
+	for(var i=0;i<EventCheckValues.length;i++)
+	{
+		var g='event'+EventCheckValues[i];
+		
+		
+			$('#'+g+' img').toggle(function(){
+				
+					if($('#'+g+' input').is(':checked'))
+					{
+					  $('#'+g+' input').prop('checked', false);
+						}else{
+							
+						$('#'+g+' input').prop('checked', true);
+							}
+		});
+	
+
+		
+		}
+	
+	
+ }	
+
+
+function ErrorCallBackEventstatus(err){ //console.log("ErrorCallBackp savereadstatus == "+ err.message);
+ }
+
+function strattransaction(value_1){
+	var value='1';
+db.transaction( function(tx){ updateEventStatus(tx,value_1,value) }, ErrorCallBackEventstatus );
+}
+
+function updateEventStatus(tx,parameter1,parameter2)
+{
+	//console.log(' upcomingevents update = '+parameter1);
+	tx.executeSql("UPDATE upcomingevents set readstatus=? where event_id=?", [parameter2,parameter1]);
+	}
+  
+  
+  
+function addeventcalendar()
+{
+	
+	 EventCheckValues = $('#events_id input:checkbox:checked').map(function () {
+		  return this.value;
+		}).get(); // ["18", "55", "10"]
+
+	//console.log(EventCheckValues);
+	
+		
+		
+		//console.log(EventCheckValues);
+		
+		var event_length=EventCheckValues.length;
+			  
+			//  console.log(event_length);
+			 var event_success=0;
+			 var event_fail=0; 
+			 var errormessage='';
+			  
+			if(event_length > 0)
+			{
+				
+			for(var i=0; i< event_length ; i++)
+				{		
+						var event_id = EventCheckValues[i];
+					//	console.log("Event Id  = " + event_id);
+						var eventtitle = $('#event'+event_id).attr('data-value1');
+						var datetime = $('#event'+event_id).attr('data-value2');
+						var readstatus = $('#event'+event_id).attr('data-value3');
+						
+						//console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
+						currentEventId=event_id;
+						$('#event'+event_id).attr('style', 'background-color:#CCC !important,padding-left:30px !important');
+						
+						var datetime_array = datetime.split(' ');
+						var date_array = datetime_array[0].split('-');
+						var time_array = datetime_array[1].split(':');
+						
+						// prep some variables
+						var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
+						var endDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0);
+						var title = eventtitle;
+						var location = "";
+						var notes = "";
+						var success = function(message) { event_success =1; };
+						var error = function(message) { event_fail=1 ; errormessage=message };
+						
+						window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+					
+					$('#event'+event_id).removeAttr('onclick');
+					
+					$('#event'+event_id).attr('onclick','alreadyadded()');
+					
+						
+				   }
+				   if(event_fail>0)
+				   {
+					  navigator.notification.alert(message, alertCallback, "Calendar", "Done");
+					  
+					   }else{
+						   
+					  navigator.notification.alert(event_length+ " Event(s) added into your iPhone Calendar", alertCallback, "Calendar", "Done");	   
+						   }
+				   
+				savereadstatus();
+				}
+				else{
+					  navigator.notification.alert("Please select atleast one calendar", alertCallback, "Calendar", "Done");
+					}  
+			  
+			
+
 	
 	}  
-  
+ function alreadyadded(){
+	 
+	 
+	  navigator.notification.alert("Events already added into your iphone calendar", alertCallback, "Calendar", "Done");
+	 
+	 }
   
   
 function gohomepage()
@@ -2528,7 +2799,7 @@ function queryPasswordSuccess(tx,result)
 	{
 		for(var i=0; i< length ; i++)
 		{
-			console.log(result.rows.item(i).passwords);
+		//	console.log(result.rows.item(i).passwords);
 			$('#getpassword').val(result.rows.item(i).passwords);	
 			paswordDbCount=1;	
 													if( $('#remember_me').is(':checked') )
@@ -2540,12 +2811,12 @@ function queryPasswordSuccess(tx,result)
 													
 													}
 													
-			 console.log(paswordDbCount);
+			// console.log(paswordDbCount);
 			}
 	}else{
 	  paswordDbCount=0;
 	  
-	  console.log(paswordDbCount);
+	 // console.log(paswordDbCount);
 	  }
 }
 
@@ -2553,12 +2824,12 @@ function queryPasswordSuccess(tx,result)
 
 function savepassword()
 {
-	console.log("save passwordss");
+	//console.log("save passwordss");
 	db.transaction(populatePasswordDB, errorPasswordCB , successPasswordInsertCB);
 	}
 function successPasswordInsertCB()
 {
-	console.log(" successPasswordInsertCB = "+ $('#getpassword').val() );
+//	console.log(" successPasswordInsertCB = "+ $('#getpassword').val() );
 		var new_passwords = $('#getpassword').val();
 		var value='1';
 		db.transaction( function(tx){ insertpasswordvalues(tx,new_passwords,value) }, ErrorCallBackpass );
@@ -2571,10 +2842,10 @@ function insertpasswordvalues(tx,parameter1,parameter2)
 
 	if(paswordDbCount>0)
 	{
-		console.log(' Password Insert = '+parameter1);
+	//	console.log(' Password Insert = '+parameter1);
 		tx.executeSql("UPDATE password set passwords=? ", [parameter1]);
 	}else{
-		console.log(' Password Insert = '+parameter1);
+		//console.log(' Password Insert = '+parameter1);
 		tx.executeSql('INSERT INTO password (passwords,status) VALUES (?,?)',[parameter1,parameter2]);
 		}
 	loadpassword();
@@ -2719,6 +2990,31 @@ function triggercheckbox()
 		 }
 	
 	}
+
+
+
+function addcalenderdata(g)
+{
+	$('#'+g.id+' img').toggle(function(){
+				
+					if($('#'+g.id+' input').is(':checked'))
+					{
+					  $('#'+g.id+' input').prop('checked', false);
+						}else{
+							
+						$('#'+g.id+' input').prop('checked', true);
+							}
+		});
+	
+	
+	}
+
+function test()
+{
+	
+
+	}	
+	
 
 
 </script>

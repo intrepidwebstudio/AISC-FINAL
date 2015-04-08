@@ -161,15 +161,16 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        callbanner();   
+          
 		
 		$('#abc div.ui-checkbox label').removeClass('ui-btn');
 		
 		registerDevice();
             if(navigator.network.connection.type == Connection.NONE){
-               // alert("nocon");
+              callbanner(); 
             }else{
-             //   alert("yescon");
+           		callbannerfromserver();
+				//console.log('connectin server');
             }
 			browser_setting();
 			
