@@ -913,6 +913,15 @@ padding-left:15px !important;
 	
 	display:none !important;
 	}
+	
+.padding30{
+	padding-left:30px !important;
+	
+	}	
+ul.listevent li{
+		padding-left:30px !important;
+	}	
+	
 </style>
 </head>
 <body class="app">
@@ -997,7 +1006,7 @@ padding-left:15px !important;
     <!----content---->
 	<div data-role="content">
             <div class="example-wrapper" data-iscroll>            
-                <ul id="events_id" data-role="listview"  data-divider="true" >
+                <ul class="listevent" id="events_id" data-role="listview"  data-divider="true" >
 
                         
 
@@ -1593,10 +1602,10 @@ function queryEventsSuccess(tx,result){
 	
 		if(readstatus=='1')
 		{
-		Eventsappend+='<li style="padding-left:30px !important; background-color: #ccc !important ;" onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+		Eventsappend+='<li class="padding30" style="background-color: #ccc !important ;" onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 			}
 		else{	
-		Eventsappend+='<li style="padding-left:30px !important;" onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+		Eventsappend+='<li class="padding30"  onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 		}
 
 Eventsappend+='<div style="width:90% !important; float:left !important">';
@@ -2541,7 +2550,7 @@ function addeventcalendar()
 						
 						//console.log("Event Id = "+event_id+"Event tittle" +eventtitle + "Date time = " + datetime +"Read status =  "+ readstatus );
 						currentEventId=event_id;
-						$('#event'+event_id).attr('style', 'background-color:#CCC !important,padding-left:30px !important');
+						$('#event'+event_id).attr('style', 'background-color:#CCC !important');
 						
 						var datetime_array = datetime.split(' ');
 						var date_array = datetime_array[0].split('-');
@@ -2688,7 +2697,7 @@ function insertpasswordvalues(tx,parameter1,parameter2)
 	// alert("Password = "+ password);
  if(navigator.network.connection.type == Connection.NONE){
 		//console.log(' intrenet not working'); 	 
-	 navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
+	 navigator.notification.alert("Your phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
  }else{
 		//console.log(' password check ajax '); 
 	 if(password!='' && password!=null)
@@ -2769,7 +2778,7 @@ function insertpasswordvalues(tx,parameter1,parameter2)
 		//	alert(url_link);
 if(navigator.network.connection.type == Connection.NONE)
 	{
-		navigator.notification.alert("Yor phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
+		navigator.notification.alert("Your phone does not currently have an intrenet connection. Please connect and try again.", alertCallback, "AISC", "OK"); 
 		
 		}
 		else{
