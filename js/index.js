@@ -186,11 +186,11 @@ var app = {
 	
      if(navigator.network.connection.type == Connection.NONE){
 
-    navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
+  //  navigator.notification.alert("Network problem , please try after sometime !!", alertCallback, "AISC", "OK");
 	
 	 }else{
 
-	var mapid1='<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1147.1983216655128!2d80.24665805295187!3d12.981672347328574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xa9a3700f3f4b67b0!2sAmerican+International+School!5e1!3m2!1sen!2sin!4v1428049841141" width="600" height="450" frameborder="0" style="border:0"></iframe>';
+	var mapid1='<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d3096.390826458215!2d80.24626718779895!3d12.981671817928133!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6450872cd3%3A0xa9a3700f3f4b67b0!2sAmerican+International+School!5e1!3m2!1sen!2sin!4v1428489014895"  frameborder="0" style="border:0; width:100%; height:auto"></iframe>';
 	
 	$('#mapid').html(mapid1);    
 
