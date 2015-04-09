@@ -85,7 +85,7 @@ font-size: 0.85em !important;
 	
 	.sliderres{
 	
-		height:136px !important;
+		height:141px !important;
 		
 		}
 	
@@ -261,7 +261,9 @@ font-size: 0.85em !important;
 	
 	/* Home */
 	
-	
+	.custheight{
+		height:60px !important;;
+		}
 .newslettericons
 {
 background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:65px !important;
@@ -279,7 +281,7 @@ font-size: 0.85em !important;
 	
 	.sliderres{
 	
-		height:229px !important;
+		height:224px !important;
 		
 		}
 	
@@ -452,7 +454,9 @@ font-size: 0.85em !important;
 @media (min-device-width: 375px) and (min-device-height: 667px){
 	/* Home */
 	
-	
+	.custheight{
+		height:60px !important;;
+		}
 	
 .newslettericons
 {
@@ -646,7 +650,9 @@ padding-left:10px !important;
 	/* Home */
 
 
-	
+	.custheight{
+		height:60px !important;;
+		}
 .newslettericons
 {
 background:url(img1/cbg@2x.png) !important; background-size:contain !important; background-repeat:repeat-x !important; height:77px !important;
@@ -941,7 +947,7 @@ ul.listevent li{
 <div data-role="page" id="index"  data-title="School Apps">
     <!-- /header -->
     <div data-role="header" data-id="persistent"  data-position="fixed">
-        <div style="background-color:#38549b; height:60px; width:100% !important" class="custheight"  >
+        <div style="background-color:#38549b;  width:100% !important" class="custheight"  >
           <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:43%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                 Home
             </span> 
@@ -952,8 +958,8 @@ ul.listevent li{
     <div data-role='content'>
 
         <ul class="rslides" id="slider1">
-<!--
-            <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/courage@3x.png" ></li>
+
+<!--            <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/courage@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/compassion@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/confidence@3x.png" ></li>
             <li class="sliderres"><img style="width:100%; height:100%;"  src="slider/creativity@3x.png" ></li>
@@ -1220,6 +1226,24 @@ ul.listevent li{
 <script>
     // You can also use "$(window).load(function() {"
 //	GLOBAL VALUES
+
+/*$(function(){
+	
+	
+	 $("#slider1").responsiveSlides({
+        maxwidth: 800,
+        speed: 800
+      });
+
+	});
+
+*/
+setTimeout(function() {
+navigator.splashscreen.hide();
+//	
+}, 3000);
+
+
 var AppTokenId='abcdefghijklmnopqrstuvwxyz';
 var ajaxpath = 'http://www.safelearners.com/aisc/appajax/';
 var imagepath ='http://www.safelearners.com/aisc/';
@@ -1346,11 +1370,7 @@ if(banner!='')
         maxwidth: 800,
         speed: 800
       });
-	
-	
 	} 
-  
-  
   }
   
         // device APIs are available
@@ -1365,21 +1385,17 @@ if(banner!='')
  
  
  
-function loadcontacts()
+/*function loadcontacts()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 //alert("loadContacsFromLocalDb");
 		loadContactsFromLocalDb(); 
 		 }
 		else{
-			//alert("loadContacsFromserver");
 			loadcontactsfromserver(); 
-			//fetch contacts from online and update in local db 
-			//then call loadcontacts from local db function afgain;	
 		}		 
 	 }
-	 
+	*/ 
 	 
 function loadContactsFromLocalDb()
 {
@@ -1539,21 +1555,17 @@ function insertContactvalues(tx,parameter1,parameter2,parameter3,parameter4)
 
 *******************************************************************************************************************************************************/
 
-function loadupcomingevents()
+/*function loadupcomingevents()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 //alert("loadupcomingevents local");
 		loadEventsFromLocalDb(); 
 		 }
 		else{
-			//alert("loadupcomingevents server");
 			loadEventsfromserver(); 
-			//fetch contacts from online and update in local db 
-			//then call loadcontacts from local db function afgain;	
 		}		 
 	 }
-	 
+	*/ 
 	 
 function loadEventsFromLocalDb()
 {
@@ -1790,22 +1802,18 @@ function successSelectEventsCB(tx,result){
 	UPCOMING NEWSLETTER CODE BELOW
 
 *******************************************************************************************************************************************************/
-
+/*
 function loadupcomingNewsletter()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 //alert("loadupcomingNewsletter local");
 		loadNewsletterFromLocalDb(); 
 		 }
 		else{
-			//alert("loadupcomingNewsletter server");
 			loadNewsletterfromserver(); 
-			//fetch contacts from online and update in local db 
-			//then call loadcontacts from local db function afgain;	
 		}		 
 	 }
-	 
+	 */
 	 
 function loadNewsletterFromLocalDb()
 {
@@ -1997,22 +2005,18 @@ function successSelectNewsletterCB(tx,result){
 	 NOTIFICATIONS CODE BELOW
 
 *******************************************************************************************************************************************************/
-
+/*
 function loadnotifications()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		 //alert("loadupcomingNotifications local");
 		loadNotificationsFromLocalDb(); 
 		 }
 		else{
-			//alert("loadupcomingNotifications server");
 			loadNotificationsfromserver(); 
-			//fetch contacts from online and update in local db 
-			//then call loadcontacts from local db function afgain;	
 		}		 
 	 }
-	 
+	*/ 
 	 
 function loadNotificationsFromLocalDb()
 {
@@ -2239,21 +2243,17 @@ function successSelectNotificationsCB(tx,result){
 
 *******************************************************************************************************************************************************/
 
-function loadlinks()
+/*function loadlinks()
  {
 	 if(navigator.network.connection.type == Connection.NONE)
 	 {
-		// alert("loadupcominglinks local");
 		loadlinksFromLocalDb(); 
 		 }
 		else{
-		//	alert("loadupcominglinks server");
 			loadlinksfromserver(); 
-			//fetch contacts from online and update in local db 
-			//then call loadcontacts from local db function afgain;	
 		}		 
 	 }
-	 
+*/	 
 	 
 function loadlinksFromLocalDb()
 {
