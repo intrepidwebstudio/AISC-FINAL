@@ -2588,7 +2588,11 @@ function addeventcalendar()
 				   }
 				   if(event_fail>0)
 				   {
-					  navigator.notification.alert(message, alertCallback, "Calendar", "Done");
+					  navigator.notification.alert(message, alertCallback, "Calendar","Done");
+					  var timeindex=1;
+					  setTimeout(function(timeindex){
+						  alertCallback();
+						  },3000); 
 					  
 					   }else{
 						   
