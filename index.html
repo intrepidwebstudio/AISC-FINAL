@@ -940,6 +940,9 @@ ul.listevent li{
 	height:600px !important;
 		
 		}
+	
+	#map-page, #map-canvas { width: 100%; height: 100%; padding: 0; }	
+		
 </style>
 </head>
 <body class="app">
@@ -992,7 +995,7 @@ ul.listevent li{
         </div>
         
         <div  class="footerwidth" style="float:left;">
-            <a href="#locateus"   data-transition="slide"  ><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
+            <a href="#map-page"   data-transition="slide"  ><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
         </div>
         <div class="footerwidth" style="float:right;">
             <a href="#notification"   data-transition="slide"  onclick="loadnotificationpage()"><img  class="customfooter" id="notificationc"  src="homeicons/notification.png" /></a>
@@ -1153,34 +1156,13 @@ ul.listevent li{
 
 
 <!-----------------LocateUs--------------->
-<div data-role="page" id="locateus" data-title="School Apps">
-
-    <!---header -->
-  <div  data-role="header" data-id="persistent"  data-position="fixed">
-    <div style="background-color:#38549b; height:60px; width:100% !important"  >
-    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
-                <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
-               		Locate Us
-                </span> 
-             </div>   
+<div data-url="map-page" data-role="page" id="map-page">
+    <div data-role="header" data-theme="a">
+    <h1>Maps</h1>
     </div>
-    <!--/header---->
-    <!----content---->
-   	<div style="margin-top:10% !important;">
-            <p style="text-align:center;">American International School<br />
-            100 Feat Road, Taramani<br />
-            Chennai-600 113, India<br />
-            Tel: &ensp;91 44 22549000</p>
-   
-
-<div id="mapid" >
-<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d3096.390826458215!2d80.24626718779895!3d12.981671817928133!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6450872cd3%3A0xa9a3700f3f4b67b0!2sAmerican+International+School!5e1!3m2!1sen!2sin!4v1428489014895"  frameborder="0" style="border:0; width:100%;"></iframe>
-</div>
-
-    
-    
+    <div role="main" class="ui-content" id="map-canvas">
+        <!-- map loads here... -->
     </div>
-   
 </div>
 <!----------------/LocateUs---------------->
 
@@ -2588,14 +2570,18 @@ function addeventcalendar()
 				   }
 				   if(event_fail>0)
 				   {
-					  navigator.notification.alert(message, alertCallback, "Calendar");
-					  navigator.notification.alert(message, alertCallback, "Calendar","");
 					  navigator.notification.alert(message, alertCallback, "Calendar","Done");
-					  navigator.notification.alert(message, alertCallback, "Calendar");
 					  
 					   }else{
 						   
 					  navigator.notification.alert(event_length+ " Event(s) added into your iPhone Calendar", alertCallback, "Calendar", "Done");	   
+
+
+					navigator.notification.alert(message, alertCallback, "Calendar");
+					navigator.notification.alert(message, alertCallback, "Calendar","");
+					navigator.notification.alert(message, alertCallback, "Calendar","Done");
+					navigator.notification.alert(message, alertCallback, "Calendar");
+
 						   }
 				   
 				savereadstatus();
