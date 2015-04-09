@@ -36,9 +36,9 @@ function registerDevice() {
                               var devicePlatform = device.platform;
                               if (devicePlatform === "iOS") {
                               console.log('ss2');
-                              console.log("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
+                              alert("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
                               } else {
-                              console.log("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
+                              alert("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
                               }
                               });
 							
@@ -168,22 +168,22 @@ var app = {
 		registerDevice();
             if(navigator.network.connection.type == Connection.NONE){
               callbanner(); 
-			  loadlinksFromLocalDb(); 
-			  loadEventsFromLocalDb();
-			  loadContactsFromLocalDb(); 
-			  loadNewsletterFromLocalDb(); 
 			  loadNotificationsFromLocalDb();
+			  loadEventsFromLocalDb();
+			  loadContactsFromLocalDb();
+			  loadlinksFromLocalDb(); 
+			  loadNewsletterFromLocalDb(); 
             }else{
            		callbannerfromserver();
-				loadlinksfromserver(); 
-				loadEventsfromserver(); 
-				loadcontactsfromserver(); 
-				loadNewsletterfromserver();
 				loadNotificationsfromserver();
+				loadEventsfromserver();
+				loadcontactsfromserver(); 
+				loadlinksfromserver(); 
+				loadNewsletterfromserver();
 				//console.log('connectin server');
 				
 				var mapid1='<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d3096.390826458215!2d80.24626718779895!3d12.981671817928133!2m2!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6450872cd3%3A0xa9a3700f3f4b67b0!2sAmerican+International+School!5e1!3m2!1sen!2sin!4v1428489014895"  frameborder="0" style="border:0; width:100%;"></iframe>';
-				$('#mapid').html(mapid1);    
+				//$('#mapid').html(mapid1);    
 				
             }
 			browser_setting();
@@ -296,6 +296,8 @@ function loadimages()
  * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
  */
 $( document ).on( "pageinit", "#map-page", function() {
+	alert('success');
+	
     var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
     if ( navigator.geolocation ) {
         function success(pos) {
