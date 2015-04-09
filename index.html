@@ -2429,29 +2429,20 @@ function successSelectlinksCB(tx,result){
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   function loadnotificationpage()
   {
+		if(navigator.network.connection.type == Connection.NONE)
+		 {
+		   loadNotificationsFromLocalDb();
+		   }
+			else{
+			loadNotificationsfromserver();
+	}		 
+
 	  
-	  loadlinks();
 	  
 	  
-	  
-	  }
+}
   
 
 
@@ -2482,10 +2473,7 @@ function successEventReadstatusCB()
 					if($('#'+g+' input').is(':checked'))
 					{
 					  $('#'+g+' input').prop('checked', false);
-						}else{
-							
-						$('#'+g+' input').prop('checked', true);
-							}
+						}
 		});
 	
 
@@ -2576,12 +2564,6 @@ function addeventcalendar()
 						   
 					  navigator.notification.alert(event_length+ " Event(s) added into your iPhone Calendar", alertCallback, "Calendar", "Done");	   
 
-
-					navigator.notification.alert(message, alertCallback, "Calendar");
-					navigator.notification.alert(message, alertCallback, "Calendar","");
-					navigator.notification.alert(message, alertCallback, "Calendar","Done");
-					navigator.notification.alert(message, alertCallback, "Calendar");
-
 						   }
 				   
 				savereadstatus();
@@ -2595,10 +2577,7 @@ function addeventcalendar()
 	
 	}  
  function alreadyadded(){
-	 
-	 
-	  navigator.notification.alert("Events already added into your iphone calendar", alertCallback, "Calendar", "Done");
-	 
+	   navigator.notification.alert("Events already added into your iphone calendar", alertCallback, "Calendar", "Done");
 	 }
   
   
