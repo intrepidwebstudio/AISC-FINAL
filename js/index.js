@@ -161,7 +161,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-          StatusBar.backgroundColorByHexString("#1f1e2e");
+         // StatusBar.backgroundColorByHexString("#1f1e2e");
 		
 		$('#abc div.ui-checkbox label').removeClass('ui-btn');
 		
