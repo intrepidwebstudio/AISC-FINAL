@@ -162,7 +162,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
          // StatusBar.backgroundColorByHexString("#1f1e2e");
-		
+		$.mobile.page.prototype.options.domCache = true;
 		$('#abc div.ui-checkbox label').removeClass('ui-btn');
 		
 		registerDevice();

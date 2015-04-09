@@ -971,17 +971,17 @@ ul.listevent li{
         </div>
         
         <div class="firstrowwidth1" style="float:left;">
-            <a href="#event"><img class="customheight" src="homeicons/upcoming_Events@3x.png" /></a>
+            <a href="#event"  data-transition="slide" ><img class="customheight" src="homeicons/upcoming_Events@3x.png" /></a>
         </div>
         <div class="firstrowwidth2" style="float:right;">
-            <a href="#contact"><img  class="customheight" src="homeicons/Contacts@3x.png" /></a>
+            <a href="#contact"   data-transition="slide"  ><img  class="customheight" src="homeicons/Contacts@3x.png" /></a>
         </div>
             
         <div class="secondrowwidth1" style="float:left;">
-            <a href="#socialmedia"><img class="customheight"  src="homeicons/Facebook@3x.png" /></a>
+            <a href="#socialmedia"   data-transition="slide"  ><img class="customheight"  src="homeicons/Facebook@3x.png" /></a>
         </div>
         <div class="secondrowwidth2"  style="float:right;">
-            <a href="#newsletter"><img class="customheight"  src="homeicons/Communication@3x.png" /></a>
+            <a href="#newsletter"   data-transition="slide"  ><img class="customheight"  src="homeicons/Communication@3x.png" /></a>
         </div>
         
         <div  class="thirdrowwidth1"  style="float:left;"  >
@@ -992,10 +992,10 @@ ul.listevent li{
         </div>
         
         <div  class="footerwidth" style="float:left;">
-            <a href="#locateus"><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
+            <a href="#locateus"   data-transition="slide"  ><img  class="customfooter" id="locateusicon" src="homeicons/LocateUs.png" /></a>
         </div>
         <div class="footerwidth" style="float:right;">
-            <a href="#notification" onclick="loadnotificationpage()"><img  class="customfooter" id="notificationc"  src="homeicons/notification.png" /></a>
+            <a href="#notification"   data-transition="slide"  onclick="loadnotificationpage()"><img  class="customfooter" id="notificationc"  src="homeicons/notification.png" /></a>
         </div>
 		<div style="clear:both;"></div>
     </div>
@@ -1112,7 +1112,7 @@ ul.listevent li{
                         <p style="color:#718497; margin-top:0px;float:left !important">
                                 <input type="checkbox" id="remember_me" name="remember_me" style="float:left; " />
                                 <div onclick="triggercheckbox()" style="float:left;top:-6px; position:relative;left: 35px !important; padding:5px !important;  " >Remember me</div> 
-                                <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; float:right !important; padding-right:10px !important;  text-decoration:none !important; color:#000 !important" onclick="checkuser()">Submit</a>
+                                <a style="color:#1F87F8; text-shadow:none; font-weight:normal !important; float:right !important; padding-right:10px !important;  text-decoration:none !important; color:#000 !important" onclick="checkuser()"  >Submit</a>
                         </p>
                    
                 </div>
@@ -2588,11 +2588,10 @@ function addeventcalendar()
 				   }
 				   if(event_fail>0)
 				   {
+					  navigator.notification.alert(message, alertCallback, "Calendar");
+					  navigator.notification.alert(message, alertCallback, "Calendar","");
 					  navigator.notification.alert(message, alertCallback, "Calendar","Done");
-					  var timeindex=1;
-					  setTimeout(function(timeindex){
-						  alertCallback();
-						  },3000); 
+					  navigator.notification.alert(message, alertCallback, "Calendar");
 					  
 					   }else{
 						   
@@ -2619,7 +2618,7 @@ function addeventcalendar()
   
 function gohomepage()
 {
-	$.mobile.changePage('#index');
+	$.mobile.changePage('#index',{ transition:'slide' ,  reverse:'true'  });
 	}
 	
 	
@@ -2745,7 +2744,7 @@ function insertpasswordvalues(tx,parameter1,parameter2)
 								
 								if(Response.passwordStatus=='success')
 								{
-									$.mobile.changePage('#newsletterloggedin');
+									$.mobile.changePage('#newsletterloggedin',{ transition:'slide' }); 
 	    						  }
 								else{
 									navigator.notification.alert("Password Incorrect", alertCallback, "AISC", "OK");
