@@ -327,23 +327,12 @@ function loadimages()
 $( document ).on( "pageinit", "#locateuss", function() {
 
 	
-    var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
-    if ( navigator.geolocation ) {
-        function success(pos) {
-            // Location found, show map with these coordinates
-            drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-        }
-        function fail(error) {
-            drawMap(defaultLatLng);  // Failed to find location, show default map
-        }
-        // Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
-        navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
-    } else {
+    var defaultLatLng = new google.maps.LatLng(12.982186,80.246433);  // Default to Hollywood, CA when no geolocation support
         drawMap(defaultLatLng);  // No geolocation support, show default map
-    }
     function drawMap(latlng) {
+		
         var myOptions = {
-            zoom: 10,
+            zoom: 17,
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
