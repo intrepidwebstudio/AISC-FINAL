@@ -23,6 +23,20 @@ var PUSHAPPS_APP_TOKEN = "6f747f13-5c54-41f0-84c5-892d4c0ffdf6";
 /**
  * Register current device with PushApps
  */
+ 
+
+ function onNotificationConfirm(button1){
+	 			if(button1 == 2)
+					{
+					   $.mobile.changePage('#notification',{ transition:'slide' });
+					   loadnotificationpage();
+					}
+	 }
+	 
+	 
+	 
+	 
+ 
 function registerDevice() {
 	PushNotification.registerDevice(GOOGLE_PROJECT_ID, PUSHAPPS_APP_TOKEN, function (pushToken) {
                               //      alert('registerDevice, push token' + pushToken);
@@ -35,10 +49,21 @@ function registerDevice() {
                               var notification = event.notification;
                               var devicePlatform = device.platform;
                               if (devicePlatform === "iOS") {
-                              console.log('ss2');
-                              alert("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
-                              } else {
-                              alert("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
+                              //console.log('ss2');
+                           
+											navigator.notification.confirm(
+											'New notification recieved',  // message
+											onNotificationConfirm,
+											'Notification',            // title
+											'Read-later,view'          // buttonLabels
+											);
+											
+							  //alert("message-received, Message: " + notification.aps.alert + " , D: " + notification.D);
+							                                
+							  } else {
+								  
+                             // alert("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
+							  
                               }
                               });
 							
@@ -155,6 +180,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+		
+		document.addEventListener("resume", resumeappcallCB, false);
     },
     // deviceready Event Handler
     //
@@ -214,7 +241,9 @@ var app = {
 };
 
 
-
+function resumeappcallCB(){
+			loadnotificationpage();
+	}
 
 /*
 function loadimages()
@@ -295,7 +324,7 @@ function loadimages()
  * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
  * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
  */
-$( document ).on( "pageinit", "#map-page", function() {
+$( document ).on( "pageinit", "#locateuss", function() {
 	alert('success');
 	
     var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support

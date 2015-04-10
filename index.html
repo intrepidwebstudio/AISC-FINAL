@@ -54,8 +54,12 @@ ul li.eventlist{
 .backbutton{
 		left: 10px !important;
 		position: relative !important;
-		top: 35% !important;
+		top: 30% !important;
 		width: 20% !important;
+		padding:5px !important;
+		padding-right:7px !important;
+		padding-left:7px !important;
+		
 	}	
 	
 
@@ -943,6 +947,80 @@ ul.listevent li{
 	
  #map-canvas { width: 100%; height: 100%; padding: 0; }	
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+.alert.in {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.35);
+    pointer-events: auto;
+}
+.alert, .alert > .alert-content {
+    transition: all 0.2s ease-in-out 0s;
+}
+.alert {
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+element.style {
+    margin-top: -85px;
+}
+.alert.in > .alert-content {
+    left: 0;
+    right: 0;
+}
+.alert, .alert > .alert-content {
+    transition: all 0.2s ease-in-out 0s;
+}
+.alert-content {
+    background-image: linear-gradient(to bottom, #eef3f3, #d8e2e2 50%, #ebf0f0);
+    border-radius: 8px;
+    left: -100%;
+    margin: 0 15px;
+    padding: 12px 15px;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+}
+.alert-content > h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.alert-content > p {
+    font-size: 14px;
+    text-align: center;
+}
+.alert-buttons {
+    border-top: 1px solid #c6c9c8;
+    margin: 15px -15px -12px;
+    overflow: hidden;
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 </style>
 </head>
 <body class="app">
@@ -1012,7 +1090,11 @@ ul.listevent li{
     <!---header -->
      <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
-              <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+
+                           <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                           
+                            
+                            
                 <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                         Events 
                 </span> 
@@ -1193,6 +1275,19 @@ ul.listevent li{
     
     <!---header---->
 </div>
+
+    <script>document.write('<div class="js">'); // demo only </script>
+    <!-- The alert is activated by toggling the "in" class. -->
+    <div class="alert in calendarAlert" style="display:none" >
+      <!-- The top margin must be set to 50% of the alert's height using JavaScript. -->
+      <div class="alert-content" style="margin-top: -85px;">
+        <h3>Calendar</h3>
+        <p id="calendarMessage"></p>
+        </div>
+    </div>
+    <script>document.write('</div>'); // demo only </script>
+
+
 <!---------------/Notification---------------->
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/jquery.mobile-1.4.5.js"></script>
@@ -1206,6 +1301,11 @@ ul.listevent li{
 <script type="text/javascript" src="js/calendar.js"></script>
 
 <script>
+
+
+
+
+
     // You can also use "$(window).load(function() {"
 //	GLOBAL VALUES
 
@@ -1609,7 +1709,7 @@ function queryEventsSuccess(tx,result){
 	
 		if(readstatus=='1')
 		{
-		Eventsappend+='<li class="padding30" style="background-color: #ccc !important ;" onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
+		Eventsappend+='<li class="padding30" style="background-color: #ccc !important ;" onclick="alreadyadded()" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
 			}
 		else{	
 		Eventsappend+='<li class="padding30"  onclick="addcalenderdata(this)" id="event'+event_id+'" data-value1="'+eventname+'" data-value2="'+datetime+'" data-value3="'+readstatus+'" >';	
@@ -2091,7 +2191,7 @@ function compareNotification(){
 	{
 		
 		//console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
-		$.mobile.changePage('#notification');
+		$.mobile.changePage('#notification',{ transition:'slide' });
 		}else{
 			
 		//console.log(' no notification');
@@ -2473,7 +2573,9 @@ function successEventReadstatusCB()
 					if($('#'+g+' input').is(':checked'))
 					{
 					  $('#'+g+' input').prop('checked', false);
-						}
+						}else{
+						$('#'+g+' input').prop('checked', false);	
+							}
 		});
 	
 
@@ -2502,7 +2604,6 @@ function updateEventStatus(tx,parameter1,parameter2)
   
 function addeventcalendar()
 {
-	
 	 EventCheckValues = $('#events_id input:checkbox:checked').map(function () {
 		  return this.value;
 		}).get(); // ["18", "55", "10"]
@@ -2558,18 +2659,29 @@ function addeventcalendar()
 				   }
 				   if(event_fail>0)
 				   {
-					  navigator.notification.alert(message, alertCallback, "Calendar","Done");
 					  
+					  //navigator.notification.alert(message, alertCallback, "Calendar","Done");
+					  			$('#calendarMessage').html(message);
+								$('.calendarAlert').show();
+								setTimeout(function() { $("#calendarAlert").hide(); }, 3000);
 					   }else{
-						   
-					  navigator.notification.alert(event_length+ " Event(s) added into your iPhone Calendar", alertCallback, "Calendar", "Done");	   
-
+					 // navigator.notification.alert(event_length+ " Event(s) added into your iPhone Calendar", alertCallback, "Calendar", "Done");	   
+					  
+							    $('#calendarMessage').html(event_length+ " Event(s) added into your iPhone Calendar");
+								$('.calendarAlert').show();
+								setTimeout(function() { $("#calendarAlert").hide(); }, 3000);
+								
 						   }
 				   
 				savereadstatus();
 				}
 				else{
 					  navigator.notification.alert("Please select atleast one calendar", alertCallback, "Calendar", "Done");
+					  
+	//				  $('#calendarMessage').html(message);
+					  
+					  $()
+					  
 					}  
 			  
 			
