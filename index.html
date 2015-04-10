@@ -51,23 +51,30 @@ ul li.eventlist{
 	padding:0em 1em !important;
 	}
 	
-.backbutton{
-		left: 10px !important;
-		position: relative !important;
-		top: 20% !important;
-		width: 20% !important;
-		padding:5px !important;
-		padding-right:7px !important;
-		padding-left:7px !important;
-		
-	}	
 	
 
  @media only screen and (min-device-width: 320px) and (min-device-height: 480px) {
 	
 	/* Home */
+		.plusicon{
 	
+			position:absolute; vertical-align:middle; right:4% !important; top:18% !important;	
+			padding:5px !important;
+		
+		}
+
 	
+	.backbutton{
+		left: 10px !important;
+		position: relative !important;
+		top: 25% !important;
+		width: 21% !important;
+		padding:5px !important;
+		padding-right:6px !important;
+		padding-left:7px !important;
+		
+	}	
+
 	.custheight{
 		height:55px !important;;
 		}
@@ -265,6 +272,26 @@ font-size: 0.85em !important;
 	
 	/* Home */
 	
+		.plusicon{
+	
+			position:absolute; vertical-align:middle; right:4% !important; top:18% !important;	
+			padding:5px !important;
+		
+		}
+
+	
+	.backbutton{
+		left: 10px !important;
+		position: relative !important;
+		top: 25% !important;
+		width: 21% !important;
+		padding:5px !important;
+		padding-right:6px !important;
+		padding-left:7px !important;
+	
+	}	
+
+	
 	.custheight{
 		height:60px !important;;
 		}
@@ -460,6 +487,24 @@ font-size: 0.85em !important;
 @media (min-device-width: 375px) and (min-device-height: 667px){
 	/* Home */
 	
+		.plusicon{
+	
+			position:absolute; vertical-align:middle; right:4% !important; top:17% !important;	
+			padding:5px !important;
+		
+		}
+
+	.backbutton{
+		left: 10px !important;
+		position: relative !important;
+		top: 20% !important;
+		width: 20% !important;
+		padding:5px !important;
+		padding-right:6px !important;
+		padding-left:7px !important;
+		
+	}	
+
 	.custheight{
 		height:60px !important;;
 		}
@@ -655,7 +700,26 @@ padding-left:10px !important;
 
 @media (min-device-width: 414px) and (min-device-height: 736px){
 	/* Home */
+	
+	
+		.plusicon{
+	
+			position:absolute; vertical-align:middle; right:4% !important; top:18% !important;	
+			padding:5px !important;
+		
+		}
 
+
+	.backbutton{
+		left: 10px !important;
+		position: relative !important;
+		top: 18% !important;
+		width: 19% !important;
+		padding:5px !important;
+		padding-right:6px !important;
+		padding-left:7px !important;
+		
+	}	
 
 	.custheight{
 		height:60px !important;;
@@ -909,12 +973,6 @@ padding-left:15px !important;
 		  }
 	
 	
-	.plusicon{
-	
-			position:absolute; vertical-align:middle; right:4% !important; top:21% !important;	
-			padding:5px !important;
-		
-		}
 		
 	
 	.eventcontenttext2{
@@ -2232,16 +2290,21 @@ function compareNotification(){
 	}
 function loadNotificationsfromserver()
 {
+	total_notificationcount=0;
+	newtotal_notificationcount=0;
+	
 	db.transaction(populateNotificationsDB, errorNotificationsCB, successNotificationsCBServer);
 }
 
 
 function successNotificationsCBServer(){
 	
-//	alert('adasda !!!!');
+	getlastnotificationdata();
+ }
+ 
+ 
+function notification_server(){
 	
-	//console.log(ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId);
-		
 	$.support.cors = true;
 	$.ajax({
 	url:ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId,
@@ -2252,8 +2315,6 @@ function successNotificationsCBServer(){
 	crossDomain: true,
 	success: function(data)
 	{
-	getlastnotificationdata();
-	deleteNotifications_data();	
 //	alert('evennts loaded');
 	//	alert(data.status.code);
 			if(data.status.code=='100')
@@ -2278,8 +2339,8 @@ function successNotificationsCBServer(){
 	   navigator.notification.alert("System error 83014 notification. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
+
  }
- 
  
 function ErrorCallBack(err){
 	//alert("ERROR 11 :"+err.message);
@@ -2312,7 +2373,7 @@ function slectnotificationCB(tx,result){
 		total_notificationcount=lengthselected;
 		//alert('Length selected ====== '+total_notificationcount);
 		//console.log(total_notificationcount);
-		
+	deleteNotifications_data();		
 	}
 function errorslectnotificationCB(err)
 {
@@ -2330,6 +2391,10 @@ function deleteNotifications_data()
 				var cond='0';
         		tx.executeSql("UPDATE notifications set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
 		},ErrordeletteCB);	 
+		
+		
+		
+		notification_server();
 		
 	}
 	

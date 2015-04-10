@@ -163,9 +163,9 @@ function removeTag() {
 
 function getDeviceId() {
     PushNotification.getDeviceId(function (deviceId) {
-                                 alert("Your device id is: " + deviceId);
+                             //    alert("Your device id is: " + deviceId);
                                  }, function () {
-                                 alert("We could not get your device id. Please check your logs or contact our support team");
+                              //   alert("We could not get your device id. Please check your logs or contact our support team");
                                  })
 }
 
@@ -231,7 +231,9 @@ var app = {
     
 	
 			
-			
+		    var defaultLatLng = new google.maps.LatLng(12.982186,80.246433);  // Default to Hollywood, CA when no geolocation support
+        drawMap(defaultLatLng);  // No geolocation support, show default map
+	
 			
 			
 			
@@ -244,6 +246,24 @@ var app = {
 function resumeappcallCB(){
 			loadnotificationpage();
 	}
+	
+	
+	    function drawMap(latlng) {
+		
+        var myOptions = {
+            zoom: 17,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        // Add an overlay to the map of current lat/lng
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: "Greetings!"
+        });
+    }
+
 
 /*
 function loadimages()
@@ -324,24 +344,6 @@ function loadimages()
  * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
  * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
  */
-$( document ).on( "pageinit", "#locateuss", function() {
 
 	
-    var defaultLatLng = new google.maps.LatLng(12.982186,80.246433);  // Default to Hollywood, CA when no geolocation support
-        drawMap(defaultLatLng);  // No geolocation support, show default map
-    function drawMap(latlng) {
-		
-        var myOptions = {
-            zoom: 17,
-            center: latlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
-        // Add an overlay to the map of current lat/lng
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            title: "Greetings!"
-        });
-    }
-});
+
