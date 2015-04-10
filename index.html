@@ -41,9 +41,9 @@
 	font-weight: normal;
 	display: block !important;
 	margin: 0.6em 0 !important;
-	text-overflow: ellipsis;
+
 	overflow: hidden;
-	white-space: nowrap;
+	
 }
 
 
@@ -2677,7 +2677,6 @@ function addeventcalendar()
 				}
 				else{
 					  navigator.notification.alert("Please select atleast one calendar", alertCallback, "Calendar", "Done");
-					  
 	//				  $('#calendarMessage').html(message);
 					  
 					}  
@@ -2687,7 +2686,11 @@ function addeventcalendar()
 	
 	}  
  function alreadyadded(){
-	   navigator.notification.alert("Events already added into your iphone calendar", alertCallback, "Calendar", "Done");
+	//   navigator.notification.alert("Events already added into your iphone calendar", alertCallback, "Calendar", "Done");
+		$('#calendarMessage').html("Events already added into your iphone calendar");
+		$('.calendarAlert').show();
+		setTimeout(function() { $(".calendarAlert").hide(); }, 2000);
+	   
 	 }
   
   
