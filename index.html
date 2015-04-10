@@ -2263,7 +2263,7 @@ function queryNotificationsSuccess(tx,result){
 			}//if close
 			else{
 				 if(navigator.network.connection.type == Connection.NONE){
-						navigator.notification.alert("No Notifications available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
+					//	navigator.notification.alert("No Notifications available , Please turn on Data to sync contact", alertCallback, "AISC", "Done");
 				 }else{
 					loadNotificationsfromserver(); 
 					 }
@@ -2279,7 +2279,6 @@ function compareNotification(){
 	//console.log("statttttt = "+ newtotal_notificationcount +"===<>=="+total_notificationcount);
 	if((total_notificationcount < newtotal_notificationcount) && total_notificationcount>0 	)
 	{
-		
 		//console.log("statttttt = "+newtotal_notificationcount+"===<>=="+total_notificationcount);
 		$.mobile.changePage('#notification',{ transition:'slide' });
 		}else{
@@ -2300,11 +2299,7 @@ function loadNotificationsfromserver()
 function successNotificationsCBServer(){
 	
 	getlastnotificationdata();
- }
- 
- 
-function notification_server(){
-	
+	deleteNotifications_data();		
 	$.support.cors = true;
 	$.ajax({
 	url:ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId,
@@ -2373,7 +2368,7 @@ function slectnotificationCB(tx,result){
 		total_notificationcount=lengthselected;
 		//alert('Length selected ====== '+total_notificationcount);
 		//console.log(total_notificationcount);
-	deleteNotifications_data();		
+	
 	}
 function errorslectnotificationCB(err)
 {
@@ -2391,11 +2386,6 @@ function deleteNotifications_data()
 				var cond='0';
         		tx.executeSql("UPDATE notifications set status=? where id!=?;", [ value, cond ]); // array of values for the ? placeholders
 		},ErrordeletteCB);	 
-		
-		
-		
-		notification_server();
-		
 	}
 	
 function ErrordeletteCB(err)

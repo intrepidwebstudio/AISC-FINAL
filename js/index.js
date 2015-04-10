@@ -181,7 +181,10 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
 		
-		document.addEventListener("resume", resumeappcallCB, false);
+		  if(navigator.network.connection.type != Connection.NONE){
+			  
+					document.addEventListener("resume", resumeappcallCB, false);
+		  }
     },
     // deviceready Event Handler
     //
@@ -244,81 +247,6 @@ var app = {
 function resumeappcallCB(){
 			loadnotificationpage();
 	}
-
-/*
-function loadimages()
-{
-	
-		  
-					var screenwidth=window.screen.width;
-					var screenheight=window.screen.height;
-					
-					
-					alert(screenwidth +'    '+screenheight );
-					
-					
-					
-					if(screenwidth == 320 && screenheight == 480)
-					{
-						document.getElementById("sliderres1").style.height = "136px";
-						document.getElementById("sliderres2").style.height = "136px";
-						document.getElementById("sliderres3").style.height = "136px";
-						document.getElementById("sliderres4").style.height = "136px";
-						
-						$('#sliderres1').html('<img style="width:100%; height:100%;" src="slider/courage.png" >');
-						$('#sliderres2').html('<img style="width:100%; height:100%;"  src="slider/compassion.png" >');
-						$('#sliderres3').html('<img style="width:100%; height:100%;"  src="slider/confidence.png" >');
-						$('#sliderres4').html('<img style="width:100%; height:100%;"  src="slider/creativity.png" >');
-					}else 
-					if(screenwidth == 320 && screenheight == 568){
-						
-						document.getElementById("sliderres1").style.height = "229px";
-						document.getElementById("sliderres2").style.height = "229px";
-						document.getElementById("sliderres3").style.height = "229px";
-						document.getElementById("sliderres4").style.height = "229px";
-						
-						$('#sliderres1').html('<img style="width:100%; height:100%;" src="slider/courage@2x.png" >');
-						$('#sliderres2').html('<img style="width:100%; height:100%;"  src="slider/compassion@2x.png" >');
-						$('#sliderres3').html('<img style="width:100%; height:100%;"  src="slider/confidence@2x.png" >');
-						$('#sliderres4').html('<img style="width:100%; height:100%;"  src="slider/creativity@2x.png" >');
-						
-						}else if(screenwidth == 375 && screenheight == 667){
-						
-						
-						$('#locateusicon').attr('src','homeicons/LocateUs@3x.png');
-						$('#notification').attr('src','homeicons/notification@3x.png');
-						
-						document.getElementById("sliderres1").style.height = "323px";
-						document.getElementById("sliderres2").style.height = "323px";
-						document.getElementById("sliderres3").style.height = "323px";
-						document.getElementById("sliderres4").style.height = "323px";
-						
-						$('#sliderres1').html('<img style="width:100%; height:100%;"  src="slider/courage@3x.png" >');
-						$('#sliderres2').html('<img style="width:100%; height:100%;"  src="slider/compassion@3x.png" >');
-						$('#sliderres3').html('<img style="width:100%; height:100%;"  src="slider/confidence@3x.png" >');
-						$('#sliderres4').html('<img style="width:100%; height:100%;"  src="slider/creativity@3x.png" >');
-											
-						}else if(screenwidth == 414 && screenheight == 736){
-							
-						$('#locateusicon').attr('src','homeicons/LocateUs@3x.png');
-						$('#notification').attr('src','homeicons/notification@3x.png');
-							
-						document.getElementById("sliderres1").style.height = "392px";
-						document.getElementById("sliderres2").style.height = "392px";
-						document.getElementById("sliderres3").style.height = "392px";
-						document.getElementById("sliderres4").style.height = "392px";
-						
-						$('#sliderres1').html('<img style="width:100%; height:100%;" src="slider/courage@3x.png" >');
-						$('#sliderres2').html('<img style="width:100%; height:100%;"  src="slider/compassion@3x.png" >');
-						$('#sliderres3').html('<img style="width:100%; height:100%;"  src="slider/confidence@3x.png" >');
-						$('#sliderres4').html('<img style="width:100%; height:100%;"  src="slider/creativity@3x.png" >');
-							
-			        }
-					
-		
-	
-	} */
-	
 	
 /*
  * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
