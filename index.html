@@ -1278,7 +1278,7 @@ element.style {
 
     <script>document.write('<div class="js">'); // demo only </script>
     <!-- The alert is activated by toggling the "in" class. -->
-    <div class="alert in calendarAlert" style="display:none" >
+    <div class="alert in calendarAlert">
       <!-- The top margin must be set to 50% of the alert's height using JavaScript. -->
       <div class="alert-content" style="margin-top: -85px;">
         <h3>Calendar</h3>
@@ -1286,6 +1286,8 @@ element.style {
         </div>
     </div>
     <script>document.write('</div>'); // demo only </script>
+
+
 
 
 <!---------------/Notification---------------->
@@ -1320,6 +1322,11 @@ element.style {
 	});
 
 */
+
+$('.calendarAlert').show();
+setTimeout(function() { $(".calendarAlert").hide(); }, 3000);
+
+
 setTimeout(function() {
 navigator.splashscreen.hide();
 //	
