@@ -60,7 +60,6 @@ ul li.eventlist{
 	
 			position:absolute; vertical-align:middle; right:4% !important; top:18% !important;	
 			padding:5px !important;
-		
 		}
 
 	
@@ -72,7 +71,6 @@ ul li.eventlist{
 		padding:5px !important;
 		padding-right:6px !important;
 		padding-left:7px !important;
-		
 	}	
 
 	.custheight{
@@ -95,26 +93,20 @@ font-size: 0.85em !important;
 	
 	
 	.sliderres{
-	
 		height:141px !important;
-		
 		}
 	
 .homeheader1{
 		background-color:#38549B;
 		color:white;
 		padding:14px;
-				
 	}
 	.homeimage1{
-	
 		max-height:145px !important; 
 		min-height:145px !important;
 		width:100% !important;
-	
 	}
 	.homeimage{
-	
 		max-height:70px !important; 
 		min-height:70px !important;
 		width:100% !important;
@@ -1121,7 +1113,7 @@ element.style {
         </div>
         
         <div class="firstrowwidth1" style="float:left;">
-            <a href="#event"  data-transition="slide" ><img class="customheight" src="homeicons/upcoming_Events@3x.png" /></a>
+            <a href="#event"  data-transition="slide"  onclick="loadupcomingeventspage()" ><img class="customheight" src="homeicons/upcoming_Events@3x.png" /></a>
         </div>
         <div class="firstrowwidth2" style="float:right;">
             <a href="#contact"   data-transition="slide"  ><img  class="customheight" src="homeicons/Contacts@3x.png" /></a>
@@ -1207,7 +1199,7 @@ element.style {
     </div>
    <!--/header---->
     <!----content---->
-   <div data-role="content" id="contact_id" class="example-wrapper" data-iscroll>     
+   <div data-role="content" id="contact_id" style="padding-bottom:50px !important;" class="example-wrapper" data-iscroll>     
    
    
 <div class="contactsimagetop examplecolor" style="width:100%; height:50px;">
@@ -1629,7 +1621,7 @@ function queryContactSuccess(tx,result){
 		}
 		
 		//console.log(contactappend);
-		
+
 		$('#contact_id').html(contactappend);		
 				
 			}//if close
@@ -1833,7 +1825,19 @@ Eventsappend+='<input name="eventcheck[]" type="checkbox" style="display:none !i
 }
 
 
-
+function loadupcomingeventspage()
+{
+	
+	if(navigator.network.connection.type == Connection.NONE)
+	 {
+	   loadEventsFromLocalDb(); //loadNotificationsFromLocalDb();
+	   }
+		else{
+		loadEventsfromserver(); //loadNotificationsfromserver();
+		}
+	
+	
+	}
 
 function loadEventsfromserver()
 {
