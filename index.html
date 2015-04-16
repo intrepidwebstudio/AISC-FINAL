@@ -51,6 +51,8 @@ ul li.eventlist{
 	padding:0em 1em !important;
 	}
 	
+
+	
 	
 
  @media only screen and (min-device-width: 320px) and (min-device-height: 480px) {
@@ -63,15 +65,20 @@ ul li.eventlist{
 		}
 
 	
-	.backbutton{
+	.backbutton12{
 		left: 10px !important;
 		position: relative !important;
-		top: 25% !important;
+		top: 23% !important;
 		width: 21% !important;
 		padding:6px !important;
 		padding-right:6px !important;
 		padding-left:6px !important;
 	}	
+			.backbutton{
+		width:70% !important;
+		
+		}
+
 
 	.custheight{
 		height:55px !important;;
@@ -272,16 +279,20 @@ font-size: 0.85em !important;
 		}
 
 	
-	.backbutton{
+	.backbutton12{
 		left: 10px !important;
 		position: relative !important;
-		top: 25% !important;
+		top: 23% !important;
 		width: 21% !important;
-		padding:5px !important;
+		padding:6px !important;
 		padding-right:6px !important;
-		padding-left:7px !important;
-	
+		padding-left:6px !important;
 	}	
+			.backbutton{
+		width:70% !important;
+		
+		}
+
 
 	
 	.custheight{
@@ -486,16 +497,20 @@ font-size: 0.85em !important;
 		
 		}
 
-	.backbutton{
+	.backbutton12{
 		left: 10px !important;
 		position: relative !important;
-		top: 20% !important;
-		width: 20% !important;
-		padding:5px !important;
+		top: 23% !important;
+		width: 21% !important;
+		padding:6px !important;
 		padding-right:6px !important;
-		padding-left:7px !important;
-		
+		padding-left:6px !important;
 	}	
+			.backbutton{
+		width:70% !important;
+		
+		}
+
 
 	.custheight{
 		height:60px !important;;
@@ -702,16 +717,22 @@ padding-left:10px !important;
 		}
 
 
-	.backbutton{
+	.backbutton12{
 		left: 10px !important;
 		position: relative !important;
-		top: 18% !important;
-		width: 19% !important;
-		padding:5px !important;
+		top: 23% !important;
+		width: 22% !important;
+		padding:6px !important;
 		padding-right:6px !important;
-		padding-left:7px !important;
-		
+		padding-left:6px !important;
 	}	
+			.backbutton{
+		width:70% !important;
+		
+		}
+
+
+	
 
 	.custheight{
 		height:60px !important;;
@@ -1151,10 +1172,10 @@ element.style {
     <!---header -->
      <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
-
-                           <img src="images/gallery/backbuton.png" class="backbutton" />
-                           
-                            
+				<div class="backbutton12"  style="min-width:100px !important; min-height:50px !important;" >
+              		   <img src="images/gallery/backbuton.png" class="backbutton" />
+                 </div>
+                 
                             
                 <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:19%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                         Events 
@@ -1409,12 +1430,12 @@ navigator.splashscreen.hide();
 
 
 
-$('.backbutton').on("touchstart",function(e){
-		$(this).css("opacity","0.6");
+$('.backbutton12').on("touchstart",function(e){
+		$(this).children('.backbutton').css("opacity","0.4");
 		})
 .on("touchmove",function(e){  })	
 .on("touchend",function(e){
-	$(this).css("opacity","1.0");
+		$(this).children('.backbutton').css("opacity","1.0");
 	$.mobile.changePage('#index',{ transition:'slide' ,  reverse:'true'  });
 });	
 
@@ -1500,7 +1521,7 @@ var banner='';
 		},
 		error: function(e)
 		{
-		navigator.notification.alert("System error 83014  contact . Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+		//navigator.notification.alert("System error 83014  contact . Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 		}
 		});
 
@@ -1702,7 +1723,7 @@ function successContactCBServer(){
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014  contact . Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	   //navigator.notification.alert("System error 83014  contact . Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
 	
@@ -1897,7 +1918,7 @@ function successEventsCBServer(){
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014 events. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	   //navigator.notification.alert("System error 83014 events. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
  }
@@ -2127,7 +2148,7 @@ function successNewsletterCBServer(){
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014  newsletter. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	   //navigator.notification.alert("System error 83014  newsletter. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
  }
@@ -2347,7 +2368,7 @@ function successNotificationsCBServer(){
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014 notification. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	   //navigator.notification.alert("System error 83014 notification. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
 
@@ -2575,7 +2596,7 @@ function successlinksCBServer(){
 	},
 	error: function(e)
 	{
-	   navigator.notification.alert("System error 83014 links. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+	   //navigator.notification.alert("System error 83014 links. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 	}
 	});
  }
@@ -2948,7 +2969,7 @@ $('#submitpass').on("touchstart",function(e){
 						},
 						error: function(e)
 						{
-						   navigator.notification.alert("System error 83014 password. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
+						  // //navigator.notification.alert("System error 83014 password. Please try again in a couple of minutes.", alertCallback, "AISC", "Done");
 						}
 						});
 
