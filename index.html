@@ -1152,7 +1152,7 @@ element.style {
      <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:transparent !important;">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
 
-                           <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                           <img src="images/gallery/backbuton.png" class="backbutton" />
                            
                             
                             
@@ -1190,7 +1190,7 @@ element.style {
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed" style="background-color:#38549b !important">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
-    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+    			<img src="images/gallery/backbuton.png" class="backbutton" />
                 <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Contacts
                 </span> 
@@ -1217,7 +1217,7 @@ element.style {
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
-    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+    			<img src="images/gallery/backbuton.png" class="backbutton" />
                 <span style="position:absolute !important; font-size:22px !important; left:38% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Social Media
                 </span> 
@@ -1241,7 +1241,7 @@ element.style {
     <!---header -->
     <div data-role="header" data-id="persistent"  data-position="fixed">
          <div style="background-color:#38549b; height:60px; width:100% !important"  >
-            <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+            <img src="images/gallery/backbuton.png" class="backbutton" />
             <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                 Newsletters
             </span> 
@@ -1274,7 +1274,7 @@ element.style {
     <!---header -->
     <div  data-role="header" data-id="persistent"  data-position="fixed">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
-    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+    			<img src="images/gallery/backbuton.png" class="backbutton" />
                 <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Newsletters
                 </span> 
@@ -1301,7 +1301,7 @@ element.style {
     <!---header -->
   <div  data-role="header" data-id="persistent"  data-position="fixed">
     <div style="background-color:#38549b; height:60px; width:100% !important"  >
-    			<img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+    			<img src="images/gallery/backbuton.png" class="backbutton" />
                 <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                		Locate Us
                 </span> 
@@ -1334,7 +1334,7 @@ element.style {
     <!---header -->
      <div  data-role="header" data-id="persistent"  data-position="fixed">
         <div style="background-color:#38549b; height:60px; width:100% !important"  >
-                    <img src="images/gallery/backbuton.png" class="backbutton" onclick="gohomepage()"  />
+                    <img src="images/gallery/backbuton.png" class="backbutton" />
                     <span style="position:absolute !important; font-size:22px !important; left:40% !important; top:45%; color:#FFF; text-shadow:none !important; font-weight:500 !important ">
                         Notifications
                     </span> 
@@ -1406,6 +1406,18 @@ setTimeout(function() {
 navigator.splashscreen.hide();
 //	
 }, 3000);
+
+
+
+$('.backbutton').on("touchstart",function(e){
+		$(this).css("opacity","0.6");
+		})
+.on("touchmove",function(e){  })	
+.on("touchend",function(e){
+	$(this).css("opacity","1.0");
+	$.mobile.changePage('#index',{ transition:'slide' ,  reverse:'true'  });
+});	
+
 
 
 var AppTokenId='abcdefghijklmnopqrstuvwxyz';
@@ -2785,11 +2797,11 @@ function addeventcalendar()
 	 }
   
   
-function gohomepage()
+/*function gohomepage()
 {
 	$.mobile.changePage('#index',{ transition:'slide' ,  reverse:'true'  });
 	}
-	
+	*/
 	
 function gotomail(emaillink)
 {
