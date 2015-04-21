@@ -45,8 +45,6 @@
 	font-weight: normal;
 	display: block !important;
 	margin: 0.6em 0 !important;
-
-/
 	
 }
 
@@ -1295,7 +1293,7 @@ element.style {
                         <p style="color:#718497; margin-top:0px;float:left !important">
                                 <input type="checkbox" id="remember_me" name="remember_me" style="float:left; " />
                                 <div onclick="triggercheckbox()" style="float:left;top:-6px; position:relative;left: 35px !important; padding:5px !important;  " >Remember me</div> 
-                                <a style="color:#06F !important; text-shadow:none; font-weight:normal !important; float:right !important; padding-right:10px !important;  text-decoration:none !important;"  id="submitpass"   >Submit</a>
+                                <a style=" text-shadow:none;  float:right !important; padding-right:10px !important;  text-decoration:none !important;"  id="submitpass"   ><img src="newslettericons/button.jpg" id="buttonsubmit"   /></a>
                         </p>
                    
                 </div>
@@ -2958,11 +2956,11 @@ function insertpasswordvalues(tx,parameter1,parameter2)
 
 
 $('#submitpass').on("touchstart",function(e){
-		$(this).css("opacity","0.2");
+		$('#buttonsubmit').css("opacity","0.5");
 		})
 .on("touchmove",function(e){  })	
 .on("touchend",function(e){
-	$(this).css("opacity","1.0");
+	$('#buttonsubmit').css("opacity","1.0");
 	checkuser();
 });	
 
