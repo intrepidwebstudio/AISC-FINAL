@@ -1292,8 +1292,9 @@ element.style {
                 	 	<!--<img style="width:19px; float:left !important" src="images/gallery/checkbox1.png" />-->
                         <p style="color:#718497; margin-top:0px;float:left !important">
                                 <input type="checkbox" id="remember_me" name="remember_me" style="float:left; " />
-                                <div onclick="triggercheckbox()" style="float:left;top:-6px; position:relative;left: 35px !important; padding:5px !important;  " >Remember me</div> 
-                                <a style=" text-shadow:none;  float:right !important; padding-right:10px !important;  text-decoration:none !important;"  id="submitpass"   ><img src="newslettericons/button.jpg" id="buttonsubmit"   /></a>
+                                <div onclick="triggercheckbox()" style="float:left;top:-6px; position:relative;left: 31px !important; padding:5px !important;  " >Remember me</div> 
+                                
+                                <a style=" text-shadow:none;  float:right !important; margin-top:-5px; padding-right:7px !important;  text-decoration:none !important;"  id="submitpass"   ><img src="newslettericons/button.png" id="buttonsubmit"  style="width:80px !important"  /></a>
                         </p>
                    
                 </div>
@@ -2747,7 +2748,7 @@ function successEventReadstatusCB()
 		
 		}
 	
-	
+ loadupcomingeventspage();	
  }	
 
 
@@ -2828,7 +2829,7 @@ function addeventcalendar()
 					  //navigator.notification.alert(message, alertCallback, "Calendar","Done");
 					  			$('#calendarMessage').html(message);
 								$('.calendarAlert').show();
-								setTimeout(function() { $(".calendarAlert").hide(); }, 3000);
+								setTimeout(function() { $(".calendarAlert").hide();  }, 3000);
 					   }else{
 					 // navigator.notification.alert(event_length+ " Event(s) added into your iPhone Calendar", alertCallback, "Calendar", "Done");	   
 					  
