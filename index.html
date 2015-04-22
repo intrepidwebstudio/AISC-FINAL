@@ -2329,7 +2329,7 @@ function errorNotificationsCB(err){
 
 function queryNotificationsSuccess(tx,result){
 		var length = result.rows.length;
-		//	alert("Notifications LENGTH  = "+ length);
+	alert("Notifications LENGTH  = "+ length);
 			var Notificationsappend='';
 			if(length >0)
 			{
@@ -2396,6 +2396,8 @@ function successNotificationsCBServer(){
 	
 	getlastnotificationdata();
 	deleteNotifications_data();		
+	
+	console.log(' Ajaxpath  ='+ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId+'&userdeviceid='+UserDeviceId);
 	$.support.cors = true;
 	$.ajax({
 	url:ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId+'&userdeviceid='+UserDeviceId,
