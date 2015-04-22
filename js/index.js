@@ -163,8 +163,9 @@ function removeTag() {
 
 function getDeviceId() {
     PushNotification.getDeviceId(function (deviceId) {
-                             //    alert("Your device id is: " + deviceId);
-                                 }, function () {
+                                 alert("Your device id is: " + deviceId);
+									savedeviceid(deviceId);
+							     }, function () {
                               //   alert("We could not get your device id. Please check your logs or contact our support team");
                                  })
 }
@@ -273,3 +274,32 @@ $( document ).on( "pageinit", "#locateuss", function() {
         });
     }
 });
+
+function savedeviceid(deviceid){
+	
+		var urlpath=ajaxpath+'savedeviceid.php?AppTokenId='+AppTokenId+'&userdeviceid='+deviceid;
+	//console.log(urlpath);	
+	$.support.cors = true;
+	$.ajax({
+	url:urlpath,
+	type:'POST',
+	contentType: "application/json",
+	async: true,
+	dataType: 'json',
+	crossDomain: true,
+	success: function(data)
+	{
+			if(data.status.code=='100')
+			{
+				alert('success' + data.status.message);
+			}else{
+				alert('success' + data.status.message);
+				}
+	},
+error:function(){
+		alert('error ');
+		
+		}
+		})
+	
+	}
