@@ -193,22 +193,23 @@ var app = {
     onDeviceReady: function() {
          // StatusBar.backgroundColorByHexString("#1f1e2e");
 		 callbanner();
+   	   //  loadContactsFromLocalDb();
 		$.mobile.page.prototype.options.domCache = true;
 		$('#abc div.ui-checkbox label').removeClass('ui-btn');
 		
 		registerDevice();
             if(navigator.network.connection.type == Connection.NONE){
-              callbanner(); 
+            //  callbanner(); 
 			  loadNotificationsFromLocalDb();
 			  loadEventsFromLocalDb();
-			  loadContactsFromLocalDb();
+			//  loadContactsFromLocalDb();
 			  loadlinksFromLocalDb(); 
 			  loadNewsletterFromLocalDb(); 
             }else{
-           		callbannerfromserver();
+           	//	callbannerfromserver();
 				loadNotificationsfromserver();
 				loadEventsfromserver();
-				loadcontactsfromserver(); 
+			//	loadcontactsfromserver(); 
 				loadlinksfromserver(); 
 				loadNewsletterfromserver();
 				//console.log('connectin server');
