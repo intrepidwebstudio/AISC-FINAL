@@ -2846,8 +2846,8 @@ function addeventcalendar()
 						var notes = "";
 						var success = function(message) { event_success =1; };
 						var error = function(message) { event_fail=1 ; errormessage=message };
-						alert(" startDate ="+startDate);
-						alert(" endDate ="+endDate);
+					//	alert(" startDate ="+startDate);
+					//	alert(" endDate ="+endDate);
 						
 						window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
 					
