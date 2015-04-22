@@ -2827,15 +2827,16 @@ function addeventcalendar()
 						
 						// prep some variables
 						
-						alert(time_array[0]+'  '+time_array[1]);
+					//	alert(time_array[0]+'  '+time_array[1]);
 						var month=date_array[1];
 						
-						var endhour=time_array[0] + 1;
-						alert(endhour);
+						var endhour=parseInt(time_array[0]);
+						endhour=endhour + 1;
+					//	alert(endhour);
 	
 						
-						alert(date_array[2] +','+ (month-1) +','+date_array[0]+','+time_array[0]+','+time_array[1]+','+0+','+0+','+0);
-						alert(date_array[2] +','+ (month-1)+','+date_array[0]+','+time_array[0]+','+endhour+','+0+','+0+','+0);
+					//	alert(date_array[2] +','+ (month-1) +','+date_array[0]+','+time_array[0]+','+time_array[1]+','+0+','+0+','+0);
+					//	alert(date_array[2] +','+ (month-1)+','+date_array[0]+','+time_array[0]+','+endhour+','+0+','+0+','+0);
 						
 						
 						var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
