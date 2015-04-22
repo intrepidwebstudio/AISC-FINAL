@@ -42,7 +42,7 @@ function registerDevice() {
 	PushNotification.registerDevice(GOOGLE_PROJECT_ID, PUSHAPPS_APP_TOKEN, function (pushToken) {
                               //      alert('registerDevice, push token' + pushToken);
 																UserDeviceId=pushToken;
-																alert(UserDeviceId);
+																//alert(UserDeviceId);
 																savedeviceid(pushToken);
                                     }, function (error) {
                             //        alert('gggg='+error);
@@ -216,7 +216,7 @@ var app = {
 				loadEventsfromserver();
 			//	loadcontactsfromserver(); 
 				loadlinksfromserver(); 
-				loadNewsletterfromserver();
+				//loadNewsletterfromserver();
 				//console.log('connectin server');
 				
 				 

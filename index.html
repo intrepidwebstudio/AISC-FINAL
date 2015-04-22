@@ -2329,7 +2329,7 @@ function errorNotificationsCB(err){
 
 function queryNotificationsSuccess(tx,result){
 		var length = result.rows.length;
-	alert("Notifications LENGTH  = "+ length);
+	//alert("Notifications LENGTH  = "+ length);
 			var Notificationsappend='';
 			if(length >0)
 			{
@@ -2826,13 +2826,21 @@ function addeventcalendar()
 						var time_array = datetime_array[1].split(':');	
 						
 						// prep some variables
+						
+						alert(time_array[0]+'  '+time_array[1]);
+						
+						alert(date_array[2]+','+date_array[1]-1+','+date_array[0]+','+time_array[0]+','+time_array[1]+','+0+','+0+','+0);
+						alert(date_array[2]+','+date_array[1]-1+','+date_array[0]+','+time_array[0]+','+(time_array[1]+1)+','+0+','+0+','+0);
+						
 						var startDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0); // beware: month 0 = january, 11 = december
-						var endDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0],time_array[1],0,0,0);
+						var endDate = new Date(date_array[2],date_array[1]-1,date_array[0],time_array[0]+1,time_array[1],0,0,0);
 						var title = eventtitle;
 						var location = "";
 						var notes = "";
 						var success = function(message) { event_success =1; };
 						var error = function(message) { event_fail=1 ; errormessage=message };
+						alert(" startDate ="+startDate);
+						alert(" endDate ="+endDate);
 						
 						window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
 					
@@ -3015,7 +3023,7 @@ $('#submitpass').on("touchstart",function(e){
 						
 								if(data.status.code=='100')
 								{
-									
+									loadNewsletterfromserver();
 								var	Response = data.Response;
 								
 							//	alert("Response===="+Response.passwordStatus);
