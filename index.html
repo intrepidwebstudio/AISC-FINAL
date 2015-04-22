@@ -2398,7 +2398,7 @@ function successNotificationsCBServer(){
 	deleteNotifications_data();		
 	$.support.cors = true;
 	$.ajax({
-	url:ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId,
+	url:ajaxpath+'loadnotifications.php?AppTokenId='+AppTokenId+'&userdeviceid='+UserDeviceId,
 	type:'POST',
 	contentType: "application/json",
 	async: true,
