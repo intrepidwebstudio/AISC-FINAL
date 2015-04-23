@@ -18,7 +18,7 @@
  */
 
 var GOOGLE_PROJECT_ID = "";
-var PUSHAPPS_APP_TOKEN = "6f747f13-5c54-41f0-84c5-892d4c0ffdf6";
+var PUSHAPPS_APP_TOKEN = "1afa519a-edd7-4dc1-84bd-f85a1b778fb8";
 var UserDeviceId='';
 
 /**
