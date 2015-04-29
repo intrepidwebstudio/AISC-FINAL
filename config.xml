@@ -4,16 +4,16 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.AISC.Prod"  
-        version   = "1.0.0">
+        version   = "1.1.0">
 
     <name>AISC</name>
 
     <description>
-        AISC is an school app helping parents and students keep track of the school events
+        The AISC app is for members of the AISC school community to stay current with important communication channels. AISC is a non-profit international school in Chennai, India.
     </description>
 
-    <author href="http://www.inpws.com" email="info@inpws.com">
-        Intrepid Webstudio
+    <author href="http://www.aisch.org" email="appsdeveloper@aisch.org.com">
+        AISC
     </author>
 
     <!--
